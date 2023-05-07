@@ -1,0 +1,45 @@
+:root {
+  --color-white-pri: #FFFFFF;
+  --color-white-sec: #D9D9D9;
+  --color-white-ter: #878787;
+  --color-gold-pri: #EBC7AD;
+  --color-gold-sec: #C09678;
+  --color-gold-gradient: linear-gradient(to bottom, var(--color-gold-pri), var(--color-gold-sec));
+  --color-background-main: #121212;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--color-white-pri);
+  background-color: var(--color-background-main);
+  background-image: url('/Logo.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  padding: 12px;
+  color: var(--color-white-ter);
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+}
