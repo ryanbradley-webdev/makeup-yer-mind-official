@@ -19,7 +19,7 @@
 html {
   color: var(--color-white-pri);
   background-color: var(--color-background-main);
-  background-image: url('/Logo.svg');
+  background-image: url('/Logo-Large.svg');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -30,6 +30,17 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
 }
 
 main {

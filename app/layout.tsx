@@ -1,5 +1,8 @@
 import './globals.css'
+import styles from './page.module.css'
 import { Cabin } from 'next/font/google'
+import Image from 'next/image'
+import Burger from './Burger'
 
 const cabin = Cabin({ subsets: ['latin'] })
 
@@ -15,7 +18,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cabin.className}>{children}</body>
+      <body className={cabin.className}>
+
+        <header>
+          <Image src={'/Logo-Small.svg'} alt='' width={95} height={36} />
+
+          <Burger />
+        </header>
+
+        {children}
+
+        <footer>
+          &copy; 2023 Shades of Pink. Designed and developed by Ryan Bradley Web Design.
+        </footer>
+
+      </body>
     </html>
   )
 }
