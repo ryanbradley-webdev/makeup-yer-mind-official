@@ -21,6 +21,11 @@ export default function Menu({
 
     return (
         <nav className={styles.menu} style={{ right: menuVisible ? '0' : '-100%' }}>
+            <button className={styles.closeBtn} onClick={toggleMenu}>
+                <div className={styles.closeBtnDiv}></div>
+                <div className={styles.closeBtnDiv}></div>
+            </button>
+
             <ul>
                 <Link href='/' onClick={toggleMenu}>
                     Home
