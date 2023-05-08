@@ -5,9 +5,11 @@ import styles from './header.module.css'
 import { useEffect, useState } from 'react'
 
 export default function Menu({
-    isVisible
+    isVisible,
+    toggleMenu
 }: {
-    isVisible: boolean
+    isVisible: boolean,
+    toggleMenu: () => void
 }) {
     const [menuVisible, setMenuVisible] = useState(false)
 
@@ -20,19 +22,19 @@ export default function Menu({
     return (
         <nav className={styles.menu} style={{ right: menuVisible ? '0' : '-100%' }}>
             <ul>
-                <Link href='/'>
+                <Link href='/' onClick={toggleMenu}>
                     Home
                 </Link>
-                <Link href='/about'>
+                <Link href='/about' onClick={toggleMenu}>
                     About
                 </Link>
-                <Link href='/blogs'>
+                <Link href='/blogs' onClick={toggleMenu}>
                     Blogs
                 </Link>
-                <Link href='/looks'>
+                <Link href='/looks' onClick={toggleMenu}>
                     Looks
                 </Link>
-                <Link href='/affiliates'>
+                <Link href='/affiliates' onClick={toggleMenu}>
                     Affiliates
                 </Link>
             </ul>

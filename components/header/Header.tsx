@@ -19,7 +19,7 @@ export default function Header() {
 
             <Burger toggleMenu={toggleMenu} />
 
-            <Menu isVisible={menuVisible} />
+            <Menu isVisible={menuVisible} toggleMenu={toggleMenu} />
         </header>
     )
 }
