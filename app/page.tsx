@@ -1,13 +1,13 @@
 import styles from './page.module.css'
-import LogoName from './assets/LogoName'
-import HeroBtn from './assets/HeroBtn'
+import LogoName from '../components/assets/LogoName'
+import HeroBtn from '../components/assets/HeroBtn'
 import Link from 'next/link'
 
 export default function Home() {
 
 
   return (
-    <main className={styles.main}>
+    <main>
       <section className={styles.hero}>
         <LogoName />
         <h3>
