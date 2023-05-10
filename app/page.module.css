@@ -8,7 +8,9 @@
     height: 800px;
     background-image: url('/background-mobile.png');
     background-position: center top;
+    background-size: contain;
     background-repeat: no-repeat;
+    text-align: center;
 }
 
 .hero svg {
