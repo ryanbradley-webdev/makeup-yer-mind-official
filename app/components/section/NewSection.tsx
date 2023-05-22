@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
+import Video from '../assets/Video'
+import Instagram from '../assets/Instagram'
+import Link from 'next/link'
 
 export default function NewSection() {
     return (
@@ -30,13 +33,29 @@ export default function NewSection() {
                             Take this short quiz to find your skin type!
                         </h6>
 
-                        <button>
-                            Read More
-                        </button>
-
                     </div>
 
                 </div>
+
+                <div className={styles.btnDiv}>
+
+                    <Link href={'/'}>
+                        <button className={styles.btn}>
+                            Read More
+                        </button>
+                    </Link>
+
+                    <Link href={'/'}>
+                        <button className={styles.btnAlt}>
+                            All Blogs
+                        </button>
+                    </Link>
+
+                </div>
+
+                <p>
+                    Check out my latest videos, Insta posts, and more!
+                </p>
 
                 <div className={styles.content}>
 
@@ -47,6 +66,12 @@ export default function NewSection() {
                         <h5>
                             Reduce, Reuse, Recycle
                         </h5>
+
+                        <h6>
+                            Check out this tutorial to see how I take old every-day items and turn them into super-useful tools for all of my accessories!
+                        </h6>
+
+                        <Video />
 
                     </div>
 
@@ -62,6 +87,12 @@ export default function NewSection() {
                             A Fun Title
                         </h5>
 
+                        <h6>
+                            I just needed another piece of content to round out this mockup. I don’t really have anything else substantive.
+                        </h6>
+
+                        <Instagram />
+
                     </div>
 
                 </div>
@@ -75,6 +106,12 @@ export default function NewSection() {
                         <h5>
                             What to expect when you follow me!
                         </h5>
+
+                        <h6>
+                            Here’s a quick overview of all the fun content that I give you to help you out in your beauty journey!
+                        </h6>
+
+                        <Instagram />
 
                     </div>
 

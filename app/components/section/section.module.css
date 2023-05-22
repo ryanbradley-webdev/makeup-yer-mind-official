@@ -1,6 +1,9 @@
 .sectionHeader {
+    position: sticky;
+    top: 72px;
     width: 100%;
     background: linear-gradient(to bottom, #7D6D61, #665344);
+    z-index: 1;
 }
 
 .sectionHeader h2 {
@@ -13,18 +16,66 @@
 
 .grid {
     display: grid;
-    gap: 48px;
-    margin-top: 24px;
+    gap: 12px;
+    margin-top: 48px;
     padding-inline: 16px;
+}
+
+.grid > p {
+    text-align: center;
+    color: var(--color-white-sec);
+    font-weight: 300;
+    padding-block: 8px;
+    border-top: 1px solid var(--color-gold-sec);
+    border-bottom: 1px solid var(--color-gold-sec);
 }
 
 .content {
     position: relative;
     width: 100%;
+    isolation: isolate;
 }
 
-.content:not(:first-of-type) {
-    width: 80%;
+.grid > *:not(.content:first-of-type) {
+    margin-bottom: 36px;
+}
+
+.btnDiv {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+}
+
+.btnDiv a {
+    width: 100%;
+}
+
+.btnDiv button {
+    width: 100%;
+    border-radius: 0;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.btn {
+    color: var(--color-background-main);
+    background: var(--color-gold-gradient);
+    border: none;
+}
+
+.btnAlt {
+    color: var(--color-gold-pri);
+    border: 1px solid var(--color-gold-pri);
+    background: var(--color-background-main);
+}
+
+.content svg {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 25px;
+    fill: var(--color-gold-sec);
 }
 
 .content img {
@@ -45,6 +96,7 @@
     flex-direction: column;
     gap: 4px;
     padding: 8px;
+    padding-right: 24px;
     background-color: var(--color-background-card);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
