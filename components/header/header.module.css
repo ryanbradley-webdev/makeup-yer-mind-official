@@ -1,4 +1,6 @@
 .header {
+    --transition-duration: 0.5s;
+    --timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     position: fixed;
     top: 0;
     left: 0;
@@ -14,19 +16,30 @@
     height: 18px;
     background-color: transparent;
     border: none;
+    z-index: 10;
 }
 
 .burgerDiv,
+.burgerDiv > div,
 .burgerDiv::before,
 .burgerDiv::after {
     width: 19px;
     height: 2px;
     background: var(--color-white-pri);
+    transition: var(--transition-duration) var(--timing-function);
 }
 
 .burgerDiv {
     position: relative;
     margin-left: auto;
+    transform-origin: bottom left;
+}
+
+.burgerDiv > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
 }
 
 .burgerDiv::before,
@@ -44,6 +57,27 @@
     top: 8px;
 }
 
+.header:has(.menu[aria-hidden="false"]) .burgerDiv {
+    rotate: 45deg;
+}
+
+.header:has(.menu[aria-hidden="false"]) .burgerDiv > div {
+    rotate: -90deg;
+    top: 4px;
+    left: 1px;
+}
+
+.header:has(.menu[aria-hidden="false"]) .burgerDiv::before {
+    top: 0;
+    left: -14px;
+}
+
+.header:has(.menu[aria-hidden="false"]) .burgerDiv::after {
+    rotate: -90deg;
+    top: 7px;
+    left: -7px;
+}
+
 .menu {
     position: absolute;
     top: 0;
@@ -57,7 +91,7 @@
     padding: 24px 20px;
     background-color: #121212DD;
     backdrop-filter: blur(2px);
-    transition: right 0.3s ease-in-out;
+    transition: right var(--transition-duration) var(--timing-function);
 }
 
 .menu[aria-hidden="true"] {
@@ -90,31 +124,4 @@
 .iconDiv svg {
     height: 30px;
     fill: var(--color-white-sec);
-}
-
-.closeBtn {
-    position: relative;
-    display: grid;
-    place-items: center;
-    margin-left: auto;
-    height: 20px;
-    width: 20px;
-    background: none;
-    border: none;
-}
-
-.closeBtnDiv {
-    position: absolute;
-    background: var(--color-white-sec);
-    height: 2px;
-    width: 26px;
-    transform-origin: center;
-}
-
-.closeBtnDiv:first-of-type {
-    rotate: 45deg;
-}
-
-.closeBtnDiv:last-of-type {
-    rotate: -45deg;
 }

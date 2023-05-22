@@ -25,12 +25,7 @@ export default function Menu({
     }, [isVisible])
 
     return (
-        <nav className={styles.menu} aria-hidden={!isVisible}>
-
-            <button className={styles.closeBtn} onClick={toggleMenu}>
-                <div className={styles.closeBtnDiv}></div>
-                <div className={styles.closeBtnDiv}></div>
-            </button>
+        <nav className={styles.menu} aria-hidden={!menuVisible}>
 
             <ul>
 

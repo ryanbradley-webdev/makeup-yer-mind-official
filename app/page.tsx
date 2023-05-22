@@ -24,15 +24,19 @@ export default function Home() {
         <div className={styles.heroBtnDiv}>
 
           <Link href={'/about'}>
+            
             <HeroBtn className={styles.heroBtn}>
               Find Out More
             </HeroBtn>
+            
           </Link>
 
           <Link href={'/color-match'}>
+            
             <HeroBtn className={styles.heroBtnAlt}>
               Get Color-Matched
             </HeroBtn>
+            
           </Link>
 
         </div>

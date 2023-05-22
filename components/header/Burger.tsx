@@ -7,7 +7,9 @@ export default function Burger({
 }) {
     return (
         <button className={styles.burgerBtn} onClick={toggleMenu}>
-            <div className={styles.burgerDiv}></div>
+            <div className={styles.burgerDiv}>
+                <div></div>
+            </div>
         </button>
     )
 }
