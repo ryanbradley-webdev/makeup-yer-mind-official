@@ -1,10 +1,8 @@
 import styles from './page.module.css'
-import Link from 'next/link'
 import Image from 'next/image'
 import LogoName from './components/assets/LogoName'
-import HeroBtn from './components/assets/HeroBtn'
+import Button from './components/assets/Button'
 import NewSection from './components/section/NewSection'
-import SectionHeader from './components/section/SectionHeader'
 import LooksSection from './components/section/LooksSection'
 import BlogsSection from './components/section/BlogsSection'
 
@@ -31,21 +29,13 @@ export default function Home() {
 
         <div className={styles.heroBtnDiv}>
 
-          <Link href={'/about'}>
-            
-            <HeroBtn className={styles.heroBtn}>
-              Find Out More
-            </HeroBtn>
-            
-          </Link>
+          <Button to='/about'>
+            Find Out More
+          </Button>
 
-          <Link href={'/color-match'}>
-            
-            <HeroBtn className={styles.heroBtnAlt}>
-              Get Color-Matched
-            </HeroBtn>
-            
-          </Link>
+          <Button to='/color-match' alt>
+            Get Color-Matched
+          </Button>
 
         </div>
         
@@ -67,13 +57,9 @@ export default function Home() {
 
           <p>Ready to get started??</p>
 
-          <Link href={'/'}>
-
-            <HeroBtn className={styles.heroBtnAlt}>
-              Let&apos;s Do It!!
-            </HeroBtn>
-
-          </Link>
+          <Button to='/' alt>
+            Let&apos;s Do It!!
+          </Button>
 
         </aside>
 

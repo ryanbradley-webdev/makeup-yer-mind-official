@@ -3,7 +3,7 @@ import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
 import Video from '../assets/Video'
 import Instagram from '../assets/Instagram'
-import Link from 'next/link'
+import Button from '../assets/Button'
 
 export default function NewSection() {
     return (
@@ -39,17 +39,13 @@ export default function NewSection() {
 
                 <div className={styles.btnDiv}>
 
-                    <Link href={'/'}>
-                        <button className={styles.btn}>
-                            Read More
-                        </button>
-                    </Link>
+                    <Button to='/'>
+                        Read More
+                    </Button>
 
-                    <Link href={'/'}>
-                        <button className={styles.btnAlt}>
-                            All Blogs
-                        </button>
-                    </Link>
+                    <Button to='/blogs' alt>
+                        All Blogs
+                    </Button>
 
                 </div>
 

@@ -49,27 +49,6 @@
     margin-top: 42px;
 }
 
-.heroBtn,
-.heroBtnAlt {
-    width: 310px;
-    height: 41px;
-    font-family: inherit;
-    font-size: 16px;
-    border-radius: 4px;
-}
-
-.heroBtn {
-    color: var(--color-gold-pri);
-    background-color: rgba(0, 0, 0, 0.288);
-    border: 2px solid var(--color-gold-pri);
-}
-
-.heroBtnAlt {
-    color: black;
-    background-color: var(--color-gold-pri);
-    border: none;
-}
-
 .about {
     display: flex;
     flex-direction: column;
@@ -117,7 +96,7 @@
     text-decoration: none;
 }
 
-.about .heroBtnAlt {
+.about button {
     display: block;
     margin-inline: auto;
 }
