@@ -3,6 +3,11 @@
 import Link from 'next/link'
 import styles from './header.module.css'
 import { useEffect, useState } from 'react'
+import YouTube from '../assets/YouTube'
+import Instagram from '../assets/Instagram'
+import Pinterest from '../assets/Pinterest'
+import Facebook from '../assets/Facebook'
+import Email from '../assets/Email'
 
 export default function Menu({
     isVisible,
@@ -20,29 +25,61 @@ export default function Menu({
     }, [isVisible])
 
     return (
-        <nav className={styles.menu} style={{ right: menuVisible ? '0' : '-100%' }}>
+        <nav className={styles.menu} aria-hidden={!isVisible}>
+
             <button className={styles.closeBtn} onClick={toggleMenu}>
                 <div className={styles.closeBtnDiv}></div>
                 <div className={styles.closeBtnDiv}></div>
             </button>
 
             <ul>
+
                 <Link href='/' onClick={toggleMenu}>
                     Home
                 </Link>
+
                 <Link href='/about' onClick={toggleMenu}>
                     About
                 </Link>
+
                 <Link href='/blogs' onClick={toggleMenu}>
                     Blogs
                 </Link>
+
                 <Link href='/looks' onClick={toggleMenu}>
                     Looks
                 </Link>
+
                 <Link href='/affiliates' onClick={toggleMenu}>
                     Affiliates
                 </Link>
+
             </ul>
+
+            <div className={styles.iconDiv}>
+
+                <Link href='https://www.youtube.com/@Makeup.Yer.Mind.' rel='noopener noreferrer' target='_blank'>
+                    <YouTube />
+                </Link>
+
+                <Link href='https://www.youtube.com/@Makeup.Yer.Mind.' rel='noopener noreferrer' target='_blank'>
+                    <Instagram />
+                </Link>
+
+                <Link href='https://www.pinterest.com/MakeupYerMind/' rel='noopener noreferrer' target='_blank'>
+                    <Pinterest />
+                </Link>
+
+                <Link href='https://www.facebook.com/MakeupYerMind' rel='noopener noreferrer' target='_blank'>
+                    <Facebook />
+                </Link>
+
+                <Link href='mailto:courtneyhollyactor@gmail.com' target='_blank'>
+                    <Email />
+                </Link>
+
+            </div>
+
         </nav>
     )
 }

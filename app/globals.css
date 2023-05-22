@@ -32,7 +32,12 @@ body {
   min-height: 100dvh;
 }
 
+header {
+  z-index: 1;
+}
+
 main {
+  position: relative;
   flex-grow: 1;
 }
 
