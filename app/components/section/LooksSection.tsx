@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
 

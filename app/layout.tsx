@@ -1,6 +1,7 @@
 import './globals.css'
 import { Cabin } from 'next/font/google'
 import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
 
 const cabin = Cabin({ subsets: ['latin'] })
 
@@ -22,9 +23,7 @@ export default function RootLayout({
 
         {children}
 
-        <footer>
-          &copy; 2023 Shades of Pink. Designed and developed by Ryan Bradley Web Design.
-        </footer>
+        <Footer />
 
       </body>
     </html>
