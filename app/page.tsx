@@ -5,9 +5,12 @@ import LogoName from './components/assets/LogoName'
 import HeroBtn from './components/assets/HeroBtn'
 import SectionHeader from './components/sectionHeader/sectionHeader'
 
+export const metadata = {
+  title: 'Makeup Yer Mind',
+  description: 'Be your most beautiful self!'
+}
+
 export default function Home() {
-
-
   return (
     <main className={styles.main}>
 
