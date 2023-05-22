@@ -3,7 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import LogoName from './components/assets/LogoName'
 import HeroBtn from './components/assets/HeroBtn'
-import SectionHeader from './components/sectionHeader/sectionHeader'
+import NewSection from './components/section/NewSection'
+import SectionHeader from './components/section/SectionHeader'
+import LooksSection from './components/section/LooksSection'
+import BlogsSection from './components/section/BlogsSection'
 
 export const metadata = {
   title: 'Makeup Yer Mind',
@@ -76,51 +79,11 @@ export default function Home() {
 
       </section>
 
-      <section id='new'>
+      <NewSection />
 
-        <SectionHeader>
-          What&apos;s New
-        </SectionHeader>
+      <LooksSection />
 
-        <div className={styles.newGrid}>
-
-          <div className={styles.first_new_content}>
-            <Image src='/new-placeholder-lg.png' width={448} height={337} alt='' />
-            <div className={styles.card_info}>
-              <p className={styles.latest}>
-                Latest Blog
-              </p>
-              <h5>
-                Find Your Skin Type
-              </h5>
-              <h6>
-                Take this short quiz to find your skin type!
-              </h6>
-              <button>
-                Read More
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-      </section>
-
-      <section id='looks'>
-
-        <SectionHeader>
-          Find a New Look
-        </SectionHeader>
-
-      </section>
-
-      <section id='blogs'>
-
-        <SectionHeader>
-          Blogs
-        </SectionHeader>
-
-      </section>
+      <BlogsSection />
 
     </main>
   )

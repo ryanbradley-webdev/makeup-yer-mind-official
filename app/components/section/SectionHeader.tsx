@@ -1,4 +1,4 @@
-import styles from './sectionHeader.module.css'
+import styles from './section.module.css'
 
 export default function SectionHeader({
     children
