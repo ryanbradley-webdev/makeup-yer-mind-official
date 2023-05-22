@@ -1,6 +1,6 @@
 import './globals.css'
 import { Cabin } from 'next/font/google'
-import Header from '@/components/header/Header'
+import Header from './components/header/Header'
 
 const cabin = Cabin({ subsets: ['latin'] })
 

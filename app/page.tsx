@@ -1,8 +1,8 @@
 import styles from './page.module.css'
-import LogoName from '../components/assets/LogoName'
-import HeroBtn from '../components/assets/HeroBtn'
 import Link from 'next/link'
 import Image from 'next/image'
+import LogoName from './components/assets/LogoName'
+import HeroBtn from './components/assets/HeroBtn'
 
 export default function Home() {
 

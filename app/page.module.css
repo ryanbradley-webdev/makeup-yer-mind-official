@@ -72,9 +72,9 @@
 
 .about img {
     display: block;
-    object-fit: contain;
     width: 80%;
-    margin-bottom: -100px;
+    height: auto;
+    margin-bottom: -70px;
 }
 
 .about aside {
