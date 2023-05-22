@@ -12,19 +12,19 @@ export default function Footer() {
 
                 <div className={styles.links}>
 
-                    <Link href={''}>
+                    <Link href={'/terms-and-conditions'}>
                         Terms and Conditions
                     </Link>
 
-                    <Link href={''}>
+                    <Link href={'/privacy-policy'}>
                         Privacy Policy
                     </Link>
 
-                    <Link href={''}>
+                    <Link href={'/contact'}>
                         Contact
                     </Link>
 
-                    <Link href={''}>
+                    <Link href={'/about'}>
                         About Me
                     </Link>
 
