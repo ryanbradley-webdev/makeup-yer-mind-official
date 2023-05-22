@@ -3,12 +3,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import LogoName from './components/assets/LogoName'
 import HeroBtn from './components/assets/HeroBtn'
+import SectionHeader from './components/sectionHeader/sectionHeader'
 
 export default function Home() {
 
 
   return (
-    <main>
+    <main className={styles.main}>
 
       <section className={styles.hero}>
 
@@ -69,6 +70,52 @@ export default function Home() {
           </Link>
 
         </aside>
+
+      </section>
+
+      <section id='new'>
+
+        <SectionHeader>
+          What&apos;s New
+        </SectionHeader>
+
+        <div className={styles.newGrid}>
+
+          <div className={styles.first_new_content}>
+            <Image src='/new-placeholder-lg.png' width={448} height={337} alt='' />
+            <div className={styles.card_info}>
+              <p className={styles.latest}>
+                Latest Blog
+              </p>
+              <h5>
+                Find Your Skin Type
+              </h5>
+              <h6>
+                Take this short quiz to find your skin type!
+              </h6>
+              <button>
+                Read More
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section id='looks'>
+
+        <SectionHeader>
+          Find a New Look
+        </SectionHeader>
+
+      </section>
+
+      <section id='blogs'>
+
+        <SectionHeader>
+          Blogs
+        </SectionHeader>
 
       </section>
 

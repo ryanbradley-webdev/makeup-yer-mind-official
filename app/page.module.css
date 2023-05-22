@@ -1,3 +1,10 @@
+.main section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin-bottom: 60px;
+    scroll-margin-top: 72px;
+}
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -113,4 +120,58 @@
 .about .heroBtnAlt {
     display: block;
     margin-inline: auto;
+}
+
+.newGrid {
+    display: grid;
+    margin-top: 24px;
+    padding-inline: 16px;
+}
+
+.newGrid img:first-of-type {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.newGrid > div {
+    position: relative;
+}
+
+.card_info {
+    position: absolute;
+    inset: 16px;
+    top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    background-color: var(--color-background-card);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.latest {
+    font-size: 12px;
+    font-weight: 300;
+    color: #E71313;
+}
+
+.card_info h5 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.card_info h6 {
+    color: var(--color-white-sec);
+    font-weight: 300;
+}
+
+.card_info button {
+    display: none;
+    padding: 8px;
+    color: var(--color-gold-pri);
+    background-color: transparent;
+    border: 1px solid var(--color-gold-pri);
+    border-radius: 0;
 }
