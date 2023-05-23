@@ -1,6 +1,6 @@
 .sectionHeader {
     position: sticky;
-    top: 72px;
+    top: 71px;
     width: 100%;
     background: linear-gradient(to bottom, #7D6D61, #665344);
     z-index: 1;
@@ -125,6 +125,13 @@
     border-radius: 0;
 }
 
+.look_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 60px;
+}
+
 .first_look {
     width: 80%;
     margin-inline: auto;
@@ -132,6 +139,13 @@
 
 .look {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.look h5 {
+    margin-left: 4px;
+    color: var(--color-white-sec);
 }
 
 .first_look > img,

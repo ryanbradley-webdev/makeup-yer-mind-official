@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
+import Button from '../assets/Button'
 
 export default function LooksSection() {
     return (
@@ -40,48 +41,100 @@ export default function LooksSection() {
 
                 </div>
 
-                <div className={styles.look}>
+                <div className={styles.btnDiv}>
 
-                    <Image src='/look-placeholder-2l.png' width={200} height={240} alt='' />
-                    <Image src='/look-placeholder-2r.png' width={200} height={240} alt='' />
+                    <Button to='/'>
+                        Read More
+                    </Button>
 
-                    <div className={styles.card_info}>
+                    <Button to='/looks' alt>
+                        All Looks
+                    </Button>
+
+                </div>
+
+                <p>
+                    I&apos;ve got a whole bunch of looks for you to try, I know you&apos;ll find one you&apos;ll love!
+                </p>
+
+                <div className={styles.look_grid}>
+
+                    <div className={styles.look}>
+
+                        <Image src='/look-placeholder-2l.png' width={200} height={240} alt='' />
+                        {/* <Image src='/look-placeholder-2r.png' width={200} height={240} alt='' /> */}
 
                         <h5>
                             Titletown
                         </h5>
 
-                        <div className={styles.colors}>
+                        {/* <div className={styles.colors}>
 
                             <Image src='/georgia.png' width={36} height={20} alt='' />
                             <Image src='/no-33.png' width={36} height={20} alt='' />
                             <Image src='/emerald-city.png' width={36} height={20} alt='' />
 
-                        </div>
+                        </div> */}
 
                     </div>
 
-                </div>
+                    <div className={styles.look}>
 
-                <div className={styles.look}>
-
-                    <Image src='/look-placeholder-3l.png' width={200} height={240} alt='' />
-                    <Image src='/look-placeholder-3r.png' width={200} height={240} alt='' />
-
-                    <div className={styles.card_info}>
+                        <Image src='/look-placeholder-3l.png' width={200} height={240} alt='' />
+                        {/* <Image src='/look-placeholder-3r.png' width={200} height={240} alt='' /> */}
 
                         <h5>
                             Dreamy Autumn Eyes
                         </h5>
 
-                        <div className={styles.colors}>
+                        {/* <div className={styles.colors}>
 
                             <Image src='/drift.png' width={36} height={20} alt='' />
                             <Image src='/ginger.png' width={36} height={20} alt='' />
                             <Image src='/pomegranate.png' width={36} height={20} alt='' />
                             <Image src='/coco.png' width={36} height={20} alt='' />
 
-                        </div>
+                        </div> */}
+
+                    </div>
+
+                    <div className={styles.look}>
+
+                        <Image src='/look-placeholder-4.png' width={200} height={240} alt='' />
+                        {/* <Image src='/look-placeholder-3r.png' width={200} height={240} alt='' /> */}
+
+                        <h5>
+                            Persephone
+                        </h5>
+
+                        {/* <div className={styles.colors}>
+
+                            <Image src='/drift.png' width={36} height={20} alt='' />
+                            <Image src='/ginger.png' width={36} height={20} alt='' />
+                            <Image src='/pomegranate.png' width={36} height={20} alt='' />
+                            <Image src='/coco.png' width={36} height={20} alt='' />
+
+                        </div> */}
+
+                    </div>
+
+                    <div className={styles.look}>
+
+                        <Image src='/look-placeholder-5.png' width={200} height={240} alt='' />
+                        {/* <Image src='/look-placeholder-3r.png' width={200} height={240} alt='' /> */}
+
+                        <h5>
+                            Sweetheart
+                        </h5>
+
+                        {/* <div className={styles.colors}>
+
+                            <Image src='/drift.png' width={36} height={20} alt='' />
+                            <Image src='/ginger.png' width={36} height={20} alt='' />
+                            <Image src='/pomegranate.png' width={36} height={20} alt='' />
+                            <Image src='/coco.png' width={36} height={20} alt='' />
+
+                        </div> */}
 
                     </div>
 
