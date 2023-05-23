@@ -106,11 +106,19 @@ export default function BlogsSection() {
 
                 </div>
 
-                <Link href='/blogs'>
-                    <Button variant='solid'>
-                        See the rest of my blogs!
+                <div className={styles.btnDiv}>
+
+                    <Button variant='ghost'>
+                        Load More
                     </Button>
-                </Link>
+
+                    <Link href='/blogs'>
+                        <Button variant='solid'>
+                            See the rest of my blogs!
+                        </Button>
+                    </Link>
+
+                </div>
                 
             </div>
 
