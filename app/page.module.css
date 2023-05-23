@@ -58,13 +58,30 @@
     flex-direction: column;
     align-items: center;
     padding: 16px;
+    padding-bottom: 40px;
 }
 
-.about img {
-    display: block;
-    width: 80%;
+.about_hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.about_hero img {
+    width: 150px;
     height: auto;
-    margin-bottom: -70px;
+}
+
+.about_hero h4 {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--color-gold-pri);
+    text-align: center;
+    width: max-content;
+    margin-left: -100px;
 }
 
 .about aside {
@@ -73,27 +90,16 @@
     gap: 16px;
 }
 
-.about h4 {
-    font-size: 60px;
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    color: var(--color-gold-pri);
-    text-align: center;
-    margin-bottom: 16px;
-    background: linear-gradient(to bottom, transparent, var(--color-background-main));
-}
-
 .about p {
     color: var(--color-white-sec);
     font-size: 12px;
     line-height: 1.5em;
 }
 
-.about p:last-of-type {
+.about p:is(:first-of-type, :last-of-type) {
     text-align: center;
-    font-size: 18px;
-    font-style: italic;
+    /* font-size: 18px; */
+    /* font-style: italic; */
 }
 
 .about a {

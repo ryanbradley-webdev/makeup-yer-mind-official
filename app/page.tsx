@@ -57,13 +57,18 @@ export default function Home() {
 
       <section className={styles.about}>
 
-        <Image src='/about-333x500.png' height={500} width={333} alt='' />
 
-        <aside>
+        <div className={styles.about_hero}>
+
+          <Image src='/about.png' height={200} width={200} alt='' />
 
           <h4>
             Hey Bebe!
           </h4>
+
+        </div>
+
+        <aside>
 
           <p>
             Welcome to my blog! I&apos;m so glad you&apos;re here!
