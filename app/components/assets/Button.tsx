@@ -1,32 +1,17 @@
-import Link from 'next/link'
 import React from 'react'
+
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+    children: string
+    alt?: boolean
+}
 
 export default function Button({
     children,
-    alt,
-    to
-}: {
-    children: string,
-    alt?: boolean,
-    to: string
-}) {
-    const isExternal = to.includes('https://')
-
+    alt
+}: ButtonProps) {
     return (
-        <Link
-            href={to}
-            rel={isExternal ? 'noopener noreferrer' : ''}
-            target={isExternal ? '_blank' : ''}
-        >
-
-            <button 
-                className={alt ? 'button button-alt' : 'button button-main' }
-            >
-
-                {children}
-
-            </button>
-
-        </Link>
+        <button className={alt ? 'button button-alt' : 'button button-main' } >
+            {children}
+        </button>
     )
 }

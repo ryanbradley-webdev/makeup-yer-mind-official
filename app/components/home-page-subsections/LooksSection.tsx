@@ -2,6 +2,7 @@ import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
 import Button from '../assets/Button'
+import Link from 'next/link'
 
 export default function LooksSection() {
     return (
@@ -43,13 +44,17 @@ export default function LooksSection() {
 
                 <div className={styles.btnDiv}>
 
-                    <Button to='/'>
-                        Read More
-                    </Button>
+                    <Link href=''>
+                        <Button>
+                            Read More
+                        </Button>
+                    </Link>
 
-                    <Button to='/looks' alt>
-                        All Looks
-                    </Button>
+                    <Link href='/looks'>
+                        <Button alt>
+                            All Looks
+                        </Button>
+                    </Link>
 
                 </div>
 
@@ -140,9 +145,11 @@ export default function LooksSection() {
 
                 </div>
 
-                <Button to='/looks' alt>
-                    See the rest of my looks!
-                </Button>
+                <Link href='/looks'>
+                    <Button alt>
+                        See the rest of my looks!
+                    </Button>
+                </Link>
 
             </div>
 

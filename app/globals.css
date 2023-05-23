@@ -2,6 +2,7 @@
   --color-white-pri: #FFFFFF;
   --color-white-sec: #D9D9D9;
   --color-white-ter: #878787;
+  --color-grey: #333;
   --color-gold-pri: #EBC7AD;
   --color-gold-sec: #C09678;
   --color-gold-gradient: linear-gradient(to bottom, var(--color-gold-pri), var(--color-gold-sec));
@@ -42,8 +43,10 @@ main {
 }
 
 .button {
-  width: 310px;
+  width: 100%;
+  max-width: 310px;
   padding: 8px;
+  margin-inline: auto;
   font-family: inherit;
   font-size: 16px;
   border-radius: 4px;

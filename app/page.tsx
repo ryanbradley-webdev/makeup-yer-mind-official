@@ -2,9 +2,11 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import LogoName from './components/assets/LogoName'
 import Button from './components/assets/Button'
-import NewSection from './components/section/NewSection'
-import LooksSection from './components/section/LooksSection'
-import BlogsSection from './components/section/BlogsSection'
+import NewSection from './components/home-page-subsections/NewSection'
+import LooksSection from './components/home-page-subsections/LooksSection'
+import BlogsSection from './components/home-page-subsections/BlogsSection'
+import ContactForm from './components/home-page-subsections/ContactForm'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Makeup Yer Mind',
@@ -14,6 +16,10 @@ export const metadata = {
 export default function Home() {
   return (
     <main className={styles.main}>
+
+
+
+      {/* Hero Section */}
 
       <section className={styles.hero}>
 
@@ -29,17 +35,25 @@ export default function Home() {
 
         <div className={styles.heroBtnDiv}>
 
-          <Button to='/about'>
-            Find Out More
-          </Button>
+          <Link href='/about'>
+            <Button>
+              Find Out More
+            </Button>
+          </Link>
 
-          <Button to='/color-match' alt>
-            Get Color-Matched
-          </Button>
+          <Link href='/color-match'>
+            <Button alt>
+              Get Color-Matched
+            </Button>
+          </Link>
 
         </div>
         
       </section>
+
+
+
+      {/* About Section */}
 
       <section className={styles.about}>
 
@@ -47,15 +61,25 @@ export default function Home() {
 
         <aside>
 
-          <h4>Hey Bebe!</h4>
+          <h4>
+            Hey Bebe!
+          </h4>
 
-          <p>Welcome to my blog! I&apos;m so glad you&apos;re here!</p>
+          <p>
+            Welcome to my blog! I&apos;m so glad you&apos;re here!
+          </p>
 
-          <p>I absolutely LOVE sharing what I know about makeup and skincare, and I know you&apos;ll find something here that you&apos;ll find useful!</p>
+          <p>
+            I absolutely LOVE sharing what I know about makeup and skincare, and I know you&apos;ll find something here that you&apos;ll find useful!
+          </p>
 
-          <p>From tutorials to life-hacks, new looks for you to try, new and exciting products, and everything in-between, I&apos;ll share everything with you! So take a look around, check out some of my blog articles, and visit my community on Instagram!</p>
+          <p>
+            From tutorials to life-hacks, new looks for you to try, new and exciting products, and everything in-between, I&apos;ll share everything with you! So take a look around, check out some of my blog articles, and visit my community on Instagram!
+          </p>
 
-          <p>Ready to get started??</p>
+          <p>
+            Ready to get started??
+          </p>
 
           <Button to='/' alt>
             Let&apos;s Do It!!
@@ -65,11 +89,17 @@ export default function Home() {
 
       </section>
 
+
+
+      {/* Additional Subsections */}
+
       <NewSection />
 
       <LooksSection />
 
       <BlogsSection />
+
+      <ContactForm />
 
     </main>
   )

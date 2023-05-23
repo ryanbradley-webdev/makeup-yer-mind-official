@@ -2,6 +2,7 @@ import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
 import Button from '../assets/Button'
+import Link from 'next/link'
 
 export default function BlogsSection() {
     return (
@@ -81,9 +82,11 @@ export default function BlogsSection() {
 
                 </div>
 
-                <Button to='/blogs' alt>
-                    See the rest of my blogs!
-                </Button>
+                <Link href='/blogs'>
+                    <Button alt>
+                        See the rest of my blogs!
+                    </Button>
+                </Link>
                 
             </div>
 

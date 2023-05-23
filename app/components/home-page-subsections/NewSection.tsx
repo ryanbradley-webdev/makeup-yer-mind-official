@@ -4,6 +4,7 @@ import styles from './section.module.css'
 import Video from '../assets/Video'
 import Instagram from '../assets/Instagram'
 import Button from '../assets/Button'
+import Link from 'next/link'
 
 export default function NewSection() {
     return (
@@ -39,13 +40,17 @@ export default function NewSection() {
 
                 <div className={styles.btnDiv}>
 
-                    <Button to='/'>
-                        Read More
-                    </Button>
+                    <Link href='/'>
+                        <Button>
+                            Read More
+                        </Button>
+                    </Link>
 
-                    <Button to='/blogs' alt>
-                        All Blogs
-                    </Button>
+                    <Link href='/blogs'>
+                        <Button alt>
+                            All Blogs
+                        </Button>
+                    </Link>
 
                 </div>
 
