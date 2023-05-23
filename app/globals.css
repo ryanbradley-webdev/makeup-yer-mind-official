@@ -62,3 +62,30 @@ main {
   color: black;
   background-color: var(--color-gold-pri);
 }
+
+input,
+textarea {
+  padding: 8px;
+  color: var(--color-white-pri);
+  font-size: 16px;
+  font-family: inherit;
+  border-radius: 4px;
+  border: 1px solid var(--color-white-ter);
+  background: var(--color-grey);
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-style: italic;
+  color: var(--color-white-ter);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-gold-pri);
+}
+
+img {
+  border-radius: 4px;
+}

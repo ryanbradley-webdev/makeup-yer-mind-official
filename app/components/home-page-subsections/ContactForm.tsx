@@ -35,7 +35,7 @@ export default function ContactForm() {
                         Message
                     </span>
 
-                    <textarea name="message" id="message" cols={30} rows={10} placeholder='Enter your message here!' required></textarea>
+                    <textarea name="message" id="message" cols={30} rows={5} placeholder='Enter your message here!' required></textarea>
 
                 </label>
                 
