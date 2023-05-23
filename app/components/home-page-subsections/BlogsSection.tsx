@@ -28,6 +28,10 @@ export default function BlogsSection() {
                             Ride or Die Beauty Products
                         </h5>
 
+                        <h6>
+                            These are my go-to products that I use on a daily basis.
+                        </h6>
+
                     </div>
 
                     <div className={styles.subcontent}>
@@ -37,6 +41,10 @@ export default function BlogsSection() {
                         <h5>
                             Basics of Eyeshadow
                         </h5>
+
+                        <h6>
+                            Need some tips to level up your eyeshadow game?
+                        </h6>
 
                     </div>
 
@@ -48,6 +56,10 @@ export default function BlogsSection() {
                             Clean and Compact
                         </h5>
 
+                        <h6>
+                            Channel your inner thrift-queen with these techniques!
+                        </h6>
+
                     </div>
 
                     <div className={styles.subcontent}>
@@ -57,6 +69,10 @@ export default function BlogsSection() {
                         <h5>
                             Basics of Contouring
                         </h5>
+
+                        <h6>
+                            A quick video showcasing my contouring techniques!
+                        </h6>
 
                     </div>
 
@@ -68,6 +84,10 @@ export default function BlogsSection() {
                             Wing it. Eyeliner, life, everything...
                         </h5>
 
+                        <h6>
+                            Three easy ways to nail that wing.
+                        </h6>
+
                     </div>
 
                     <div className={styles.subcontent}>
@@ -78,12 +98,16 @@ export default function BlogsSection() {
                             St.Sational
                         </h5>
 
+                        <h6>
+                            My honest review of Seint products.
+                        </h6>
+
                     </div>
 
                 </div>
 
                 <Link href='/blogs'>
-                    <Button alt>
+                    <Button variant='solid'>
                         See the rest of my blogs!
                     </Button>
                 </Link>

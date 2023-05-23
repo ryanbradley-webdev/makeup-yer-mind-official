@@ -2,15 +2,25 @@ import React from 'react'
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     children: string
-    alt?: boolean
+    variant?: string
 }
 
 export default function Button({
     children,
-    alt
+    variant
 }: ButtonProps) {
+    const generateClassName = () => {
+        if (variant === 'solid') {
+            return 'button-solid'
+        } else if (variant === 'ghost') {
+            return 'button-ghost'
+        } else {
+            return 'button-main'
+        }
+    }
+
     return (
-        <button className={alt ? 'button button-alt' : 'button button-main' } >
+        <button className={ `button ${generateClassName()}` } >
             {children}
         </button>
     )

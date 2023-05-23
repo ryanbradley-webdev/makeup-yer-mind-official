@@ -51,7 +51,7 @@ export default function LooksSection() {
                     </Link>
 
                     <Link href='/looks'>
-                        <Button alt>
+                        <Button variant='solid'>
                             All Looks
                         </Button>
                     </Link>
@@ -146,7 +146,7 @@ export default function LooksSection() {
                 </div>
 
                 <Link href='/looks'>
-                    <Button alt>
+                    <Button variant='solid'>
                         See the rest of my looks!
                     </Button>
                 </Link>

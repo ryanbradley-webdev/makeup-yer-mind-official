@@ -18,7 +18,7 @@ export default function Subscribe() {
 
                 <input type="email" name="email" id="email" placeholder='Enter your email' required />
 
-                <Button>
+                <Button variant='ghost'>
                     Submit
                 </Button>
 

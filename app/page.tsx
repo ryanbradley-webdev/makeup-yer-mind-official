@@ -42,7 +42,7 @@ export default function Home() {
           </Link>
 
           <Link href='/color-match'>
-            <Button alt>
+            <Button variant='solid'>
               Get Color-Matched
             </Button>
           </Link>
@@ -87,7 +87,7 @@ export default function Home() {
           </p>
 
           <Link href='/'>
-            <Button alt>
+            <Button variant='solid'>
               Let&apos;s Do It!!
             </Button>
           </Link>

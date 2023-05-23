@@ -121,7 +121,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 12px;
-    row-gap: 60px;
+    row-gap: 30px;
 }
 
 .first_look {
@@ -132,12 +132,25 @@
 .subcontent {
     display: flex;
     flex-direction: column;
-    gap: 12px;
 }
 
-.subcontent h5{
+.subcontent img {
+    margin-bottom: 12px;
+}
+
+.subcontent h5,
+.subcontent h6 {
     margin-left: 4px;
+}
+
+.subcontent h5 {
+    margin-bottom: 4px;
     color: var(--color-white-sec);
+    line-height: 16px;
+}
+
+.subcontent h6 {
+    color: var(--color-white-ter);
 }
 
 .first_look > img,

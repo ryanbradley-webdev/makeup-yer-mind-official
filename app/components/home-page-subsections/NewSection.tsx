@@ -47,7 +47,7 @@ export default function NewSection() {
                     </Link>
 
                     <Link href='/blogs'>
-                        <Button alt>
+                        <Button variant='solid'>
                             All Blogs
                         </Button>
                     </Link>
