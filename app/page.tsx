@@ -81,9 +81,11 @@ export default function Home() {
             Ready to get started??
           </p>
 
-          <Button to='/' alt>
-            Let&apos;s Do It!!
-          </Button>
+          <Link href='/'>
+            <Button alt>
+              Let&apos;s Do It!!
+            </Button>
+          </Link>
 
         </aside>
 

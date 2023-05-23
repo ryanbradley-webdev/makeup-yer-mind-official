@@ -98,9 +98,9 @@
 
 .about a {
     text-decoration: none;
+    margin-inline: auto;
 }
 
 .about button {
     display: block;
-    margin-inline: auto;
 }
