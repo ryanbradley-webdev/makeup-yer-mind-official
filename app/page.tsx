@@ -75,6 +75,16 @@ export default function Home() {
           </p>
 
           <p>
+            I&apos;m a <span>Seint Artist</span>, actor, voice actor, singer, and content creator here to try to make your life even just a little bit better.
+          </p>
+
+          <Link href='/what-is-a-seint-artist'>
+            <span className={styles.inline_link}>
+              What is a Seint Artist?
+            </span>
+          </Link>
+
+          <p>
             I absolutely LOVE sharing what I know about makeup and skincare, and I know you&apos;ll find something here that you&apos;ll find useful!
           </p>
 

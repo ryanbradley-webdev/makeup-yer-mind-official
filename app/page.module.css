@@ -90,16 +90,15 @@
     gap: 16px;
 }
 
+.inline_link {
+    font-style: italic;
+    color: var(--color-gold-pri);
+}
+
 .about p {
     color: var(--color-white-sec);
     font-size: 12px;
     line-height: 1.5em;
-}
-
-.about p:is(:first-of-type, :last-of-type) {
-    text-align: center;
-    /* font-size: 18px; */
-    /* font-style: italic; */
 }
 
 .about a {
