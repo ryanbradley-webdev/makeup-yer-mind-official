@@ -21,6 +21,10 @@
     padding-inline: 16px;
 }
 
+.grid > a:has(button) {
+    margin-inline: auto;
+}
+
 .grid > p {
     text-align: center;
     color: var(--color-white-sec);
@@ -32,7 +36,7 @@
 
 .content,
 .first_look,
-.look {
+.subcontent {
     position: relative;
     width: 100%;
     isolation: isolate;
@@ -48,18 +52,6 @@
     align-items: center;
     gap: 20px;
     margin-top: 8px;
-}
-
-.btn {
-    color: var(--color-background-main);
-    background: var(--color-gold-gradient);
-    border: none;
-}
-
-.btnAlt {
-    color: var(--color-gold-pri);
-    border: 1px solid var(--color-gold-pri);
-    background: var(--color-background-main);
 }
 
 .content svg {
@@ -107,7 +99,7 @@
 }
 
 .content:not(:first-of-type) h5,
-.look h5 {
+.subcontent h5 {
     font-size: 16px;
 }
 
@@ -125,7 +117,7 @@
     border-radius: 0;
 }
 
-.look_grid {
+.subcontent_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 12px;
@@ -137,19 +129,19 @@
     margin-inline: auto;
 }
 
-.look {
+.subcontent {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.look h5 {
+.subcontent h5{
     margin-left: 4px;
     color: var(--color-white-sec);
 }
 
 .first_look > img,
-.look > img {
+.subcontent > img {
     width: 100%;
     height: auto;
     object-fit: cover;
