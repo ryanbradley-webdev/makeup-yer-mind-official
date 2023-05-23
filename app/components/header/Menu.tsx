@@ -3,11 +3,11 @@
 import Link from 'next/link'
 import styles from './header.module.css'
 import { useEffect, useState } from 'react'
-import YouTube from '../assets/YouTube'
-import Instagram from '../assets/Instagram'
-import Pinterest from '../assets/Pinterest'
-import Facebook from '../assets/Facebook'
-import Email from '../assets/Email'
+import YouTube from '../../assets/YouTube'
+import Instagram from '../../assets/Instagram'
+import Pinterest from '../../assets/Pinterest'
+import Facebook from '../../assets/Facebook'
+import Email from '../../assets/Email'
 
 export default function Menu({
     isVisible,

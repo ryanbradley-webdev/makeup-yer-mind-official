@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
-import Video from '../assets/Video'
-import Instagram from '../assets/Instagram'
-import Button from '../assets/Button'
+import Video from '../../assets/Video'
+import Instagram from '../../assets/Instagram'
+import Button from '../../assets/Button'
 import Link from 'next/link'
 
 export default function NewSection() {

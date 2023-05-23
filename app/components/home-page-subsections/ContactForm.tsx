@@ -1,6 +1,6 @@
 'use client'
 
-import Button from '../assets/Button'
+import Button from '../../assets/Button'
 import styles from './section.module.css'
 
 export default function ContactForm() {
