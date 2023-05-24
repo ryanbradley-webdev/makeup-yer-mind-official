@@ -5,6 +5,7 @@ import Button from '../assets/Button'
 import ExternalLink from '../assets/ExternalLink'
 import ImgCarousel from './components/ImgCarousel'
 import Image from 'next/image'
+import Signoff from '../assets/Signoff'
 // import YouTubeEmbed from '../assets/YouTubeEmbed'
 
 export const metadata = {
@@ -54,11 +55,11 @@ export default function WhatIsASeintArtist() {
 
             </aside>
 
-            <Glossary />
-
             <Button>
                 Join Courtney&apos;s Team!
             </Button>
+
+            <Glossary />
 
             <section id='what-is-the-seint-artist-program' className={styles.section}>
 
@@ -449,11 +450,7 @@ export default function WhatIsASeintArtist() {
                     I can&apos;t wait for this to become a fun and low stress way for you to make some income like it has for me!
                 </p>
 
-                <p className={styles.signoff}>
-                    Love always,
-                    <br />
-                    Courtney xoxo
-                </p>
+                <Signoff />
 
             </section>
 
