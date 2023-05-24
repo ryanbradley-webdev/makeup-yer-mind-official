@@ -70,7 +70,7 @@ export default function WhatIsASeintArtist() {
                 </h2>
 
                 <p>
-                    <ExternalLink href='https://st-sational-corntee.seintofficial.com/en/about'>Seint</ExternalLink> (formerly Maskcara) Beauty is centralized around the idea that &quot;helping others look beautiful is nice, but helping them believe they are beautiful is life-changing.&quote;
+                    <ExternalLink href='https://st-sational-corntee.seintofficial.com/en/about'>Seint</ExternalLink> (formerly Maskcara) Beauty is centralized around the idea that &quot;helping others look beautiful is nice, but helping them believe they are beautiful is life-changing.&quot;
                 </p>
 
                 <p>
