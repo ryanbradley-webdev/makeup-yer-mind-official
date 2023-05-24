@@ -43,6 +43,7 @@ main {
 }
 
 .button {
+  display: block;
   width: 100%;
   max-width: 310px;
   padding: 8px;

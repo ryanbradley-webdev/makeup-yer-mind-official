@@ -1,0 +1,87 @@
+.main {
+    position: relative;
+    padding-top: 72px;
+}
+
+.main section,
+.main aside {
+    display: grid;
+    row-gap: 24px;
+    padding-block: 12px;
+    padding-inline: 16px;
+}
+
+.main h1,
+.main h3 {
+    text-align: center;
+}
+
+.main p,
+.section li {
+    font-size: 12px;
+    color: var(--color-white-sec);
+    line-height: 1.5em;
+}
+
+.glossary_container {
+    position: sticky;
+    top: 69px;
+}
+
+.glossary_btn {
+    width: 100%;
+    color: var(--color-white-pri);
+    background: linear-gradient(to bottom, #7D6D61, #665344);
+    border: none;
+}
+
+.glossary {
+    padding-left: 16px;
+    overflow: hidden;
+}
+
+.glossary[aria-hidden="true"] {
+    height: 0;
+}
+
+.glossary a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main button {
+    margin-inline: auto;
+}
+
+.section h5 {
+    text-align: center;
+    color: var(--color-gold-pri)
+}
+
+.carousel {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.carousel img {
+    height: 200px;
+    width: auto;
+    border-radius: 0;
+}
+
+.section img {
+    margin-inline: auto;
+}
+
+.signoff {
+    text-align: right;
+    margin-right: 24px;
+}
+
+.youtube {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
