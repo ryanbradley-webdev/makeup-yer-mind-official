@@ -19,6 +19,8 @@ export default function WhatIsASeintArtist() {
             
             <section className={styles.intro}>
 
+                <Image src='/seint-logo-large.png' height={476} width={900} alt='Seint Artist Program' />
+
                 <h1>
                     What is a Seint Artist, anyway?
                 </h1>
@@ -73,6 +75,9 @@ export default function WhatIsASeintArtist() {
 
                 <p>
                     As a Seint Artist you are given the opportunity to work one-on-one with your clients to help them highlight their own natural beauty. As an artist you become a catalyst for self-expression, an envoy of illumination. 
+                </p>
+
+                <p>
                     You form a unique bond with your clients as you guide them, and they become like family. This is what makes being a Seint Artist so different from other companies. 
                 </p>
 
@@ -83,6 +88,8 @@ export default function WhatIsASeintArtist() {
                 <p>
                     That said, Seint created the Artist Program to provide those who resonate with their vision an opportunity to make a living with a product they already know and love; while also providing a truly unique experience. Rather than putting it on store shelves (which they were offered and turned it down) where customers wouldn&apos;t get the true attention they deserve; the Artist Program insures that customers will be cared for on a personal level. They are not a number on a spreadsheet. They are a wonderfully unique person who deserves undivided attention to help them highlight their natural beauty. That is what being a Seint Artist is about.  The artist program is currently available to those in the US and Canada.
                 </p>
+
+                <Image src='/mission-statement.png' height={1422} width={800} alt='Seint Mission Statement' />
 
             </section>
 
@@ -363,9 +370,9 @@ export default function WhatIsASeintArtist() {
                 </h2>
 
                 <ExternalLink href='https://st-sational-corntee.seintofficial.com/en/enroll/pick-artist'>
-                    <h5>
+                    <span className={styles.center_text}>
                         Join with an artist!!!!!
-                    </h5>
+                    </span>
                 </ExternalLink>
 
                 <p>

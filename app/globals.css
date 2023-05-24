@@ -6,6 +6,7 @@
   --color-gold-pri: #EBC7AD;
   --color-gold-sec: #C09678;
   --color-gold-gradient: linear-gradient(to bottom, var(--color-gold-pri), var(--color-gold-sec));
+  --color-blue-link: #6eaedc;
   --color-background-main: #121212;
   --color-background-card: #12121266;
 }

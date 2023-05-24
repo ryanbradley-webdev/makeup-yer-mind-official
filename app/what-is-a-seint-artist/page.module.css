@@ -9,6 +9,10 @@
     row-gap: 24px;
     padding-block: 24px;
     padding-inline: 16px;
+}
+
+.section,
+.main aside {
     margin-top: 24px;
 }
 
@@ -17,7 +21,14 @@
     text-align: center;
 }
 
-.main h2 {
+.intro img {
+    width: 80%;
+    height: auto;
+    border-radius: 0;
+    margin-inline: auto;
+}
+
+.section h2 {
     position: relative;
     font-size: 20px;
     font-style: italic;
@@ -29,7 +40,7 @@
     background-image: linear-gradient(to right, var(--color-white-sec), var(--color-white-pri));
 }
 
-.main h2::after {
+.section:not(:last-of-type) h2::after {
     content: '';
     position: absolute;
     bottom: -8px;
@@ -40,7 +51,8 @@
 }
 
 .main a {
-    color: var(--color-gold-pri);
+    color: var(--color-blue-link);
+    font-size: 12px;
 }
 
 .main p,
@@ -86,6 +98,10 @@
     color: inherit;
 }
 
+.section a:has(.center_text) {
+    text-align: center;
+}
+
 .glossary li {
     padding-block: 4px;
 }
@@ -103,6 +119,23 @@
     color: var(--color-gold-pri)
 }
 
+.section ol,
+.section ul {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section ol p,
+.section ul p {
+    margin-block: 12px;
+}
+
+.section ul {
+    list-style-type: '-';
+}
+
 .carousel {
     display: flex;
     gap: 8px;
@@ -118,6 +151,9 @@
 
 .section img {
     margin-inline: auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
 }
 
 .main hr {
