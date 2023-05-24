@@ -5,7 +5,7 @@ import Button from '../assets/Button'
 import ExternalLink from '../assets/ExternalLink'
 import ImgCarousel from './components/ImgCarousel'
 import Image from 'next/image'
-import YouTubeEmbed from '../assets/YouTubeEmbed'
+// import YouTubeEmbed from '../assets/YouTubeEmbed'
 
 export const metadata = {
     title: 'What is a Seint Artist, anyway?',
@@ -250,7 +250,7 @@ export default function WhatIsASeintArtist() {
                 </p>
 
                 <p>
-                    On a personal note: I use a party link all the time and  I use the accumulated rewards and store credit to purchase my own makeup and restock items in my kit, so in my case my party link keeps me from spending money on product! It's the gift that keeps on giving!
+                    On a personal note: I use a party link all the time and  I use the accumulated rewards and store credit to purchase my own makeup and restock items in my kit, so in my case my party link keeps me from spending money on product! It&apos;s the gift that keeps on giving!
                 </p>
 
             </section>
@@ -465,7 +465,7 @@ export default function WhatIsASeintArtist() {
                     Quick Seint Artist Program Overview Video:
                 </h2>
 
-                <YouTubeEmbed url='https://youtube.com/embed/vb1QfLXK-JY' />
+                {/* <YouTubeEmbed url='https://youtube.com/embed/vb1QfLXK-JY' /> */}
 
             </section>
 
