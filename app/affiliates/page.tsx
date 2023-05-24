@@ -1,7 +1,9 @@
-import React from 'react'
+import styles from './page.module.css'
 
 export default function Affilates() {
     return (
-        <main>Affilates</main>
+        <main>
+            Affilates
+        </main>
     )
 }

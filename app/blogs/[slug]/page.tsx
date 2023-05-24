@@ -1,9 +1,9 @@
 import styles from './page.module.css'
 
-export default function TermsAndConditions() {
+export default function BlogBySlug() {
     return (
         <main>
-            Terms and Conditions
+            Blog
         </main>
     )
 }

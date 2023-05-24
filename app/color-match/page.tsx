@@ -1,7 +1,9 @@
-import React from 'react'
+import styles from './page.module.css'
 
 export default function ColorMatch() {
     return (
-        <main>Color Match</main>
+        <main>
+            Color Match
+        </main>
     )
 }
