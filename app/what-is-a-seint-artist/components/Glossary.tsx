@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import styles from '../page.module.css'
-import Link from 'next/link'
 
 export default function Glossary() {
     const [glossaryExpanded, setGlossaryExpanded] = useState(true)
@@ -22,101 +21,101 @@ export default function Glossary() {
 
                 <ol>
 
-                    <li>
-                        <Link href='what-is-the-seint-artist-program'>
+                    <a href='#what-is-the-seint-artist-program'>
+                        <li>
                             What is the Seint Artist Program?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='isnt-seint-an-mlm'>
+                    <a href='#isnt-seint-an-mlm'>
+                        <li>
                             Is Seint an MLM?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='im-not-a-makeup-artist'>
+                    <a href='#im-not-a-makeup-artist'>
+                        <li>
                             I&apos;m not a makeup artist, can I still be a Seint Artist?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='do-i-have-to-pay-for-anything'>
+                    <a href='#do-i-have-to-pay-for-anything'>
+                        <li>
                             Do I have to pay for anything?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='difference-between-kits'>
+                    <a href='#difference-between-kits'>
+                        <li>
                             Difference between kits
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='cheat-code'>
+                    <a href='#cheat-code'>
+                        <li>
                             Cheat code to get started for less!!
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='minimum-sales'>
+                    <a href='#minimum-sales'>
+                        <li>
                             Are there sales minimums?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='discount'>
+                    <a href='#discount'>
+                        <li>
                             Do I get a discount?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='inventory'>
+                    <a href='#inventory'>
+                        <li>
                             Do I have to keep inventory?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='commission'>
+                    <a href='#commission'>
+                        <li>
                             Commission plans
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='how-often-do-you-get-paid'>
+                    <a href='#how-often-do-you-get-paid'>
+                        <li>
                             How often do you get paid?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='influencer'>
+                    <a href='#influencer'>
+                        <li>
                             Influencer passive income tip!
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='competition'>
+                    <a href='#competition'>
+                        <li>
                             Do artists compete?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='team'>
+                    <a href='#team'>
+                        <li>
                             Do I have to build a team?
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='best-way-to-enroll'>
+                    <a href='#best-way-to-enroll'>
+                        <li>
                             The best way to enroll
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
-                    <li>
-                        <Link href='personal-experience'>
+                    <a href='#personal-experience'>
+                        <li>
                             Courtney&apos;s personal experience
-                        </Link>
-                    </li>
+                        </li>
+                    </a>
 
                 </ol>
 

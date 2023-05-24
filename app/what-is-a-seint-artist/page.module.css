@@ -16,6 +16,14 @@
     text-align: center;
 }
 
+.main h2 {
+    font-size: 20px;
+}
+
+.main a {
+    color: var(--color-gold-pri);
+}
+
 .main p,
 .section li {
     font-size: 12px;
@@ -26,18 +34,27 @@
 .glossary_container {
     position: sticky;
     top: 69px;
+    margin-bottom: 24px;
 }
 
 .glossary_btn {
     width: 100%;
-    color: var(--color-white-pri);
-    background: linear-gradient(to bottom, #7D6D61, #665344);
+    padding-block: 8px;
+    color: black;
+    font-family: inherit;
+    font-size: 16px;
+    background: var(--color-gold-gradient);
     border: none;
+    box-shadow: 0 4px 8px black;
 }
 
 .glossary {
-    padding-left: 16px;
-    overflow: hidden;
+    height: 200px;
+    overflow-y: scroll;
+    padding-left: 24px;
+    color: black;
+    background: var(--color-gold-sec);
+    transition: height 0.3s ease-in-out;
 }
 
 .glossary[aria-hidden="true"] {
@@ -47,6 +64,14 @@
 .glossary a {
     text-decoration: none;
     color: inherit;
+}
+
+.glossary li {
+    padding-block: 4px;
+}
+
+.glossary li:is(:hover, :focus) {
+    background-color: var(--color-gold-pri);
 }
 
 .main button {
@@ -78,6 +103,14 @@
 .signoff {
     text-align: right;
     margin-right: 24px;
+}
+
+.main hr {
+    margin-block: 24px;
+}
+
+.video {
+    padding-block: 24px;
 }
 
 /* .youtube {

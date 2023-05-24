@@ -47,9 +47,9 @@ export default function WhatIsASeintArtist() {
                 </h3>
 
                 <h3>
-                    <Link href='#video'>
+                    <a href='#video'>
                         What a quick video here!
-                    </Link>
+                    </a>
                 </h3>
 
             </aside>
@@ -459,7 +459,7 @@ export default function WhatIsASeintArtist() {
 
             <hr />
 
-            <section id="video" className={styles.section}>
+            <section id="video" className={`${styles.section} ${styles.video}`}>
 
                 <h2>
                     Quick Seint Artist Program Overview Video:
@@ -468,6 +468,8 @@ export default function WhatIsASeintArtist() {
                 {/* <YouTubeEmbed url='https://youtube.com/embed/vb1QfLXK-JY' /> */}
 
             </section>
+
+            <hr />
 
         </main>
     )
