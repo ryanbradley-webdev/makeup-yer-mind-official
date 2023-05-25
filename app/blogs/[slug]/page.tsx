@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import { SAMPLE_BLOGS } from '../sampleBlogs';
 import Image from 'next/image';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { notFound } from 'next/navigation'
 
 type Params = {
     params: { slug: string }
@@ -30,22 +31,26 @@ type Params = {
 } */
 
 export default function BlogBySlug({ params }: Params) {
-    const slug = params.slug
-    const PLACEHOLDER = SAMPLE_BLOGS[0]
+    const { slug } = params
+    const blog = SAMPLE_BLOGS.find(blog => blog.slug === slug)
+
+    if (!blog) {
+        notFound()
+    }
 
     return (
         <main>
             
             <section className={styles.header}>
 
-                <Image src={`/${PLACEHOLDER.image}`} height={337} width={448} alt='' />
+                <Image src={`/${blog.image}`} height={337} width={448} alt='' />
 
                 <h1>
-                    {PLACEHOLDER.title}
+                    {blog.title}
                 </h1>
 
                 <h3>
-                    {PLACEHOLDER.description}
+                    {blog.description}
                 </h3>
 
             </section>
