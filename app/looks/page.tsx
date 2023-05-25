@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import styles from './page.module.css'
 import LookList from './components/LookList'
 
@@ -15,9 +14,7 @@ export default function Looks() {
                 Find a New Look
             </h1>
 
-            <Suspense fallback={'Loading looks...'}>
-                <LookList />
-            </Suspense>
+            <LookList />
 
         </main>
     )
