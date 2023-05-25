@@ -22,7 +22,7 @@ export default function TermsAndConditions() {
                 </h2>
 
                 <p>
-                    Welcome to www.makeupyermind.com. The www.makeupyermind.com website (the &qout;Site&qout;) is comprised of various web pages operated by Makeup Yer Mind. www.makeupyermind.com is offered to you conditioned on your acceptance without modification of the terms, conditions, and notices contained herein (the &qout;Terms&qout;). Your use of www.makeupyermind.com constitutes your agreement to all such Terms. Please read these terms carefully, and keep a copy of them for your reference.
+                    Welcome to www.makeupyermind.com. The www.makeupyermind.com website (the &quot;Site&quot;) is comprised of various web pages operated by Makeup Yer Mind. www.makeupyermind.com is offered to you conditioned on your acceptance without modification of the terms, conditions, and notices contained herein (the &quot;Terms&quot;). Your use of www.makeupyermind.com constitutes your agreement to all such Terms. Please read these terms carefully, and keep a copy of them for your reference.
                 </p>
 
                 <p>
