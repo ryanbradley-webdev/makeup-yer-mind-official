@@ -82,7 +82,8 @@ a:has(button) {
 }
 
 input,
-textarea {
+textarea,
+select {
   padding: 8px;
   color: var(--color-white-pri);
   font-size: 16px;

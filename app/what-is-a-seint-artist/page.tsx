@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 import Glossary from './components/Glossary'
-import Button from '../assets/Button'
-import ExternalLink from '../assets/ExternalLink'
+import Button from '../../components/Button'
+import ExternalLink from '../../components/ExternalLink'
 import ImgCarousel from './components/ImgCarousel'
 import Image from 'next/image'
-import Signoff from '../assets/Signoff'
-// import YouTubeEmbed from '../assets/YouTubeEmbed'
+import Signoff from '../../components/Signoff'
+// import YouTubeEmbed from '@/components/YouTubeEmbed'
 
 export const metadata = {
     title: 'What is a Seint Artist, anyway?',

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
-import Button from '../../assets/Button'
+import Button from '../Button'
 import Link from 'next/link'
 
 export default function LooksSection() {

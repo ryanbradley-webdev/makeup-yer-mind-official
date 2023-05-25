@@ -1,11 +1,11 @@
 import styles from './page.module.css'
 import Image from 'next/image'
-import LogoName from './assets/LogoName'
-import Button from './assets/Button'
-import NewSection from './components/home-page-subsections/NewSection'
-import LooksSection from './components/home-page-subsections/LooksSection'
-import BlogsSection from './components/home-page-subsections/BlogsSection'
-import ContactForm from './components/home-page-subsections/ContactForm'
+import LogoName from '../components/icons/LogoName'
+import Button from '../components/Button'
+import NewSection from '../components/home-page-subsections/NewSection'
+import LooksSection from '../components/home-page-subsections/LooksSection'
+import BlogsSection from '../components/home-page-subsections/BlogsSection'
+import ContactForm from '../components/home-page-subsections/ContactForm'
 import Link from 'next/link'
 
 export const metadata = {

@@ -1,6 +1,6 @@
 'use client'
 
-import Button from '../../assets/Button'
+import Button from '../Button'
 import styles from './footer.module.css'
 
 export default function Subscribe() {

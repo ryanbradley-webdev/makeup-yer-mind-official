@@ -7,7 +7,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 
 export default function Button({
     children,
-    variant
+    variant,
+    ...props
 }: ButtonProps) {
     const generateClassName = () => {
         if (variant === 'solid') {
@@ -20,7 +21,7 @@ export default function Button({
     }
 
     return (
-        <button className={ `button ${generateClassName()}` } >
+        <button className={ `button ${generateClassName()}` } {...props}>
             {children}
         </button>
     )
