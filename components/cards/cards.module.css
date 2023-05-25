@@ -50,7 +50,8 @@
     border-radius: 0;
 }
 
-.blog {
+.blog,
+.look {
     text-decoration: none;
 }
 

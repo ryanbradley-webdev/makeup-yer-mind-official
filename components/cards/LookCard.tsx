@@ -1,5 +1,6 @@
 import Image from "next/image"
 import styles from './cards.module.css'
+import Link from "next/link"
 
 export default function LookCard({
     look
@@ -7,7 +8,7 @@ export default function LookCard({
     look: Look
 }) {
     return (
-        <div className={styles.look}>
+        <Link className={styles.look} href={`/looks/${look.slug}`}>
 
             <Image src={`/${look.image1}`} width={200} height={240} alt='' />
 
@@ -15,6 +16,6 @@ export default function LookCard({
                 {look.title}
             </h5>
 
-        </div>
+        </Link>
     )
 }

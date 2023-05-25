@@ -45,7 +45,7 @@
     isolation: isolate;
 }
 
-.grid > *:not(.content:first-of-type) {
+.grid > * {
     margin-bottom: 36px;
 }
 
