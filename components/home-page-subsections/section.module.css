@@ -167,7 +167,7 @@
     animation: look-fade 7s ease 2s infinite;
 }
 
-@keyframes look-fade {
+/* @keyframes look-fade {
     15%, 50% {
         opacity: 1;
     }
@@ -175,7 +175,7 @@
     65%, 100% {
         opacity: 0;
     }
-}
+} */
 
 .colors {
     display: flex;

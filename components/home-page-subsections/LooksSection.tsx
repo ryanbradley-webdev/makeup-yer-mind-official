@@ -4,6 +4,9 @@ import styles from './section.module.css'
 import Button from '../Button'
 import Link from 'next/link'
 
+import { SAMPLE_LOOKS } from '@/app/looks/sampleLooks'
+import LargeLookCard from '../cards/LargeLookCard'
+
 export default function LooksSection() {
     return (
         <section id='looks'>
@@ -14,33 +17,7 @@ export default function LooksSection() {
 
             <div className={styles.grid}>
 
-                <div className={styles.first_look}>
-
-                    <Image src='/look-placeholder-lg.png' height={646} width={550} alt='' />
-                    <Image src='/look-placeholder-lg-2.png' height={646} width={550} alt='' />
-
-                    <div className={styles.card_info}>
-
-                        <h5>
-                            Thankful
-                        </h5>
-
-                        <div className={styles.colors}>
-
-                            <Image src='/georgia.PNG' height={20} width={36} alt='' />
-                            <Image src='/leo.PNG' height={20} width={36} alt='' />
-                            <Image src='/ginger.PNG' height={20} width={36} alt='' />
-                            <Image src='/coco.PNG' height={20} width={36} alt='' />
-
-                        </div>
-
-                        <h6>
-                            Today is a day to be thankful for all that we have.
-                        </h6>
-
-                    </div>
-
-                </div>
+                <LargeLookCard look={SAMPLE_LOOKS[0]} />
 
                 <div className={styles.btnDiv}>
 

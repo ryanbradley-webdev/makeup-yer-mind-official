@@ -22,6 +22,5 @@ type Look = {
     colors: string[],
     createdAt: number,
     updatedAt: number | null,
-    content: string,
-    type: string
+    content: string
 }
