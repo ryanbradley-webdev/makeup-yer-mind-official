@@ -1,0 +1,29 @@
+.main h1 {
+    margin-top: 24px;
+}
+
+.form {
+    display: grid;
+    row-gap: 12px;
+    padding-inline: 16px;
+    padding-block: 24px;
+    margin-block: 24px;
+    /* background-image: url('/contact.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form span {
+    margin-left: 4px;
+}
+
+.form button {
+    margin-top: 12px;
+}
