@@ -62,8 +62,6 @@ export default function LooksSection() {
                     I&apos;ve got a whole bunch of looks for you to try, I know you&apos;ll find one you&apos;ll love!
                 </p>
 
-                <div className={styles.subcontent_grid}>
-
                     <div className={styles.subcontent}>
 
                         <Image src='/look-placeholder-2l.png' width={200} height={240} alt='' />
@@ -150,8 +148,6 @@ export default function LooksSection() {
                         See the rest of my looks!
                     </Button>
                 </Link>
-
-            </div>
 
         </section>
     )

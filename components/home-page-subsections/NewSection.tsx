@@ -6,6 +6,9 @@ import Instagram from '../icons/Instagram'
 import Button from '../Button'
 import Link from 'next/link'
 
+import { SAMPLE_BLOGS } from '@/app/blogs/sampleBlogs'
+import LargeBlogCard from '../cards/LargeBlogCard'
+
 export default function NewSection() {
     return (
         <section id='new'>
@@ -16,27 +19,7 @@ export default function NewSection() {
 
             <div className={styles.grid}>
 
-                <div className={styles.content}>
-
-                    <Image src='/new-placeholder-lg.png' width={448} height={337} alt='' />
-
-                    <div className={styles.card_info}>
-
-                        <p className={styles.latest}>
-                            Latest Blog
-                        </p>
-
-                        <h5>
-                            Find Your Skin Type
-                        </h5>
-
-                        <h6>
-                            Take this short quiz to find your skin type!
-                        </h6>
-
-                    </div>
-
-                </div>
+                <LargeBlogCard blog={SAMPLE_BLOGS[0]} firstBlog />
 
                 <div className={styles.btnDiv}>
 

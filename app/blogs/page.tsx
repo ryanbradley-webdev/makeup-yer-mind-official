@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import BlogList from './components/BlogList'
 import styles from './page.module.css'
 
@@ -16,10 +15,7 @@ export default function Blogs() {
                 Learn Something New
             </h1>
 
-            <Suspense fallback={'Loading blogs...'}>
-                {/* @ts-expect-error Async Server Component */}
-                <BlogList />    
-            </Suspense>
+            <BlogList />
 
         </main>
     )

@@ -6,7 +6,7 @@ import BlogCard from '../../../components/cards/BlogCard'
 import styles from '../page.module.css'
 import { SAMPLE_BLOGS } from '../sampleBlogs'
 
-export default async function BlogList() {
+export default function BlogList() {
     const blogs: Blog[] = SAMPLE_BLOGS
     
     const [searchTerm, setSearchTerm] = useState('')
@@ -78,7 +78,7 @@ export default async function BlogList() {
                     {filteredBlogs.map((blog, idx) => (
                         idx === 0 ?
 
-                        <LargeBlogCard key={blog.id} blog={blog} firstBlogId={blogs[0].id} /> :
+                        <LargeBlogCard key={blog.id} blog={blog} firstBlog={blogs[0].id === blog.id} /> :
 
                         <BlogCard key={blog.id} blog={blog} />
                     ))}

@@ -4,10 +4,10 @@ import Link from "next/link"
 
 export default function LargeBlogCard({
     blog,
-    firstBlogId
+    firstBlog
 }: {
     blog: Blog,
-    firstBlogId: string
+    firstBlog?: boolean
 }) {
     return (
         <Link className={styles.first_blog} href={`/blogs/${blog.slug}`}>
@@ -17,9 +17,7 @@ export default function LargeBlogCard({
             <div className={styles.card_info}>
 
                 {
-                    firstBlogId === blog.id
-
-                    &&
+                    firstBlog &&
                     
                     <p className={styles.latest}>
                         Latest Blog

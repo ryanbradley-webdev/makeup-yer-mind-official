@@ -21,6 +21,11 @@
     padding-inline: 16px;
 }
 
+.grid p,
+.grid .btnDiv {
+    grid-column: 1 / span 2;
+}
+
 .grid > a:has(button) {
     margin-inline: auto;
 }
@@ -86,12 +91,6 @@
     -webkit-backdrop-filter: blur(4px);
 }
 
-.latest {
-    font-size: 12px;
-    font-weight: 300;
-    color: #E71313;
-}
-
 .card_info h5 {
     font-size: 24px;
     font-weight: 400;
@@ -127,6 +126,7 @@
 .first_look {
     width: 80%;
     margin-inline: auto;
+    grid-column: 1 / span 2;
 }
 
 .subcontent {
