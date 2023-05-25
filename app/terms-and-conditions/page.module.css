@@ -1,0 +1,32 @@
+.main {
+    padding-inline: 16px;
+}
+
+.main section {
+    padding-block: 12px;
+}
+
+.main h1 {
+    font-size: 24px;
+    margin-block: 24px;
+}
+
+.main h2 {
+    font-size: 20px;
+}
+
+.main p {
+    margin-block: 12px;
+    color: var(--color-white-sec);
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.main button {
+    margin-top: 48px;
+}
+
+.main > p {
+    margin-block: 36px;
+    text-align: center;
+}

@@ -49,6 +49,10 @@ h1 {
   text-align: center;
 }
 
+a {
+  color: var(--color-blue-link);
+}
+
 a:has(button) {
   text-decoration: none;
 }
