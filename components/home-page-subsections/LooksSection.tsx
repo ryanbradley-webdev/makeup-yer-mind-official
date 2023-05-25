@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 import { SAMPLE_LOOKS } from '@/app/looks/sampleLooks'
 import LargeLookCard from '../cards/LargeLookCard'
+import LookCard from '../cards/LookCard'
 
 export default function LooksSection() {
     return (
@@ -39,92 +40,18 @@ export default function LooksSection() {
                     I&apos;ve got a whole bunch of looks for you to try, I know you&apos;ll find one you&apos;ll love!
                 </p>
 
-                    <div className={styles.subcontent}>
+                {SAMPLE_LOOKS.map((look, idx) => {
+                    if (idx === 0) return
+                    return <LookCard look={look} key={look.id} />
+                })}
 
-                        <Image src='/look-placeholder-2l.png' width={200} height={240} alt='' />
-                        {/* <Image src='/look-placeholder-2r.png' width={200} height={240} alt='' /> */}
+            </div>
 
-                        <h5>
-                            Titletown
-                        </h5>
-
-                        {/* <div className={styles.colors}>
-
-                            <Image src='/georgia.png' width={36} height={20} alt='' />
-                            <Image src='/no-33.png' width={36} height={20} alt='' />
-                            <Image src='/emerald-city.png' width={36} height={20} alt='' />
-
-                        </div> */}
-
-                    </div>
-
-                    <div className={styles.subcontent}>
-
-                        <Image src='/look-placeholder-3l.png' width={200} height={240} alt='' />
-                        {/* <Image src='/look-placeholder-3r.png' width={200} height={240} alt='' /> */}
-
-                        <h5>
-                            Dreamy Autumn Eyes
-                        </h5>
-
-                        {/* <div className={styles.colors}>
-
-                            <Image src='/drift.png' width={36} height={20} alt='' />
-                            <Image src='/ginger.png' width={36} height={20} alt='' />
-                            <Image src='/pomegranate.png' width={36} height={20} alt='' />
-                            <Image src='/coco.png' width={36} height={20} alt='' />
-
-                        </div> */}
-
-                    </div>
-
-                    <div className={styles.subcontent}>
-
-                        <Image src='/look-placeholder-4.png' width={200} height={240} alt='' />
-                        {/* <Image src='/look-placeholder-3r.png' width={200} height={240} alt='' /> */}
-
-                        <h5>
-                            Persephone
-                        </h5>
-
-                        {/* <div className={styles.colors}>
-
-                            <Image src='/drift.png' width={36} height={20} alt='' />
-                            <Image src='/ginger.png' width={36} height={20} alt='' />
-                            <Image src='/pomegranate.png' width={36} height={20} alt='' />
-                            <Image src='/coco.png' width={36} height={20} alt='' />
-
-                        </div> */}
-
-                    </div>
-
-                    <div className={styles.subcontent}>
-
-                        <Image src='/look-placeholder-5.png' width={200} height={240} alt='' />
-                        {/* <Image src='/look-placeholder-3r.png' width={200} height={240} alt='' /> */}
-
-                        <h5>
-                            Sweetheart
-                        </h5>
-
-                        {/* <div className={styles.colors}>
-
-                            <Image src='/drift.png' width={36} height={20} alt='' />
-                            <Image src='/ginger.png' width={36} height={20} alt='' />
-                            <Image src='/pomegranate.png' width={36} height={20} alt='' />
-                            <Image src='/coco.png' width={36} height={20} alt='' />
-
-                        </div> */}
-
-                    </div>
-
-                </div>
-
-                <Link href='/looks'>
-                    <Button variant='solid'>
-                        See the rest of my looks!
-                    </Button>
-                </Link>
+            <Link href='/looks'>
+                <Button variant='solid'>
+                    See the rest of my looks!
+                </Button>
+            </Link>
 
         </section>
     )
