@@ -3,9 +3,11 @@ import styles from './cards.module.css'
 import Link from "next/link"
 
 export default function LargeBlogCard({
-    blog
+    blog,
+    firstBlogId
 }: {
-    blog: Blog
+    blog: Blog,
+    firstBlogId: string
 }) {
     return (
         <Link className={styles.first_blog} href={`/blogs/${blog.slug}`}>
@@ -14,9 +16,15 @@ export default function LargeBlogCard({
 
             <div className={styles.card_info}>
 
-                <p className={styles.latest}>
-                    Latest Blog
-                </p>
+                {
+                    firstBlogId === blog.id
+
+                    &&
+                    
+                    <p className={styles.latest}>
+                        Latest Blog
+                    </p>
+                }
 
                 <h5>
                     {blog.title}
