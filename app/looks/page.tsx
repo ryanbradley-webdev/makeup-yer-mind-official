@@ -14,7 +14,6 @@ export default function Looks() {
                 Find a New Look
             </h1>
 
-            {/* @ts-expect-error Async Server Component */}
             <LookList />
 
         </main>

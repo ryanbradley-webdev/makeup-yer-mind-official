@@ -16,6 +16,7 @@
 
 .grid {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 48px;
     padding-inline: 16px;
