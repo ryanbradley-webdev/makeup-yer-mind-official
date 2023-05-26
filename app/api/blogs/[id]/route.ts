@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getBlogById } from "@/lib/getBlogById";
+import { getBlogById } from "@/lib/getBlogBySlug";
 
 interface Params {
     params: { id: string }

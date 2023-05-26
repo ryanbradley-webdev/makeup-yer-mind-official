@@ -5,8 +5,8 @@ type Blog = {
     description: string,
     image: string,
     topics: string[],
-    createdAt: number,
-    updatedAt: number | null,
+    createdAt: FieldValue,
+    updatedAt?: FieldValue,
     content: string,
     type: string
 }
@@ -20,7 +20,7 @@ type Look = {
     image2: string,
     tags: string[],
     colors: string[],
-    createdAt: number,
-    updatedAt: number | null,
+    createdAt: FieldValue,
+    updatedAt?: FieldValue,
     content: string
 }

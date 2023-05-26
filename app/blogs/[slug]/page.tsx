@@ -1,49 +1,64 @@
-import { Metadata, ResolvingMetadata } from 'next/types';
-import styles from './page.module.css'
-
-import { SAMPLE_BLOGS } from '../sampleBlogs';
+import { Metadata } from 'next/types';
 import Image from 'next/image';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { notFound } from 'next/navigation'
+import styles from './page.module.css'
+import { getBlogBySlug } from '@/lib/getBlogBySlug';
+import rehypeRaw from 'rehype-raw';
+import Signoff from '@/components/Signoff';
 
 type Params = {
     params: { slug: string }
 }
 
-/* export async function generateMetadata(
-    { params }: Props,
-    parent?: ResolvingMetadata
+export async function generateMetadata(
+    { params }: Params
 ): Promise<Metadata> {
     const slug = params.slug;
 
     // fetch data
-    const blog = await fetch(`https://.../${slug}`).then((res) => res.json())
+    const blog = await getBlogBySlug(slug)
 
-    // optionally access and extend (rather than replace) parent metadata
-    const previousImages = (await parent)?.openGraph?.images || []
-
-    return {
-        title: blog.title,
+    const metatdata = {
+        title: blog?.title || 'Blog not found',
+        descrition: blog?.description || 'No description found',
         openGraph: {
-            images: [ blog.image, ...previousImages ],
+            images: [] as string[]
         }
     }
-} */
 
-export default function BlogBySlug({ params }: Params) {
+    if (blog) {
+        metatdata.openGraph.images.push(blog.image)
+    }
+
+    return metatdata
+}
+
+export default async function BlogBySlug({ params }: Params) {
     const { slug } = params
-    const blog = SAMPLE_BLOGS.find(blog => blog.slug === slug)
+    const blog = await getBlogBySlug(slug)
 
     if (!blog) {
         notFound()
     }
 
+    const date = () => {
+        const timestamp = blog.updatedAt ? blog.updatedAt.seconds : blog.createdAt.seconds
+        const date = new Date(timestamp * 1000).toDateString()
+        return (
+            <h5>
+                <span>
+                    {blog.updatedAt ? 'Updated: ' : 'Posted: '}
+                </span>
+                {date}
+            </h5>
+        )
+    }
+
     return (
-        <main>
+        <main className={styles.main}>
             
             <section className={styles.header}>
-
-                <Image src={`/${blog.image}`} height={337} width={448} alt='' />
 
                 <h1>
                     {blog.title}
@@ -53,11 +68,24 @@ export default function BlogBySlug({ params }: Params) {
                     {blog.description}
                 </h3>
 
+                <Image src={blog.image} height={337} width={448} alt='' />
+
+                {date()}
+
             </section>
 
-            <ReactMarkdown>
-                hello
-            </ReactMarkdown>
+            <section>
+
+                <ReactMarkdown 
+                    rehypePlugins={[rehypeRaw]}
+                    className={styles.content}
+                >
+                    {blog.content}
+                </ReactMarkdown>
+
+                <Signoff />
+                
+            </section>
 
         </main>
     )
