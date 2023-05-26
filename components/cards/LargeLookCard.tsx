@@ -21,9 +21,9 @@ export default function LargeLookCard({
 
                 <div className={styles.colors}>
 
-                    {/* {look.colors.map(color => (
-                        <Image src={`/${color}.PNG`} height={20} width={36} alt='' key={Math.floor(Math.random() * 100000)} />
-                    ))} */}
+                    {look.colors.map(color => (
+                        <Image src={color.image} height={20} width={36} alt='' key={color.name} />
+                    ))}
 
                 </div>
 

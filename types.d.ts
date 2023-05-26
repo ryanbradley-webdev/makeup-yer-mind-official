@@ -19,8 +19,16 @@ type Look = {
     image1: string,
     image2: string,
     tags: string[],
-    colors: string[],
+    colors: Color[],
     createdAt: FieldValue,
     updatedAt?: FieldValue,
     content: string
+}
+
+type Color = {
+    brand: string,
+    category: string,
+    link: string,
+    image: string,
+    name: string
 }
