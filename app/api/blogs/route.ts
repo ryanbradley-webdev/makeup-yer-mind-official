@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
-import { SAMPLE_BLOGS } from "@/app/blogs/sampleBlogs";
+import { getAllBlogs } from "@/lib/getAllBlogs";
 
-export function GET(request: Request) {
-    return NextResponse.json({ data: SAMPLE_BLOGS })
+export async function GET(request: Request) {
+    const blogs = await getAllBlogs()
+
+    try {
+        return NextResponse.json({ blogs })
+    } catch (err) {
+        return new NextResponse('failed')
+    }
 }
