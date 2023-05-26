@@ -15,6 +15,7 @@ export default function Blogs() {
                 Learn Something New
             </h1>
 
+            {/* @ts-expect-error Async Server Component */}
             <BlogList />
 
         </main>
