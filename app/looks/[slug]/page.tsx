@@ -2,8 +2,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import styles from './page.module.css'
-
-import { SAMPLE_LOOKS } from '../sampleLooks'
+import { getLookBySlug } from '@/lib/getLookBySlug'
 
 type Params = {
     params: { slug: string }
@@ -29,9 +28,9 @@ type Params = {
     }
 } */
 
-export default function LookBySlug({ params }: Params) {
+export default async function LookBySlug({ params }: Params) {
     const { slug } = params
-    const look = SAMPLE_LOOKS.find(look => look.slug === slug)
+    const look = await getLookBySlug(slug)
 
     if (!look) {
         notFound()
@@ -42,8 +41,8 @@ export default function LookBySlug({ params }: Params) {
             
             <section className={styles.header}>
 
-                <Image src={`/${look.image1}`} height={646} width={550} alt='' />
-                <Image src={`/${look.image2}`} height={646} width={550} alt='' />
+                <Image src={look.image1} height={646} width={550} alt='' />
+                <Image src={look.image2} height={646} width={550} alt='' />
 
                 <h1>
                     {look.title}
@@ -56,7 +55,7 @@ export default function LookBySlug({ params }: Params) {
             </section>
 
             <ReactMarkdown>
-                hello
+                {look.content}
             </ReactMarkdown>
 
         </main>
