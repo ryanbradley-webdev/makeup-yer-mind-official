@@ -5,6 +5,7 @@ import styles from './page.module.css'
 import { getLookBySlug } from '@/lib/getLookBySlug'
 import { Metadata } from 'next/types'
 import { getAllLooks } from '@/lib/getAllLooks'
+import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 
 type Params = {
     params: { slug: string }
@@ -37,27 +38,53 @@ export default async function LookBySlug({ params }: Params) {
         notFound()
     }
 
+    const {
+        title,
+        description,
+        image1,
+        image2,
+        createdAt,
+        updatedAt,
+        colors,
+        tags,
+        content,
+        comments,
+        likes
+    } = look
+
     return (
-        <main>
+        <main className={styles.main}>
             
             <section className={styles.header}>
 
-                <Image src={look.image1} height={646} width={550} alt='' />
-                <Image src={look.image2} height={646} width={550} alt='' />
+                <div className={styles.img_container}>
+
+                    <Image src={image1} height={646} width={550} alt='' />
+                        
+                    <Image src={image2} height={646} width={550} alt='' />
+
+                </div>
 
                 <h1>
-                    {look.title}
+                    {title}
                 </h1>
 
                 <h3>
-                    {look.description}
+                    {description}
                 </h3>
+
+                {convertServerTimestamp(createdAt, updatedAt)}
 
             </section>
 
-            <ReactMarkdown>
-                {look.content}
-            </ReactMarkdown>
+            <section className={styles.content}>
+
+                <ReactMarkdown>
+                    {content}
+                </ReactMarkdown>
+
+            </section>
+
 
         </main>
     )

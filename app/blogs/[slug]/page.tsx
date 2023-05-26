@@ -6,6 +6,8 @@ import styles from './page.module.css'
 import { getBlogBySlug } from '@/lib/getBlogBySlug';
 import rehypeRaw from 'rehype-raw';
 import Signoff from '@/components/Signoff';
+import { getAllBlogs } from '@/lib/getAllBlogs';
+import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 
 type Params = {
     params: { slug: string }
@@ -34,6 +36,12 @@ export async function generateMetadata(
     return metatdata
 }
 
+export async function generateStaticParams() {
+    const blogs = await getAllBlogs()
+
+    return blogs.map(blog => blog.slug)
+}
+
 export default async function BlogBySlug({ params }: Params) {
     const { slug } = params
     const blog = await getBlogBySlug(slug)
@@ -42,18 +50,16 @@ export default async function BlogBySlug({ params }: Params) {
         notFound()
     }
 
-    const date = () => {
-        const timestamp = blog.updatedAt ? blog.updatedAt.seconds : blog.createdAt.seconds
-        const date = new Date(timestamp * 1000).toDateString()
-        return (
-            <h5>
-                <span>
-                    {blog.updatedAt ? 'Updated: ' : 'Posted: '}
-                </span>
-                {date}
-            </h5>
-        )
-    }
+    const {
+        title,
+        description,
+        image,
+        createdAt,
+        updatedAt,
+        content,
+        comments,
+        likes
+    } = blog
 
     return (
         <main className={styles.main}>
@@ -61,16 +67,16 @@ export default async function BlogBySlug({ params }: Params) {
             <section className={styles.header}>
 
                 <h1>
-                    {blog.title}
+                    {title}
                 </h1>
 
                 <h3>
-                    {blog.description}
+                    {description}
                 </h3>
 
-                <Image src={blog.image} height={337} width={448} alt='' />
+                <Image src={image} height={337} width={448} alt='' />
 
-                {date()}
+                {convertServerTimestamp(createdAt, updatedAt)}
 
             </section>
 
@@ -80,7 +86,7 @@ export default async function BlogBySlug({ params }: Params) {
                     rehypePlugins={[rehypeRaw]}
                     className={styles.content}
                 >
-                    {blog.content}
+                    {content}
                 </ReactMarkdown>
 
                 <Signoff />

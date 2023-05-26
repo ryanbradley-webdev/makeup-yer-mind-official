@@ -5,10 +5,12 @@ type Blog = {
     description: string,
     image: string,
     topics: string[],
-    createdAt: FieldValue,
-    updatedAt?: FieldValue,
+    createdAt: TimeStamp,
+    updatedAt?: TimeStamp,
     content: string,
-    type: string
+    type: string,
+    comments: string[],
+    likes: number
 }
 
 type Look = {
@@ -20,9 +22,11 @@ type Look = {
     image2: string,
     tags: string[],
     colors: Color[],
-    createdAt: FieldValue,
-    updatedAt?: FieldValue,
-    content: string
+    createdAt: TimeStamp,
+    updatedAt?: TimeStamp,
+    content: string,
+    comments: string[],
+    likes: number
 }
 
 type Color = {
@@ -31,4 +35,9 @@ type Color = {
     link: string,
     image: string,
     name: string
+}
+
+type TimeStamp = {
+    seconds: number,
+    nanoseconds: number
 }

@@ -14,6 +14,7 @@ export const metadata = {
   description: 'Be your most beautiful self!'
 }
 
+// FIXME adjust revalidate variable to 3600 for production
 export const revalidate = 60
 
 export default function Home() {
