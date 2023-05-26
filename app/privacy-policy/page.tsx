@@ -2,6 +2,11 @@ import Link from 'next/link'
 import styles from './page.module.css'
 import Button from '@/components/Button'
 
+export const metadata = {
+    title: 'Makeup Yer Mind | Privacy Policy',
+    description: 'Privacy policy for makeupyermind.com'
+}
+
 export default function PrivacyPolicy() {
     return (
         <main className={styles.main}>

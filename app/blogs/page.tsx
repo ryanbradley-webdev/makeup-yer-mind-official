@@ -2,7 +2,7 @@ import BlogList from './components/BlogList'
 import styles from './page.module.css'
 
 export const metadata = {
-    title: 'All blogs',
+    title: 'Makeup Yer Mind | All blogs',
     description: 'Are you looking for some helpful tips and tricks? What about a product upgrade? I\'ve got you covered!'
 }
 

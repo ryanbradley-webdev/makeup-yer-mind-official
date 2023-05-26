@@ -2,7 +2,7 @@ import styles from './page.module.css'
 import LookList from './components/LookList'
 
 export const metadata = {
-    title: 'All Looks to Try',
+    title: 'Makeup Yer Mind | All Looks to Try',
     description: 'I love experimenting with all the different products there are, and I\'m sure there\'s something here you\'ll love to try!'
 }
 

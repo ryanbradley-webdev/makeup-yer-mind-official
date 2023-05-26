@@ -3,7 +3,7 @@ import styles from './page.module.css'
 import Button from '@/components/Button'
 
 export const metadata = {
-    title: 'Terms and Conditions',
+    title: 'Makeup Yer Mind | Terms and Conditions',
     description: 'Agreement between User and makeupyermind.com'
 }
 
