@@ -1,5 +1,7 @@
-import styles from './page.module.css'
 import LookList from './components/LookList'
+import styles from './page.module.css'
+
+export const revalidate = 3600
 
 export const metadata = {
     title: 'Makeup Yer Mind | All Looks to Try',

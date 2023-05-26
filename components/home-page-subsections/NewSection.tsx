@@ -8,6 +8,8 @@ import LargeBlogCard from '../cards/LargeBlogCard'
 import { getAllBlogs } from '@/lib/getAllBlogs'
 import styles from './section.module.css'
 
+export const revalidate = 3600
+
 export default async function NewSection() {
     const blogs = await getAllBlogs()
 

@@ -5,6 +5,8 @@ import Link from 'next/link'
 import BlogCard from '../cards/BlogCard'
 import { getAllBlogs } from '@/lib/getAllBlogs'
 
+export const revalidate = 3600
+
 export default async function BlogsSection() {
     const blogs = await getAllBlogs()
 

@@ -6,6 +6,8 @@ import LargeLookCard from '../cards/LargeLookCard'
 import LookCard from '../cards/LookCard'
 import { getAllLooks } from '@/lib/getAllLooks'
 
+export const revalidate = 3600
+
 export default async function LooksSection() {
     const looks = await getAllLooks()
 
