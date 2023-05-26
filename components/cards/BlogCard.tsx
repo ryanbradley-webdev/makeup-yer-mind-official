@@ -10,7 +10,7 @@ export default function BlogCard({
     return (
         <Link className={styles.blog} href={`/blogs/${blog.slug}`}>
 
-            <Image src={`/${blog.image}`} width={325} height={194} alt='' />
+            <Image src={blog.image} width={325} height={194} alt='' />
 
             <h5>
                 {blog.title}

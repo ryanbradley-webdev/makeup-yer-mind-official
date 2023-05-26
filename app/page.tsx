@@ -7,6 +7,7 @@ import LooksSection from '../components/home-page-subsections/LooksSection'
 import BlogsSection from '../components/home-page-subsections/BlogsSection'
 import ContactForm from '../components/home-page-subsections/ContactForm'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Makeup Yer Mind',
@@ -110,11 +111,20 @@ export default function Home() {
 
       {/* Additional Subsections */}
 
-      <NewSection />
+      <Suspense fallback={<section>Loading...</section>}>
+        {/* @ts-expect-error Async Server Component */}
+        <NewSection />
+      </Suspense>
 
-      <LooksSection />
+      <Suspense fallback={<section>Loading...</section>}>
+        {/* @ts-expect-error Async Server Component */}
+        <LooksSection />
+      </Suspense>
 
-      <BlogsSection />
+      <Suspense fallback={<section>Loading...</section>}>
+        {/* @ts-expect-error Async Server Component */}
+        <BlogsSection />
+      </Suspense>
 
       <ContactForm />
 

@@ -10,7 +10,7 @@ export default function LookCard({
     return (
         <Link className={styles.look} href={`/looks/${look.slug}`}>
 
-            <Image src={`/${look.image1}`} width={200} height={240} alt='' />
+            <Image src={look.image1} width={200} height={240} alt='' />
 
             <h5>
                 {look.title}

@@ -1,19 +1,19 @@
-'use client'
+// 'use client'
 
 import { useEffect, useState } from 'react'
 import LargeBlogCard from '../../../components/cards/LargeBlogCard'
 import BlogCard from '../../../components/cards/BlogCard'
 import styles from '../page.module.css'
-import { SAMPLE_BLOGS } from '../sampleBlogs'
+import { getAllBlogs } from '@/lib/getAllBlogs'
 
-export default function BlogList() {
-    const blogs: Blog[] = SAMPLE_BLOGS
+export default async function BlogList() {
+    const blogs = await getAllBlogs()
     
-    const [searchTerm, setSearchTerm] = useState('')
+    /* const [searchTerm, setSearchTerm] = useState('')
     const [filterTerm, setFilterTerm] = useState('')
-    const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>(blogs || [])
+    const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>(blogs || []) */
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (!searchTerm) {
             return setFilteredBlogs(blogs)
         }
@@ -39,12 +39,12 @@ export default function BlogList() {
         setFilteredBlogs(blogs.filter(blog => {
             return blog.type.toLowerCase() === filterTerm.toLowerCase()
         }))
-    }, [filterTerm, blogs])
+    }, [filterTerm, blogs]) */
     
     return (
         <>
         
-            <section className={styles.parameters}>
+            {/* <section className={styles.parameters}>
 
                 <div>
 
@@ -71,17 +71,17 @@ export default function BlogList() {
 
                 </div>
 
-                </section>
+            </section> */}
 
-                <section className={styles.blog_grid}>
+            <section className={styles.blog_grid}>
 
-                    {filteredBlogs.map((blog, idx) => (
-                        idx === 0 ?
+                {blogs.map((blog, idx) => (
+                    idx === 0 ?
 
-                        <LargeBlogCard key={blog.id} blog={blog} firstBlog={blogs[0].id === blog.id} /> :
+                    <LargeBlogCard key={blog.id} blog={blog} firstBlog={blogs[0].id === blog.id} /> :
 
-                        <BlogCard key={blog.id} blog={blog} />
-                    ))}
+                    <BlogCard key={blog.id} blog={blog} />
+                ))}
 
             </section>
 

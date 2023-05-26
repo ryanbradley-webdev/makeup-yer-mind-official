@@ -1,19 +1,19 @@
-'use client'
+// 'use client'
 
 import { useEffect, useState } from 'react'
-import styles from '../page.module.css'
-
-import { SAMPLE_LOOKS } from '../sampleLooks'
 import LargeLookCard from '@/components/cards/LargeLookCard'
 import LookCard from '@/components/cards/LookCard'
+import styles from '../page.module.css'
+import { getAllLooks } from '@/lib/getAllLooks'
 
-export default function LookList() {
-    const looks = SAMPLE_LOOKS
-
+export default async function LookList() {
+    /* const [looks, setLooks] = useState<Look[]>([])
     const [searchTerm, setSearchTerm] = useState('')
-    const [filteredLooks, setFilteredLooks] = useState<Look[]>(looks || [])
+    const [filteredLooks, setFilteredLooks] = useState<Look[]>(looks || []) */
 
-    useEffect(() => {
+    const looks = await getAllLooks()
+
+    /* useEffect(() => {
         if (!searchTerm) {
             return setFilteredLooks(looks)
         }
@@ -29,12 +29,21 @@ export default function LookList() {
 
             return matchFound
         }))
-    }, [searchTerm, looks])
+    }, [searchTerm, looks]) */
 
+    /* useEffect(() => {
+        async function fetchData() {
+            const allLooks = await getAllLooks()
+            setLooks(allLooks)
+        }
+
+        fetchData()
+    }, []) */
+    
     return (
         <>
         
-            <section className={styles.parameters}>
+            {/* <section className={styles.parameters}>
 
                 <div>
 
@@ -46,11 +55,11 @@ export default function LookList() {
 
                 </div>
 
-            </section>
+            </section> */}
 
             <section className={styles.look_grid}>
 
-                {filteredLooks.map((look, idx) => (
+                {looks.map((look, idx) => (
                     idx === 0 ?
 
                     <LargeLookCard key={look.id} look={look} /> :

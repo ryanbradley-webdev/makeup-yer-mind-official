@@ -1,12 +1,13 @@
-import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
 import Button from '../Button'
 import Link from 'next/link'
-import { SAMPLE_BLOGS } from '@/app/blogs/sampleBlogs'
 import BlogCard from '../cards/BlogCard'
+import { getAllBlogs } from '@/lib/getAllBlogs'
 
-export default function BlogsSection() {
+export default async function BlogsSection() {
+    const blogs = await getAllBlogs()
+
     return (
         <section id='blogs'>
 
@@ -20,7 +21,7 @@ export default function BlogsSection() {
                     From tutorials, to new product releases, to everyday life, I&apos;ve got everything you need!
                 </p>
 
-                {SAMPLE_BLOGS.map((blog, idx) => {
+                {blogs && blogs.map((blog: Blog, idx: number) => {
                     if (idx === 0) return
                     return <BlogCard key={blog.id} blog={blog} />
                 })}

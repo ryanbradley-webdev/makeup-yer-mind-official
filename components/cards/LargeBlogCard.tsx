@@ -12,7 +12,7 @@ export default function LargeBlogCard({
     return (
         <Link className={styles.first_blog} href={`/blogs/${blog.slug}`}>
 
-            <Image src={`/${blog.image}`} width={448} height={337} alt='' />
+            <Image src={blog.image} width={448} height={337} alt='' />
 
             <div className={styles.card_info}>
 

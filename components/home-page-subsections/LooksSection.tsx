@@ -1,14 +1,14 @@
-import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 import styles from './section.module.css'
 import Button from '../Button'
 import Link from 'next/link'
-
-import { SAMPLE_LOOKS } from '@/app/looks/sampleLooks'
 import LargeLookCard from '../cards/LargeLookCard'
 import LookCard from '../cards/LookCard'
+import { getAllLooks } from '@/lib/getAllLooks'
 
-export default function LooksSection() {
+export default async function LooksSection() {
+    const looks = await getAllLooks()
+
     return (
         <section id='looks'>
 
@@ -18,7 +18,7 @@ export default function LooksSection() {
 
             <div className={styles.grid}>
 
-                <LargeLookCard look={SAMPLE_LOOKS[0]} />
+                <LargeLookCard look={looks[0]} />
 
                 <div className={styles.btnDiv}>
 
@@ -40,7 +40,7 @@ export default function LooksSection() {
                     I&apos;ve got a whole bunch of looks for you to try, I know you&apos;ll find one you&apos;ll love!
                 </p>
 
-                {SAMPLE_LOOKS.map((look, idx) => {
+                {looks && looks.map((look, idx) => {
                     if (idx === 0) return
                     return <LookCard look={look} key={look.id} />
                 })}

@@ -1,15 +1,16 @@
 import Image from 'next/image'
 import SectionHeader from './SectionHeader'
-import styles from './section.module.css'
 import Video from '../icons/Video'
 import Instagram from '../icons/Instagram'
 import Button from '../Button'
 import Link from 'next/link'
-
-import { SAMPLE_BLOGS } from '@/app/blogs/sampleBlogs'
 import LargeBlogCard from '../cards/LargeBlogCard'
+import { getAllBlogs } from '@/lib/getAllBlogs'
+import styles from './section.module.css'
 
-export default function NewSection() {
+export default async function NewSection() {
+    const blogs = await getAllBlogs()
+
     return (
         <section id='new'>
             
@@ -19,7 +20,7 @@ export default function NewSection() {
 
             <div className={styles.grid}>
 
-                <LargeBlogCard blog={SAMPLE_BLOGS[0]} firstBlog />
+                <LargeBlogCard blog={blogs[0]} firstBlog />
 
                 <div className={styles.btnDiv}>
 
