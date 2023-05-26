@@ -3,30 +3,31 @@ import Image from 'next/image'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import styles from './page.module.css'
 import { getLookBySlug } from '@/lib/getLookBySlug'
+import { Metadata } from 'next/types'
+import { getAllLooks } from '@/lib/getAllLooks'
 
 type Params = {
     params: { slug: string }
 }
 
-/* export async function generateMetadata(
-    { params }: Props,
-    parent?: ResolvingMetadata
+export async function generateMetadata(
+    { params }: Params,
 ): Promise<Metadata> {
-    const slug = params.slug;
+    const { slug } = params
 
     // fetch data
-    const look = await fetch(`https://.../${slug}`).then((res) => res.json())
-
-    // optionally access and extend (rather than replace) parent metadata
-    const previousImages = (await parent)?.openGraph?.images || []
+    const look = await getLookBySlug(slug)
 
     return {
-        title: look.title,
-        openGraph: {
-            images: [ look.image, ...previousImages ],
-        }
+        title: look?.title || 'Look not found'
     }
-} */
+}
+
+export async function generateStaticParams() {
+    const looks = await getAllLooks()
+
+    return looks.map(look => look.slug)
+}
 
 export default async function LookBySlug({ params }: Params) {
     const { slug } = params

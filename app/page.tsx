@@ -14,6 +14,8 @@ export const metadata = {
   description: 'Be your most beautiful self!'
 }
 
+export const revalidate = 60
+
 export default function Home() {
   return (
     <main className={styles.main}>
