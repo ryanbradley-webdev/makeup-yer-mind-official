@@ -39,12 +39,16 @@ export default function FormDiv({
             
             <div className={styles.btnDiv}>
 
-                {!firstPage && <Button onClick={() => setFormPage(prevPage => prevPage - 1)}>
+                {!firstPage && <Button onClick={() => setFormPage(prevPage => prevPage - 1)} type='button'>
                     Previous
                 </Button>}
 
-                {!lastPage && <Button onClick={() => setFormPage(prevPage => prevPage + 1)}>
+                {!lastPage && <Button onClick={() => setFormPage(prevPage => prevPage + 1)} style={{ gridColumn: '2' }} type='button'>
                     Next
+                </Button>}
+
+                {lastPage && <Button variant='solid'>
+                    Submit
                 </Button>}
 
             </div>

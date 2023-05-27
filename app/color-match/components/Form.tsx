@@ -4,6 +4,7 @@ import { useReducer, useState } from 'react'
 import { reducer, initialState } from '../util/Reducer'
 import styles from '../page.module.css'
 import FormDiv from './FormDiv'
+import Image from 'next/image'
 
 export default function Form() {
     const [formData, dispatch] = useReducer(reducer, initialState)
@@ -137,6 +138,33 @@ export default function Form() {
                     onChange={e => dispatch({ type: 'change-coverage', payload: e.target.value })}
                     value={formData.coverage}
                 ></textarea>
+
+            </FormDiv>
+
+            <FormDiv
+                formPage={formPage}
+                setFormPage={setFormPage}
+                pageIndex={4}
+            >
+
+                <p>
+                    Okay gorgeous, I just need a makeup free selfie! This is so important for me to accurately match you. I know that sending a makeup-free selfie can be intimidating, please know that I am the only one who will see it and I will delete it as soon as I&apos;m done matching you! Follow the instructions below to submit a perfect selfie!
+                </p>
+
+                <Image src='/selfie-how-to.png' width={480} height={540} alt='' />
+
+            </FormDiv>
+
+            <FormDiv
+                formPage={formPage}
+                setFormPage={setFormPage}
+                pageIndex={5} // FIXME this value is for testing 'last page' functionality. Change to actual value when more content is added.
+                lastPage
+            >
+
+                <p>
+                    If you&apos;re happy with everything, submit the form and I&apos;ll give you your color match in just a few days!
+                </p>
 
             </FormDiv>
 

@@ -1,0 +1,44 @@
+.form {
+    position: relative;
+    margin-top: 24px;
+    margin-inline: 16px;
+    height: 60vh;
+}
+
+.formDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    row-gap: 12px;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.formDiv label {
+    display: flex;
+    flex-direction: column;
+}
+
+.formDiv img {
+    width: 100%;
+    height: auto;
+}
+
+.radioDiv {
+    display: grid;
+    row-gap: 6px;
+}
+
+.radioDiv label {
+    flex-direction: row;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-white-ter);
+}
+
+.btnDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8px;
+}
