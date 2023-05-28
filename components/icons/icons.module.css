@@ -1,0 +1,5 @@
+.instagram {
+    width: auto;
+    mask-image: url('./instagram.svg');
+    mask-repeat: no-repeat;
+}

@@ -118,12 +118,18 @@
 
 .iconDiv {
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     width: 100%;
     margin-block: auto;
 }
 
-.iconDiv svg {
+.iconDiv a {
+    display: flex;
+}
+
+.iconDiv svg,
+.iconDiv img {
     height: 30px;
-    fill: var(--color-white-sec);
+    /* fill: var(--color-white-sec); */
 }
