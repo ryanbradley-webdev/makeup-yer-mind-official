@@ -13,6 +13,7 @@
     display: grid;
     row-gap: 12px;
     width: 100%;
+    max-height: 100%;
     transition: all 0.5s ease-in-out;
 }
 
@@ -22,8 +23,9 @@
 }
 
 .formDiv img {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    width: auto;
+    margin-inline: auto;
 }
 
 .radioDiv {
@@ -39,6 +41,7 @@
 }
 
 .btnDiv {
+    height: fit-content;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 8px;

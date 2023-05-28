@@ -33,6 +33,7 @@ export default function Form() {
                         id="firstName"
                         onChange={e => dispatch({ type: 'change-first-name', payload: e.target.value })}
                         value={formData.firstName}
+                        placeholder='First Name'
                         required 
                     />
                 </label>
@@ -45,6 +46,7 @@ export default function Form() {
                         id="lastName"
                         onChange={e => dispatch({ type: 'change-last-name', payload: e.target.value })}
                         value={formData.lastName}
+                        placeholder='Last Name'
                         required 
                     />
                 </label>
@@ -57,6 +59,7 @@ export default function Form() {
                         id="email"
                         onChange={e => dispatch({ type: 'change-email', payload: e.target.value })}
                         value={formData.email}
+                        placeholder='example@email.com'
                         required 
                     />
                 </label>
@@ -76,6 +79,7 @@ export default function Form() {
                         name="referral" 
                         id="referral"
                         onChange={e => dispatch({ type: 'change-referral', payload: e.target.value })}
+                        placeholder="If you weren't referred, tell me how you found me!"
                         value={formData.referral}
                     />
                 </label>
@@ -136,6 +140,7 @@ export default function Form() {
                     cols={30}
                     rows={10}
                     onChange={e => dispatch({ type: 'change-coverage', payload: e.target.value })}
+                    placeholder='Tell me all about it here!'
                     value={formData.coverage}
                 ></textarea>
 
