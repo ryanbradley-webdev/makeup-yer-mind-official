@@ -23,7 +23,7 @@
     width: calc(100vw - 32px);
 }
 
-.formDiv input {
+.formDiv input:not([type="radio"]) {
     width: 100%;
 }
 

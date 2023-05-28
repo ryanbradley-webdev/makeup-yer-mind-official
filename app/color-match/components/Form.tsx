@@ -12,6 +12,7 @@ export default function Form() {
     const [formPage, setFormPage] = useState(1)
     const [selfieFile, setSelfieFile] = useState<File>()
     const [localSelfieSrc, setLocalSelfieSrc] = useState('')
+    const [seintCartWanted, setSeintCartWanted] = useState(false)
 
     const previewSelfie = (e: React.ChangeEvent<HTMLInputElement>) => {
         const images = e.target.files
@@ -200,7 +201,84 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={6} // FIXME this value is for testing 'last page' functionality. Change to actual value when more content is added.
+                pageIndex={6}
+            >
+
+                <p>
+                    Would you like me to custom build your cart with my recommendations for you?
+                </p>
+
+                <div className={styles.radioDiv}>
+
+                    <label htmlFor="yes">
+                        <input type="radio"
+                            name='seintCart'
+                            id='yes'
+                            value='yes'
+                            onChange={() => setSeintCartWanted(true)}
+                            required
+                            />
+                        <span>Yes, please!</span>
+                    </label>
+
+                    <label htmlFor="no">
+                        <input type="radio"
+                            name='seintCart'
+                            id='no'
+                            value='no'
+                            onChange={() => setSeintCartWanted(false)}
+                            required
+                            />
+                        <span>No thank you.</span>
+                    </label>
+
+                </div>
+
+                {seintCartWanted && <div>
+
+                    <p>
+                        I just need a little more information to set up a profile for you.
+                    </p>
+
+                    <p>
+                        <em>
+                            I will never call you or send unsolicited messages this information is kept confidential and is used solely to create your Seint profile. You may edit any info afterward if you so choose.
+                        </em>
+                    </p>
+
+                    <label htmlFor="address">
+                        <span>Address</span>
+                        <input
+                            type="text"
+                            name="address"
+                            id="address"
+                            onChange={e => dispatch({ type: 'change-address', payload: e.target.value })}
+                            placeholder='address'
+                            required
+                        />
+                    </label>
+
+                    <label htmlFor="phone">
+                        <span>Phone Number</span>
+                        <input
+                            type='tel'
+                            name="phone"
+                            id="phone"
+                            onChange={e => dispatch({ type: 'change-phone', payload: e.target.value })}
+                            placeholder='(123) 555-1234'
+                            required
+                        />
+                    </label>
+
+                </div>}
+
+
+            </FormDiv>
+
+            <FormDiv
+                formPage={formPage}
+                setFormPage={setFormPage}
+                pageIndex={7}
                 lastPage
             >
 
