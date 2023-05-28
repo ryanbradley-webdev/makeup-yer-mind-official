@@ -90,7 +90,7 @@ export default function TermsAndConditions() {
                 </h2>
 
                 <p>
-                    www.makeupyermind.com may contain links to other websites (&quot;Linked Sites&qout;). The Linked Sites are not under the control of Makeup Yer Mind and Makeup Yer Mind is not responsible for the contents of any Linked Site, including without limitation any link contained in a Linked Site, or any changes or updates to a Linked Site. Makeup Yer Mind is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by Makeup Yer Mind of the site or any association with its operators.
+                    www.makeupyermind.com may contain links to other websites (&quot;Linked Sites&quot;). The Linked Sites are not under the control of Makeup Yer Mind and Makeup Yer Mind is not responsible for the contents of any Linked Site, including without limitation any link contained in a Linked Site, or any changes or updates to a Linked Site. Makeup Yer Mind is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by Makeup Yer Mind of the site or any association with its operators.
                 </p>
 
                 <p>
