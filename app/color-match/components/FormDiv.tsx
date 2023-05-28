@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
 import Button from '@/components/Button'
-import { hiddenRight, visible, hiddenLeft } from '../util/styles'
+import { hiddenRight, visible, hiddenLeft } from '../lib/styles'
 import styles from '../page.module.css'
 
 export default function FormDiv({

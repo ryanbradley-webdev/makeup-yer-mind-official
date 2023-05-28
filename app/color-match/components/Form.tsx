@@ -1,10 +1,12 @@
 'use client'
 
-import { useReducer, useState } from 'react'
-import { reducer, initialState } from '../util/Reducer'
+import { useReducer, useRef, useState } from 'react'
+import { reducer, initialState, ColorMatchFormData } from '../lib/Reducer'
 import styles from '../page.module.css'
 import FormDiv from './FormDiv'
 import Image from 'next/image'
+import { uploadImg } from '@/lib/uploadImg'
+import { uploadColorMatchForm } from '@/lib/uploadColorMatchForm'
 
 export default function Form() {
     const [formData, dispatch] = useReducer(reducer, initialState)
@@ -13,6 +15,11 @@ export default function Form() {
     const [selfieFile, setSelfieFile] = useState<File>()
     const [localSelfieSrc, setLocalSelfieSrc] = useState('')
     const [seintCartWanted, setSeintCartWanted] = useState(false)
+    const [formSubmitting, setFormSubmitting] = useState(false)
+    const [formSuccess, setFormSuccess] = useState(false)
+    const [formError, setFormError] = useState(false)
+
+    const formRef = useRef<HTMLFormElement>(null)
 
     const previewSelfie = (e: React.ChangeEvent<HTMLInputElement>) => {
         const images = e.target.files
@@ -59,12 +66,39 @@ export default function Form() {
         }
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+
+        if (!selfieFile) return
+
+        setFormSubmitting(true)
+
+        const colorMatchForm = {
+            ...formData
+        }
+
+        try {
+            colorMatchForm.selfie = await uploadImg(selfieFile)
+            await uploadColorMatchForm(colorMatchForm)
+            setFormSubmitting(false)
+            setFormSuccess(true)
+            setTimeout(() => {
+                setFormSuccess(false)
+                if (formRef?.current) formRef.current.reset()
+            }, 4000)
+        } catch {
+            setFormSubmitting(false)
+            setFormError(true)
+        }
     }
 
     return (
-        <form action='' onSubmit={handleSubmit} className={styles.form}>
+        <form
+            action=''
+            onSubmit={handleSubmit}
+            className={styles.form}
+            ref={formRef}
+        >
 
             <FormDiv
                 firstPage

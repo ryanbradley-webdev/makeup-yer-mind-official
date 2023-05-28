@@ -9,6 +9,8 @@ export type ColorMatchFormData = {
     customCart: string,
     address?: string,
     phone?: string,
+    read: boolean,
+    completed: boolean
 }
 
 export type Action = {
@@ -16,7 +18,7 @@ export type Action = {
     payload: string
 }
 
-export const initialState = {
+export const initialState: ColorMatchFormData = {
     firstName: '',
     lastName: '',
     email: '',
@@ -27,6 +29,8 @@ export const initialState = {
     customCart: '',
     address: '',
     phone: '',
+    read: false,
+    completed: false
 }
 
 export const reducer = (state: ColorMatchFormData, action: Action) => {
@@ -49,9 +53,6 @@ export const reducer = (state: ColorMatchFormData, action: Action) => {
 
         case 'change-coverage':
             return { ...state, coverage: action.payload }
-
-        case 'change-selfie':
-            return { ...state, selfie: action.payload }
 
         case 'change-cart':
             return { ...state, customCart: action.payload }
