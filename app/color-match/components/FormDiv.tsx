@@ -10,7 +10,10 @@ export default function FormDiv({
     pageIndex,
     formPage,
     setFormPage,
-    validateForm
+    validateForm,
+    formSubmitting,
+    formSuccess,
+    formError
 }: {
     children: ReactNode,
     firstPage?: boolean,
@@ -18,7 +21,10 @@ export default function FormDiv({
     pageIndex: number,
     formPage: number,
     setFormPage: Dispatch<SetStateAction<number>>,
-    validateForm?: () => void
+    validateForm?: () => void,
+    formSubmitting?: boolean,
+    formSuccess?: boolean,
+    formError?: boolean
 }) {
     const [style, setStyle] = useState(hiddenRight)
 
@@ -39,7 +45,7 @@ export default function FormDiv({
 
             {children}
             
-            <div className={styles.btnDiv}>
+            {!formSubmitting && !formSuccess && !formError && <div className={styles.btnDiv}>
 
                 {!firstPage && <Button onClick={() => setFormPage(prevPage => prevPage - 1)} type='button'>
                     Previous
@@ -53,7 +59,7 @@ export default function FormDiv({
                     Submit
                 </Button>}
 
-            </div>
+            </div>}
 
         </div>
     )

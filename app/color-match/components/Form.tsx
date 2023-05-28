@@ -1,12 +1,15 @@
 'use client'
 
 import { useReducer, useRef, useState } from 'react'
-import { reducer, initialState, ColorMatchFormData } from '../lib/Reducer'
+import { reducer, initialState } from '../lib/Reducer'
 import styles from '../page.module.css'
 import FormDiv from './FormDiv'
 import Image from 'next/image'
 import { uploadImg } from '@/lib/uploadImg'
 import { uploadColorMatchForm } from '@/lib/uploadColorMatchForm'
+import FormSubmitting from './FormSubmitting'
+import FormSuccess from './FormSuccess'
+import FormError from './FormError'
 
 export default function Form() {
     const [formData, dispatch] = useReducer(reducer, initialState)
@@ -72,6 +75,7 @@ export default function Form() {
         if (!selfieFile) return
 
         setFormSubmitting(true)
+        setFormPage(prevPage => prevPage + 1)
 
         const colorMatchForm = {
             ...formData
@@ -358,6 +362,19 @@ export default function Form() {
                     If you&apos;re happy with everything, submit the form and I&apos;ll give you your color match in just a few days!
                 </p>
 
+            </FormDiv>
+
+            <FormDiv
+                formPage={formPage}
+                setFormPage={setFormPage}
+                pageIndex={8}
+                formSubmitting={formSubmitting}
+                formSuccess={formSuccess}
+                formError={formError}
+            >
+                {formSubmitting && <FormSubmitting />}
+                {formSuccess && <FormSuccess />}
+                {formError && <FormError />}
             </FormDiv>
 
         </form>
