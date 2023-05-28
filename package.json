@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -22,5 +23,8 @@
     "react-markdown": "^8.0.7",
     "rehype-raw": "^6.1.1",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/mailchimp__mailchimp_marketing": "^3.0.9"
   }
 }
