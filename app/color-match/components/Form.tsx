@@ -14,7 +14,7 @@ import FormError from './FormError'
 export default function Form() {
     const [formData, dispatch] = useReducer(reducer, initialState)
 
-    const [formPage, setFormPage] = useState(5)
+    const [formPage, setFormPage] = useState(1)
     const [selfieFile, setSelfieFile] = useState<File>()
     const [localSelfieSrc, setLocalSelfieSrc] = useState('')
     const [seintCartWanted, setSeintCartWanted] = useState(false)
