@@ -9,14 +9,16 @@ export default function FormDiv({
     lastPage,
     pageIndex,
     formPage,
-    setFormPage
+    setFormPage,
+    validateForm
 }: {
     children: ReactNode,
     firstPage?: boolean,
     lastPage?: boolean,
     pageIndex: number,
     formPage: number,
-    setFormPage: Dispatch<SetStateAction<number>>
+    setFormPage: Dispatch<SetStateAction<number>>,
+    validateForm?: () => void
 }) {
     const [style, setStyle] = useState(hiddenRight)
 
@@ -47,7 +49,7 @@ export default function FormDiv({
                     Next
                 </Button>}
 
-                {lastPage && <Button variant='solid'>
+                {lastPage && <Button variant='solid' onClick={validateForm}>
                     Submit
                 </Button>}
 

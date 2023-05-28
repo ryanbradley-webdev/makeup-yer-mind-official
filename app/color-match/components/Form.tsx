@@ -25,6 +25,40 @@ export default function Form() {
         setLocalSelfieSrc(imgSrc)
     }
 
+    const handleSeintCartChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.checked) {
+            if (e.target.value === 'yes') {
+                setSeintCartWanted(true)
+            }
+
+            if (e.target.value === 'no') {
+                setSeintCartWanted(false)
+            }
+        }
+    }
+
+    const validateForm = () => {
+        if (!formData.firstName || !formData.lastName || !formData.email) {
+            return setFormPage(1)
+        }
+
+        if (!formData.referral || !formData.veinColor) {
+            return setFormPage(2)
+        }
+
+        if (!formData.coverage) {
+            return setFormPage(3)
+        }
+
+        if (!selfieFile) {
+            return setFormPage(5)
+        }
+
+        if (seintCartWanted && (!formData.address || !formData.phone)) {
+            return setFormPage(6)
+        }
+    }
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
     }
@@ -156,6 +190,7 @@ export default function Form() {
                     onChange={e => dispatch({ type: 'change-coverage', payload: e.target.value })}
                     placeholder='Tell me all about it here!'
                     value={formData.coverage}
+                    required
                 ></textarea>
 
             </FormDiv>
@@ -215,7 +250,8 @@ export default function Form() {
                             name='seintCart'
                             id='yes'
                             value='yes'
-                            onChange={() => setSeintCartWanted(true)}
+                            onChange={handleSeintCartChange}
+                            checked={seintCartWanted}
                             required
                             />
                         <span>Yes, please!</span>
@@ -226,7 +262,8 @@ export default function Form() {
                             name='seintCart'
                             id='no'
                             value='no'
-                            onChange={() => setSeintCartWanted(false)}
+                            onChange={handleSeintCartChange}
+                            checked={!seintCartWanted}
                             required
                             />
                         <span>No thank you.</span>
@@ -280,6 +317,7 @@ export default function Form() {
                 setFormPage={setFormPage}
                 pageIndex={7}
                 lastPage
+                validateForm={validateForm}
             >
 
                 <p>
