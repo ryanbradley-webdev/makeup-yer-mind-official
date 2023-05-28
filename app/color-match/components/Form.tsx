@@ -196,7 +196,7 @@ export default function Form() {
                         <span>Blue</span>
                     </label>
 
-                    <label htmlFor="vein-color">
+                    <label htmlFor="both">
                         <input 
                             type="radio"
                             name="vein-color"
