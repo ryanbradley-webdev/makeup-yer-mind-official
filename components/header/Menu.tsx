@@ -8,6 +8,7 @@ import Instagram from '../icons/Instagram'
 import Pinterest from '../icons/Pinterest'
 import Facebook from '../icons/Facebook'
 import Email from '../icons/Email'
+import Button from '../Button'
 
 export default function Menu({
     isVisible,
@@ -36,24 +37,28 @@ export default function Menu({
 
             <ul>
 
-                <Link href='/' onClick={toggleMenu} style={localStyle.link}>
+                <Link href='/' onClick={toggleMenu}>
                     Home
                 </Link>
 
-                <Link href='/about' onClick={toggleMenu} style={localStyle.link}>
+                <Link href='/about' onClick={toggleMenu}>
                     About
                 </Link>
 
-                <Link href='/blogs' onClick={toggleMenu} style={localStyle.link}>
+                <Link href='/blogs' onClick={toggleMenu}>
                     Blogs
                 </Link>
 
-                <Link href='/looks' onClick={toggleMenu} style={localStyle.link}>
+                <Link href='/looks' onClick={toggleMenu}>
                     Looks
                 </Link>
 
-                <Link href='/affiliates' onClick={toggleMenu} style={localStyle.link}>
+                <Link href='/affiliates' onClick={toggleMenu}>
                     Affiliates
+                </Link>
+
+                <Link href='/color-match' onClick={toggleMenu}>
+                    Get Color Matched!
                 </Link>
 
             </ul>
