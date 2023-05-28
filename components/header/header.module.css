@@ -108,6 +108,42 @@
     padding-top: 72px;
 }
 
+.menu ul a {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.menu ul a:first-child {
+    transition-delay: 0.1s;
+}
+
+.menu ul a:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.menu ul a:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.menu ul a:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.menu ul a:last-child {
+    transition-delay: 0.5s;
+}
+
+@keyframes nav-fade {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .menu a {
     text-decoration: none;
     color: var(--color-white-sec);

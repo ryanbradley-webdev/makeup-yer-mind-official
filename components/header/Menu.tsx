@@ -18,6 +18,13 @@ export default function Menu({
 }) {
     const [menuVisible, setMenuVisible] = useState(false)
 
+    const localStyle = {
+        link: menuVisible ? {
+            transform: 'translateX(0)',
+            opacity: '1'
+        } : {}
+    }
+
     useEffect(() => {
         if (window.innerWidth <= 480) {
             setMenuVisible(isVisible)
@@ -29,23 +36,23 @@ export default function Menu({
 
             <ul>
 
-                <Link href='/' onClick={toggleMenu}>
+                <Link href='/' onClick={toggleMenu} style={localStyle.link}>
                     Home
                 </Link>
 
-                <Link href='/about' onClick={toggleMenu}>
+                <Link href='/about' onClick={toggleMenu} style={localStyle.link}>
                     About
                 </Link>
 
-                <Link href='/blogs' onClick={toggleMenu}>
+                <Link href='/blogs' onClick={toggleMenu} style={localStyle.link}>
                     Blogs
                 </Link>
 
-                <Link href='/looks' onClick={toggleMenu}>
+                <Link href='/looks' onClick={toggleMenu} style={localStyle.link}>
                     Looks
                 </Link>
 
-                <Link href='/affiliates' onClick={toggleMenu}>
+                <Link href='/affiliates' onClick={toggleMenu} style={localStyle.link}>
                     Affiliates
                 </Link>
 
