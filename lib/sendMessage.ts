@@ -3,7 +3,7 @@ import { collection, addDoc, DocumentReference, FieldValue } from "firebase/fire
 
 export type quickMessage = {
     name: string,
-    message: string,
+    content: string,
     read: boolean,
     sentAt: FieldValue
 }

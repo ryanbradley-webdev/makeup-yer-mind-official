@@ -22,14 +22,14 @@ export default function ContactForm() {
 
         const msgData: quickMessage = {
             name: '',
-            message: '',
+            content: '',
             read: false,
             sentAt: serverTimestamp()
         }
 
         if (nameRef?.current && messageRef?.current) {
             msgData.name = nameRef.current.value
-            msgData.message = messageRef.current.value
+            msgData.content = messageRef.current.value
         } else {
             return
         }
