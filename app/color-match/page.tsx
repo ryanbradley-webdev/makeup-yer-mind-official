@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ColorMatch() {
     return (
-        <main>
+        <main className={styles.main}>
             
             <h1>
                 Well Hello Gorgeous!!

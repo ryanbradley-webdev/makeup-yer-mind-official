@@ -1,7 +1,16 @@
+.main {
+    padding-inline: 16px;
+}
+
+.main p {
+    font-size: 12px;
+    color: var(--color-white-sec);
+    line-height: 1.6;
+}
+
 .form {
     position: relative;
     margin-top: 24px;
-    margin-inline: 16px;
     height: 100vh;
     overflow: hidden;
 }
@@ -17,22 +26,42 @@
     transition: all 0.5s ease-in-out;
 }
 
-.formDiv label {
+.formDiv > label {
     display: flex;
     flex-direction: column;
     width: calc(100vw - 32px);
+    margin-bottom: 12px;
 }
 
 .formDiv input:not([type="radio"]) {
     width: 100%;
 }
 
+.formDiv span {
+    margin-bottom: 12px;
+}
+
+.radioDiv span {
+    margin-bottom: 0;
+}
+
 .img_container {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: calc(100vw - 32px);
-    object-fit: contain;
+    height: 400px;
+    width: 100%;
+    background-color: #222;
+    border-radius: 8px;
+    border: 1px solid var(--color-white-ter);
+    background-image: url('/silhouette.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.img_container:is(:hover, :focus) {
+    outline: none;
+    background-color: var(--color-grey);
 }
 
 .img_container img {
@@ -46,14 +75,30 @@
     row-gap: 6px;
 }
 
+.radioDiv > p {
+    margin-block: 6px;
+}
+
 .radioDiv label {
+    display: flex;
     flex-direction: row;
+    gap: 16px;
+    height: fit-content;
     padding: 8px;
     border-radius: 4px;
     border: 1px solid var(--color-white-ter);
 }
 
+.selfie {
+    display: block;
+}
+
+.selfie input {
+    display: none;
+}
+
 .btnDiv {
+    margin-top: 24px;
     height: fit-content;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

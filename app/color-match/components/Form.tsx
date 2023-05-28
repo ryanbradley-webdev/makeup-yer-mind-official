@@ -14,7 +14,7 @@ import FormError from './FormError'
 export default function Form() {
     const [formData, dispatch] = useReducer(reducer, initialState)
 
-    const [formPage, setFormPage] = useState(1)
+    const [formPage, setFormPage] = useState(5)
     const [selfieFile, setSelfieFile] = useState<File>()
     const [localSelfieSrc, setLocalSelfieSrc] = useState('')
     const [seintCartWanted, setSeintCartWanted] = useState(false)
@@ -254,8 +254,11 @@ export default function Form() {
                 setFormPage={setFormPage}
                 pageIndex={5}
             >
-                <label htmlFor="selfie">
-                    <span>Upload Photo</span>
+                <label
+                    htmlFor="selfie"
+                    className={styles.selfie}
+                >
+                    <span>Upload Selfie</span>
                     <input
                         type="file"
                         name="selfie"
@@ -263,12 +266,13 @@ export default function Form() {
                         onChange={previewSelfie}
                         required
                     />
-                </label>
-                {localSelfieSrc && 
+                 
                     <div className={styles.img_container}>
-                        <Image src={localSelfieSrc} height={550} width={480} alt='' />
+                        {localSelfieSrc && <Image src={localSelfieSrc} height={550} width={480} alt='' />}
                     </div>
-                }
+
+                </label>
+                
             </FormDiv>
 
             <FormDiv
