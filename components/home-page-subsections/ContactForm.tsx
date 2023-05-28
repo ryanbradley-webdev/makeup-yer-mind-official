@@ -1,11 +1,55 @@
 'use client'
 
+import { useRef, useState } from 'react'
 import Button from '../Button'
 import styles from './section.module.css'
+import { quickMessage, sendMessage } from '@/lib/sendMessage'
+import { serverTimestamp } from 'firebase/firestore'
 
 export default function ContactForm() {
+    const [msgSending, setMsgSending] = useState(false)
+    const [msgSuccess, setMsgSuccess] = useState(false)
+    const [msgError, setMsgError] = useState(false)
+
+    const formRef = useRef<HTMLFormElement>(null)
+    const nameRef = useRef<HTMLInputElement>(null)
+    const messageRef = useRef<HTMLTextAreaElement>(null)
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+
+        setMsgSending(true)
+
+        const msgData: quickMessage = {
+            name: '',
+            message: '',
+            read: false,
+            sentAt: serverTimestamp()
+        }
+
+        if (nameRef?.current && messageRef?.current) {
+            msgData.name = nameRef.current.value
+            msgData.message = messageRef.current.value
+        } else {
+            return
+        }
+
+        sendMessage(msgData)
+            .then(res => {
+                setMsgSending(false)
+                if (res.id) {
+                    setMsgSuccess(true)
+                    setTimeout(() => {
+                        if (formRef?.current) formRef.current.reset()
+                        setMsgSuccess(false)
+                    }, 4000)
+                }
+            })
+            .catch(err => {
+                setMsgSending(false)
+                setMsgError(true)
+                console.log(err.message)
+            })
     }
 
     return (
@@ -17,7 +61,12 @@ export default function ContactForm() {
                 Send me a message to let me know what you want to see!
             </h5>
 
-            <form action="" onSubmit={handleSubmit} className={styles.form}>
+            <form
+                action=""
+                onSubmit={handleSubmit}
+                className={styles.form}
+                ref={formRef}
+            >
 
                 <label htmlFor="name">
 
@@ -25,7 +74,14 @@ export default function ContactForm() {
                         First Name
                     </span>
 
-                    <input type='text' id='name' name='name' placeholder='Please tell me your name!' required />
+                    <input
+                        type='text'
+                        id='name'
+                        name='name'
+                        placeholder='Please tell me your name!'
+                        ref={nameRef}
+                        required 
+                    />
 
                 </label>
 
@@ -35,12 +91,22 @@ export default function ContactForm() {
                         Message
                     </span>
 
-                    <textarea name="message" id="message" cols={30} rows={5} placeholder='Enter your message here!' required></textarea>
+                    <textarea
+                        name="message"
+                        id="message"
+                        cols={30}
+                        rows={5}
+                        placeholder='Enter your message here!'
+                        ref={messageRef}
+                        required
+                    ></textarea>
 
                 </label>
                 
-                <Button>
-                    Submit
+                <Button
+                    disabled={msgSending || msgSuccess}
+                >
+                    {msgError ? 'Retry' : 'Submit'}
                 </Button>
 
             </form>

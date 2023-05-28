@@ -3,13 +3,15 @@ import React from 'react'
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     children: string
     variant?: string
-    type?: 'submit' | 'reset' | 'button'
+    type?: 'submit' | 'reset' | 'button',
+    disabled?: boolean
 }
 
 export default function Button({
     children,
     variant,
     type,
+    disabled,
     ...props
 }: ButtonProps) {
     const generateClassName = () => {
@@ -23,7 +25,12 @@ export default function Button({
     }
 
     return (
-        <button className={ `button ${generateClassName()}` } type={type} {...props}>
+        <button
+            className={ `button ${generateClassName()}` } 
+            type={type}
+            disabled={disabled}
+            {...props}
+        >
             {children}
         </button>
     )
