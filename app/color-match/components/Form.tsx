@@ -10,6 +10,19 @@ export default function Form() {
     const [formData, dispatch] = useReducer(reducer, initialState)
 
     const [formPage, setFormPage] = useState(1)
+    const [selfieFile, setSelfieFile] = useState<File>()
+    const [localSelfieSrc, setLocalSelfieSrc] = useState('')
+
+    const previewSelfie = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const images = e.target.files
+        if (!images || images.length === 0) return
+
+        const newFile = images[images.length - 1]
+        const imgSrc = URL.createObjectURL(newFile)
+
+        setSelfieFile(newFile)
+        setLocalSelfieSrc(imgSrc)
+    }
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
@@ -156,14 +169,38 @@ export default function Form() {
                     Okay gorgeous, I just need a makeup free selfie! This is so important for me to accurately match you. I know that sending a makeup-free selfie can be intimidating, please know that I am the only one who will see it and I will delete it as soon as I&apos;m done matching you! Follow the instructions below to submit a perfect selfie!
                 </p>
 
-                <Image src='/selfie-how-to.png' width={480} height={540} alt='' />
+                <div className={styles.img_container}>
+                    <Image src='/selfie-how-to.png' width={480} height={540} alt='' />
+                </div>
 
             </FormDiv>
 
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={5} // FIXME this value is for testing 'last page' functionality. Change to actual value when more content is added.
+                pageIndex={5}
+            >
+                <label htmlFor="selfie">
+                    <span>Upload Photo</span>
+                    <input
+                        type="file"
+                        name="selfie"
+                        id="selfie"
+                        onChange={previewSelfie}
+                        required
+                    />
+                </label>
+                {localSelfieSrc && 
+                    <div className={styles.img_container}>
+                        <Image src={localSelfieSrc} height={550} width={480} alt='' />
+                    </div>
+                }
+            </FormDiv>
+
+            <FormDiv
+                formPage={formPage}
+                setFormPage={setFormPage}
+                pageIndex={6} // FIXME this value is for testing 'last page' functionality. Change to actual value when more content is added.
                 lastPage
             >
 

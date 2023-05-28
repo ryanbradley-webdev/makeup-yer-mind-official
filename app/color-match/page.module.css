@@ -2,7 +2,7 @@
     position: relative;
     margin-top: 24px;
     margin-inline: 16px;
-    height: 60vh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -20,12 +20,25 @@
 .formDiv label {
     display: flex;
     flex-direction: column;
+    width: calc(100vw - 32px);
 }
 
-.formDiv img {
+.formDiv input {
+    width: 100%;
+}
+
+.img_container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: calc(100vw - 32px);
+    object-fit: contain;
+}
+
+.img_container img {
     height: 100%;
     width: auto;
-    margin-inline: auto;
+    object-fit: contain;
 }
 
 .radioDiv {
