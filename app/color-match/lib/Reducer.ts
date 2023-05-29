@@ -6,7 +6,7 @@ export type ColorMatchFormData = {
     veinColor: string,
     coverage: string,
     selfie: string,
-    customCart: string,
+    customCart: boolean,
     address?: string,
     phone?: string,
     read: boolean,
@@ -15,7 +15,7 @@ export type ColorMatchFormData = {
 
 export type Action = {
     type: string,
-    payload: string
+    payload: string | boolean
 }
 
 export const initialState: ColorMatchFormData = {
@@ -26,7 +26,7 @@ export const initialState: ColorMatchFormData = {
     veinColor: '',
     coverage: '',
     selfie: '',
-    customCart: '',
+    customCart: false,
     address: '',
     phone: '',
     read: false,

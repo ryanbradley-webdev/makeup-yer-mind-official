@@ -1,7 +1,7 @@
 'use client'
 
-import { useReducer, useRef, useState } from 'react'
-import { reducer, initialState } from '../lib/Reducer'
+import { Reducer, useEffect, useReducer, useRef, useState } from 'react'
+import { reducer, initialState, Action } from '../lib/Reducer'
 import styles from '../page.module.css'
 import FormDiv from './FormDiv'
 import Image from 'next/image'
@@ -12,7 +12,7 @@ import FormSuccess from './FormSuccess'
 import FormError from './FormError'
 
 export default function Form() {
-    const [formData, dispatch] = useReducer(reducer, initialState)
+    const [formData, dispatch] = useReducer<Reducer<any, Action>>(reducer, initialState)
 
     const [formPage, setFormPage] = useState(1)
     const [selfieFile, setSelfieFile] = useState<File>()
@@ -95,6 +95,10 @@ export default function Form() {
             setFormError(true)
         }
     }
+
+    useEffect(() => {
+        dispatch({ type: 'change-cart', payload: seintCartWanted })
+    }, [seintCartWanted])
 
     return (
         <form
