@@ -8,6 +8,7 @@ import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 import ColorBtn from './components/ColorBtn'
 import { v4 as uuid } from 'uuid'
 import styles from './page.module.css'
+import CommentForm from '@/components/CommentForm'
 
 type Params = {
     params: { slug: string }
@@ -22,7 +23,8 @@ export async function generateMetadata(
     const look = await getLookBySlug(slug)
 
     return {
-        title: look?.title || 'Look not found'
+        title: look?.title || 'Look not found',
+        description: look?.description || 'Look not found'
     }
 }
 
@@ -41,6 +43,7 @@ export default async function LookBySlug({ params }: Params) {
     }
 
     const {
+        id,
         title,
         description,
         image1,
@@ -50,7 +53,6 @@ export default async function LookBySlug({ params }: Params) {
         colors,
         tags,
         content,
-        comments,
         likes
     } = look
 
@@ -95,6 +97,25 @@ export default async function LookBySlug({ params }: Params) {
 
             </section>
 
+            <section className={styles.comments}>
+
+                <h4>
+                    Comments:
+                </h4>
+
+                <CommentForm route='looks' docId={id} className={styles.form} />
+
+                {/*
+                    comments.length > 0 ?
+
+                    comments.map(comment => <p key={uuid()}>{comment.content}</p>) :
+
+                    <p>
+                        Be the first to comment!
+                    </p>
+                    */}
+
+            </section>
 
         </main>
     )

@@ -9,7 +9,6 @@ type Blog = {
     updatedAt?: TimeStamp,
     content: string,
     type: string,
-    comments: string[],
     likes: number
 }
 
@@ -25,8 +24,13 @@ type Look = {
     createdAt: TimeStamp,
     updatedAt?: TimeStamp,
     content: string,
-    comments: string[],
     likes: number
+}
+
+type UserComment = {
+    comment: string,
+    createdAt: FieldValue,
+    articleId: string
 }
 
 type Color = {
