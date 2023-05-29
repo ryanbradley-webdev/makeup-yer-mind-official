@@ -98,7 +98,7 @@ export default async function LookBySlug({ params }: Params) {
 
             </section>
 
-            <Comments id={id} className={styles.comments_section} />
+            <Comments id={id} />
 
         </main>
     )

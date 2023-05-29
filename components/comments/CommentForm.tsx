@@ -2,6 +2,7 @@
 
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react"
 import Button from "../Button"
+import styles from './comments.module.css'
 
 export default function CommentForm({
     docId,
@@ -66,16 +67,21 @@ export default function CommentForm({
     }, [commentSending, commentSuccess, commentError])
 
     return (
-        <form action='' onSubmit={handleSubmit}ref={formRef}>
+        <form
+            action=''
+            onSubmit={handleSubmit}
+            ref={formRef}
+            className={styles.form}
+        >
 
             <label htmlFor="comment">
-                <span>Add to the conversation!</span>
                 <input
                     type="text"
                     name="comment"
                     id="comment"
                     ref={commentRef}
                     disabled={commentSuccess}
+                    placeholder="Add to the conversation!"
                     required
                 />
             </label>

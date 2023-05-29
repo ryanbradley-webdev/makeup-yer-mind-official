@@ -1,0 +1,44 @@
+.section {
+    padding-inline: 16px;
+    margin-block: 48px;
+}
+
+.section h4 {
+    color: var(--color-white-sec);
+    text-align: center;
+}
+
+.form {
+    margin-block: 16px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.comment_container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-block: 48px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--color-grey)
+}
+
+.comment span:last-child,
+.comment span:last-child * {
+    color: var(--color-white-ter);
+    font-style: italic;
+    font-weight: 200;
+    text-align: right;
+}

@@ -8,6 +8,7 @@ import rehypeRaw from 'rehype-raw';
 import Signoff from '@/components/Signoff';
 import { getAllBlogs } from '@/lib/getAllBlogs';
 import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
+import Comments from '@/components/comments/Comments';
 
 type Params = {
     params: { slug: string }
@@ -51,6 +52,7 @@ export default async function BlogBySlug({ params }: Params) {
     }
 
     const {
+        id,
         title,
         description,
         image,
@@ -91,6 +93,8 @@ export default async function BlogBySlug({ params }: Params) {
                 <Signoff />
                 
             </section>
+
+            <Comments id={id} />
 
         </main>
     )

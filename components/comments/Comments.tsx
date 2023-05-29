@@ -4,14 +4,10 @@ import { getCommentsById } from '@/lib/getCommentsById'
 import CommentForm from './CommentForm'
 import { v4 as uuid } from 'uuid'
 import { useEffect, useState } from 'react'
+import styles from './comments.module.css'
+import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 
-export default function Comments({
-    id,
-    className,
-}: {
-    id: string,
-    className: string
-}) {
+export default function Comments({ id }: { id: string }) {
     const [comments, setComments] = useState<UserComment[]>([])
     const [addingComment, setAddingComment] = useState(false)
 
@@ -26,23 +22,32 @@ export default function Comments({
     }, [id, addingComment])
 
     return (
-        <section className={className}>
+        <section className={styles.section}>
 
             <h4>
-                Comments:
+                Comments
             </h4>
 
             <CommentForm docId={id} setAddingComment={setAddingComment} />
 
-            {
-                comments.length > 0 ?
+            <div className={styles.comment_container}>
 
-                comments.map(comment => <p key={uuid()}>{comment.comment}</p>) :
+                {
+                    comments.length > 0 ?
 
-                <p>
-                    Be the first to comment!
-                </p>
-            }
+                    comments.map(comment => (
+                        <div key={uuid()} className={styles.comment}>
+                            <span>{comment.comment}</span>
+                            <span>{convertServerTimestamp(comment.createdAt, undefined)}</span>
+                        </div>
+                    )) :
+
+                    <p>
+                        Be the first to comment!
+                    </p>
+                }
+
+            </div>
 
         </section>
     )
