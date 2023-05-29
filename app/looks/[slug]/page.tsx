@@ -8,7 +8,8 @@ import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 import ColorBtn from './components/ColorBtn'
 import { v4 as uuid } from 'uuid'
 import styles from './page.module.css'
-import CommentForm from '@/components/CommentForm'
+import Comments from '@/components/comments/Comments'
+import { Suspense } from 'react'
 
 type Params = {
     params: { slug: string }
@@ -97,25 +98,7 @@ export default async function LookBySlug({ params }: Params) {
 
             </section>
 
-            <section className={styles.comments}>
-
-                <h4>
-                    Comments:
-                </h4>
-
-                <CommentForm route='looks' docId={id} className={styles.form} />
-
-                {/*
-                    comments.length > 0 ?
-
-                    comments.map(comment => <p key={uuid()}>{comment.content}</p>) :
-
-                    <p>
-                        Be the first to comment!
-                    </p>
-                    */}
-
-            </section>
+            <Comments id={id} className={styles.comments_section} />
 
         </main>
     )

@@ -1,16 +1,14 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react"
-import Button from "./Button"
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react"
+import Button from "../Button"
 
 export default function CommentForm({
-    route,
     docId,
-    className
+    setAddingComment
 }: {
-    route: string,
     docId: string,
-    className: string
+    setAddingComment: Dispatch<SetStateAction<boolean>>
 }) {
 
     const [commentSending, setCommentSending] = useState(false)
@@ -26,6 +24,7 @@ export default function CommentForm({
 
         if (!commentRef?.current?.value) return
 
+        setAddingComment(true)
         setCommentError(false)
         setCommentSending(true)
 
@@ -39,6 +38,7 @@ export default function CommentForm({
                 })
             })
 
+            setAddingComment(false)
             setCommentSending(false)
 
             if (res.ok) {
@@ -66,7 +66,7 @@ export default function CommentForm({
     }, [commentSending, commentSuccess, commentError])
 
     return (
-        <form action='' onSubmit={handleSubmit} className={className} ref={formRef}>
+        <form action='' onSubmit={handleSubmit}ref={formRef}>
 
             <label htmlFor="comment">
                 <span>Add to the conversation!</span>
@@ -75,6 +75,7 @@ export default function CommentForm({
                     name="comment"
                     id="comment"
                     ref={commentRef}
+                    disabled={commentSuccess}
                     required
                 />
             </label>

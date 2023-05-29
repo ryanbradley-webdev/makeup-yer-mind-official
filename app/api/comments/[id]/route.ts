@@ -8,36 +8,6 @@ type Params = {
     }
 }
 
-export async function GET(request: Request, { params }: Params) {
-    const { id } = params
-
-    try {
-        const commentsRef = collection(firestore, 'comments')
-
-        const q = query(commentsRef, where('article-id', '==', id))
-        
-        const comments: UserComment[] = []
-
-        const commentDocs = await getDocs(q)
-
-        commentDocs.forEach(doc => {
-            comments.push(doc.data() as UserComment)
-        })
-
-        comments.sort((a: UserComment, b: UserComment) => {
-            return b.createdAt.seconds - a.createdAt.seconds
-        })
-        
-        return NextResponse.json({
-            comments
-        }, {
-            status: 200
-        })
-    } catch (err) {
-        return NextResponse.error()
-    }
-}
-
 export async function POST(request: Request, { params }: Params) {
     const { id } = params
     const { newComment }: { newComment: string } = await request.json()
