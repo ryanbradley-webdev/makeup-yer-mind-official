@@ -1,21 +1,26 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from '../page.module.css'
 import Button from '@/components/Button'
 
 export default function Form() {
+    const [btnMsg, setBtnMsg] = useState('Submit')
     const [messageSending, setMessageSending] = useState(false)
-    const [messageSent, setMessageSent] = useState(false)
+    const [messageSuccess, setMessageSuccess] = useState(false)
     const [messageError, setMessageError] = useState(false)
 
+    const formRef = useRef<HTMLFormElement>(null)
     const nameRef = useRef<HTMLInputElement>(null)
     const emailRef = useRef<HTMLInputElement>(null)
     const subjectRef = useRef<HTMLInputElement>(null)
     const messageRef = useRef<HTMLTextAreaElement>(null)
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+
+        setMessageError(false)
+        setMessageSending(true)
 
         const formData = {
             name: nameRef?.current?.value,
@@ -28,11 +33,43 @@ export default function Form() {
             if (!field) return setMessageError(true)
         }
 
-        // TODO add API call for message submission
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                body: JSON.stringify(formData)
+            })
+
+            setMessageSending(false)
+
+            if (res.status === 202) {
+                setMessageSuccess(true)
+                setTimeout(() => {
+                    setMessageSuccess(false)
+                    if (formRef?.current) formRef.current.reset()
+                }, 4000)
+            } else {
+                setMessageError(true)
+            }
+        } catch {
+            setMessageSending(false)
+            setMessageError(true)
+        }
     }
 
+    useEffect(() => {
+        if (messageSending) {
+            setBtnMsg('Sending Message...')
+        } else if (messageSuccess) {
+            setBtnMsg('Message Sent!')
+        } else if (messageError) {
+            setBtnMsg('Something went wrong. Retry?')
+        } else {
+            setBtnMsg('Submit')
+        }
+    }, [messageSending, messageSuccess, messageError])
+
     return (
-        <form action="" onSubmit={handleSubmit} className={styles.form}>
+        <form action="" onSubmit={handleSubmit} className={styles.form} ref={formRef}>
 
             <label htmlFor="name">
                 <span>Name</span>
@@ -55,7 +92,7 @@ export default function Form() {
             </label>
 
             <Button itemType='submit'>
-                Submit
+                {btnMsg}
             </Button>
 
         </form>
