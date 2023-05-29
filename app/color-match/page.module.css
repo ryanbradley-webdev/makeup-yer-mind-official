@@ -45,9 +45,14 @@
     margin-bottom: 0;
 }
 
-.img_container {
+.img_container,
+.img_container_selfie {
     height: 400px;
     width: 100%;
+    cursor: pointer;
+}
+
+.img_container_selfie {
     background-color: #222;
     border-radius: 8px;
     border: 1px solid var(--color-white-ter);
@@ -55,8 +60,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    object-fit: cover;
-    cursor: pointer;
+    overflow: hidden;
 }
 
 .img_container:is(:hover, :focus) {
@@ -64,10 +68,14 @@
     background-color: var(--color-grey);
 }
 
-.img_container img {
+.img_container img,
+.img_container_selfie img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+}
+
+.img_container_selfie img {
+    object-fit: cover;
 }
 
 .radioDiv {

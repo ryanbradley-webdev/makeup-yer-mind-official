@@ -49,23 +49,23 @@ export default function Form() {
 
     const validateForm = () => {
         if (!formData.firstName || !formData.lastName || !formData.email) {
-            return setFormPage(1)
-        }
-
-        if (!formData.referral || !formData.veinColor) {
             return setFormPage(2)
         }
 
-        if (!formData.coverage) {
+        if (!formData.referral || !formData.veinColor) {
             return setFormPage(3)
         }
 
+        if (!formData.coverage) {
+            return setFormPage(4)
+        }
+
         if (!selfieFile) {
-            return setFormPage(5)
+            return setFormPage(6)
         }
 
         if (seintCartWanted && (!formData.address || !formData.phone)) {
-            return setFormPage(6)
+            return setFormPage(7)
         }
     }
 
@@ -114,6 +114,22 @@ export default function Form() {
                 setFormPage={setFormPage}
                 pageIndex={1}
             >
+            
+                <h1>
+                    Well Hello Gorgeous!!
+                </h1>
+
+                <p>
+                    So you&apos;re interested in getting a free color match for Seint Makeup? Yay! I&apos;m so excited! I can&apos;t wait to match you to your perfect colors! I just need a few things from you to get started.
+                </p>
+
+            </FormDiv>
+
+            <FormDiv
+                formPage={formPage}
+                setFormPage={setFormPage}
+                pageIndex={2}
+            >
 
                 <label htmlFor="firstName">
                     <span>First Name</span>
@@ -159,7 +175,7 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={2}
+                pageIndex={3}
             >
 
                 <label htmlFor="referral">
@@ -217,7 +233,7 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={3}
+                pageIndex={4}
             >
 
                 <p>
@@ -240,7 +256,7 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={4}
+                pageIndex={5}
             >
 
                 <p>
@@ -256,7 +272,7 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={5}
+                pageIndex={6}
             >
                 <label
                     htmlFor="selfie"
@@ -271,7 +287,7 @@ export default function Form() {
                         required
                     />
                  
-                    <div className={styles.img_container}>
+                    <div className={styles.img_container_selfie}>
                         {localSelfieSrc && <Image src={localSelfieSrc} height={550} width={480} alt='' />}
                     </div>
 
@@ -282,7 +298,7 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={6}
+                pageIndex={7}
             >
 
                 <p>
@@ -361,7 +377,7 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={7}
+                pageIndex={8}
                 lastPage
                 validateForm={validateForm}
             >
@@ -375,7 +391,7 @@ export default function Form() {
             <FormDiv
                 formPage={formPage}
                 setFormPage={setFormPage}
-                pageIndex={8}
+                pageIndex={9}
                 formSubmitting={formSubmitting}
                 formSuccess={formSuccess}
                 formError={formError}
