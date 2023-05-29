@@ -57,7 +57,6 @@ export default async function BlogBySlug({ params }: Params) {
         createdAt,
         updatedAt,
         content,
-        comments,
         likes
     } = blog
 
