@@ -1,11 +1,13 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import styles from './page.module.css'
 import { getLookBySlug } from '@/lib/getLookBySlug'
 import { Metadata } from 'next/types'
 import { getAllLooks } from '@/lib/getAllLooks'
 import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
+import ColorBtn from './components/ColorBtn'
+import { v4 as uuid } from 'uuid'
+import styles from './page.module.css'
 
 type Params = {
     params: { slug: string }
@@ -57,6 +59,10 @@ export default async function LookBySlug({ params }: Params) {
             
             <section className={styles.header}>
 
+                <h1>
+                    {title}
+                </h1>
+
                 <div className={styles.img_container}>
 
                     <Image src={image1} height={646} width={550} alt='' />
@@ -65,13 +71,17 @@ export default async function LookBySlug({ params }: Params) {
 
                 </div>
 
-                <h1>
-                    {title}
-                </h1>
-
                 <h3>
                     {description}
                 </h3>
+
+                <div className={styles.color_div}>
+
+                    {colors.map(color => (
+                        <ColorBtn color={color} key={uuid()} />
+                    ))}
+
+                </div>
 
                 {convertServerTimestamp(createdAt, updatedAt)}
 
