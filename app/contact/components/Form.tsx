@@ -43,9 +43,9 @@ export default function Form() {
 
             if (res.status === 202) {
                 setMessageSuccess(true)
+                if (formRef?.current) formRef.current.reset()
                 setTimeout(() => {
                     setMessageSuccess(false)
-                    if (formRef?.current) formRef.current.reset()
                 }, 4000)
             } else {
                 setMessageError(true)
