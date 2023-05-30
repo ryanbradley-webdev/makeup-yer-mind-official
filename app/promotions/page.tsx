@@ -1,4 +1,9 @@
+import { Suspense } from 'react'
+import ActivePromos from './components/ActivePromos'
 import styles from './page.module.css'
+import PastPromos from './components/PastPromos'
+
+export const revalidate = 60 // FIXME update revalidate variable for production
 
 export default function Promotions() {
     return (
@@ -10,7 +15,10 @@ export default function Promotions() {
 
             <section>
 
-                List of active promotions
+                <Suspense fallback={<p>Loading...</p>}>
+                    {/* @ts-expect-error Async Server Component */}
+                    <ActivePromos />
+                </Suspense>
 
             </section>
 
@@ -20,7 +28,10 @@ export default function Promotions() {
 
             <section>
 
-                List of past promotions
+                <Suspense fallback={<p>Loading...</p>}>
+                    {/* @ts-expect-error Async Server Component */}
+                    <PastPromos />
+                </Suspense>
 
             </section>
 

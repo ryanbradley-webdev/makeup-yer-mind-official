@@ -9,6 +9,7 @@
   --color-blue-link: #6eaedc;
   --color-background-main: #121212;
   --color-background-card: #12121266;
+  --padding-inline-main: 16px;
 }
 
 *,
@@ -43,6 +44,10 @@ main {
   position: relative;
   flex-grow: 1;
   padding-top: 72px;
+}
+
+section {
+  padding-inline: var(--padding-inline-main);
 }
 
 h1 {

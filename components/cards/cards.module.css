@@ -28,14 +28,16 @@
     color: #E71313;
 }
 
-.card_info h5 {
+.card_info h5,
+.promo h5 {
     font-size: 24px;
     font-weight: 400;
     letter-spacing: 0.03em;
     color: var(--color-white-pri)
 }
 
-.card_info h6 {
+.card_info h6,
+.promo h6 {
     color: var(--color-white-sec);
     font-weight: 300;
 }
@@ -66,16 +68,13 @@
 .blog h5,
 .blog h6,
 .look h5,
-.look h6,
-.promo h5,
-.promo h6 {
+.look h6 {
     margin-left: 4px;
     text-decoration: inherit;
 }
 
 .blog h5,
-.look h5,
-.promo h5 {
+.look h5 {
     font-size: 16px;
     margin-bottom: 4px;
     color: var(--color-white-sec);
