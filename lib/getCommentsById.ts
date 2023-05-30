@@ -1,5 +1,6 @@
 import { firestore } from "@/util/firebase"
 import { collection, getDocs, query, where } from "firebase/firestore"
+import { dataIsComment } from "./typeCheck"
 
 export const getCommentsById = async ( id: string ) => {
     try {
@@ -12,7 +13,11 @@ export const getCommentsById = async ( id: string ) => {
         const commentDocs = await getDocs(q)
 
         commentDocs.forEach(doc => {
-            comments.push(doc.data() as UserComment)
+            const docData = doc.data()
+
+            if (dataIsComment(docData)) {
+                comments.push(docData)
+            }
         })
 
         comments.sort((a: UserComment, b: UserComment) => {

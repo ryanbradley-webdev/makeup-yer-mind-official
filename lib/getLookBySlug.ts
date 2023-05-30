@@ -1,5 +1,6 @@
-import { firestore } from "@/util/firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { firestore } from "@/util/firebase"
+import { collection, query, where, getDocs } from "firebase/firestore"
+import { dataIsLook } from "./typeCheck"
 
 export async function getLookBySlug(slug: string) {
     const looksRef = collection(firestore, 'looks')
@@ -10,8 +11,8 @@ export async function getLookBySlug(slug: string) {
 
     const look = lookSnap.docs[0].data()
     
-    if (look) {
-        return look as Look
+    if (look && dataIsLook(look)) {
+        return look
     } else {
         return null
     }

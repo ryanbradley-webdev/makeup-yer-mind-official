@@ -1,5 +1,6 @@
 import { firestore } from "@/util/firebase";
 import { getDocs, collection, where, query } from "firebase/firestore";
+import { dataIsBlog } from "./typeCheck";
 
 export async function getBlogBySlug(slug: string) {
     const blogsRef = collection(firestore, 'blogs')
@@ -10,8 +11,8 @@ export async function getBlogBySlug(slug: string) {
 
     const blog = blogSnap.docs[0].data()
     
-    if (blog) {
-        return blog as Blog
+    if (blog && dataIsBlog(blog)) {
+        return blog
     } else {
         return null
     }

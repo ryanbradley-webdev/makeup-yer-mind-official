@@ -1,5 +1,6 @@
 import { firestore } from "@/util/firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { dataIsLook } from "./typeCheck";
 
 export async function getAllLooks() {
     const looskRef = collection(firestore, 'looks')
@@ -9,7 +10,11 @@ export async function getAllLooks() {
     const looks: Look[] = []
 
     looksSnap.forEach(doc => {
-        looks.push(doc.data() as Look)
+        const docData = doc.data()
+
+        if (dataIsLook(docData)) {
+            looks.push(docData)
+        }
     })
 
     return looks

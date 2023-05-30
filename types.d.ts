@@ -9,7 +9,8 @@ type Blog = {
     updatedAt?: TimeStamp,
     content: string,
     type: string,
-    likes: number
+    likes: number,
+    docType: 'blog'
 }
 
 type Look = {
@@ -24,7 +25,8 @@ type Look = {
     createdAt: TimeStamp,
     updatedAt?: TimeStamp,
     content: string,
-    likes: number
+    likes: number,
+    docType: 'look'
 }
 
 type Promo = {
@@ -33,13 +35,16 @@ type Promo = {
     image: string,
     title: string,
     description: string,
-    link: string
+    link: string,
+    active: boolean,
+    docType: 'promotion'
 }
 
 type UserComment = {
     comment: string,
     createdAt: FieldValue,
-    articleId: string
+    articleId: string,
+    docType: 'comment'
 }
 
 type Color = {

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { firestore } from '@/util/firebase'
-import { doc, serverTimestamp, addDoc, query, where, getDocs, collection } from 'firebase/firestore'
+import { serverTimestamp, addDoc, collection } from 'firebase/firestore'
 
 type Params = {
     params: {
@@ -26,7 +26,8 @@ export async function POST(request: Request, { params }: Params) {
         const commentDoc: UserComment = {
             comment: newComment,
             createdAt: serverTimestamp(),
-            articleId: id
+            articleId: id,
+            docType: 'comment'
         }
 
         const doc = await addDoc(commentsRef, commentDoc)

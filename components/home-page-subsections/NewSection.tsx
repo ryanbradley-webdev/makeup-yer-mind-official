@@ -12,7 +12,9 @@ const SAMPLE_PROMO: Promo = {
     id: '1',
     slug: 'get-a-discount-on-your-seint-products',
     image: '/promo-placeholder.png',
-    link: '/'
+    link: '/',
+    docType: 'promotion',
+    active: true
 }
 
 export default async function NewSection() {
