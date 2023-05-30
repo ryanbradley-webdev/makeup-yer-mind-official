@@ -28,7 +28,11 @@ export default function Comments({ id }: { id: string }) {
                 Comments
             </h4>
 
-            <CommentForm docId={id} setAddingComment={setAddingComment} />
+            <CommentForm 
+                docId={id}
+                docCommentsNum={comments.length}
+                setAddingComment={setAddingComment}
+            />
 
             <div className={styles.comment_container}>
 

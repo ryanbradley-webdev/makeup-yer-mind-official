@@ -1,10 +1,45 @@
 import { NextResponse } from 'next/server'
 import { firestore } from '@/util/firebase'
-import { serverTimestamp, addDoc, collection } from 'firebase/firestore'
+import { serverTimestamp, addDoc, collection, doc, updateDoc } from 'firebase/firestore'
 
 type Params = {
     params: {
         id: string
+    }
+}
+
+export async function PATCH(request: Request, { params }: Params) {
+    const { id } = params
+    const { 
+        commentCount,
+        docType
+    }: { 
+        commentCount: string,
+        docType: string
+    } = await request.json()
+
+    if (Number(commentCount) < 0 || !commentCount || !docType) {
+        return NextResponse.json({
+            error: 'invalid parameters'
+        }, {
+            status: 400
+        })
+    }
+
+    try {
+        const docRef = doc(firestore, docType, id)
+
+        await updateDoc(docRef, {
+            comments: Number(commentCount) + 1
+        })
+
+        return NextResponse.json({
+            message: 'Comment count updated'
+        }, { 
+            status: 200 
+        })
+    } catch {
+        console.log('error')
     }
 }
 

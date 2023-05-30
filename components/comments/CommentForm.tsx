@@ -3,12 +3,15 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react"
 import Button from "../Button"
 import styles from './comments.module.css'
+import { getURLPath } from "@/lib/getURLPath"
 
 export default function CommentForm({
     docId,
+    docCommentsNum,
     setAddingComment
 }: {
     docId: string,
+    docCommentsNum: number
     setAddingComment: Dispatch<SetStateAction<boolean>>
 }) {
 
@@ -43,6 +46,17 @@ export default function CommentForm({
             setCommentSending(false)
 
             if (res.ok) {
+                const path = getURLPath()
+
+                if (path) {
+                    fetch(`/api/comments/${docId}`, {
+                        method: 'PATCH',
+                        body: JSON.stringify({
+                            commentCount: docCommentsNum,
+                            docType: path
+                        })
+                    })
+                }
                 setCommentSuccess(true)
                 if (formRef.current) formRef.current.reset()
             } else {
