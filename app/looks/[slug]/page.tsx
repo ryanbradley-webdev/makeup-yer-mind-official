@@ -9,7 +9,7 @@ import ColorBtn from './components/ColorBtn'
 import { v4 as uuid } from 'uuid'
 import styles from './page.module.css'
 import Comments from '@/components/comments/Comments'
-import { Suspense } from 'react'
+import SocialStats from '@/components/social-stats/SocialStats'
 
 type Params = {
     params: { slug: string }
@@ -54,7 +54,9 @@ export default async function LookBySlug({ params }: Params) {
         colors,
         tags,
         content,
-        likes
+        likes,
+        views,
+        docType
     } = look
 
     return (
@@ -65,6 +67,8 @@ export default async function LookBySlug({ params }: Params) {
                 <h1>
                     {title}
                 </h1>
+
+                {convertServerTimestamp(createdAt, updatedAt)}
 
                 <div className={styles.img_container}>
 
@@ -86,9 +90,15 @@ export default async function LookBySlug({ params }: Params) {
 
                 </div>
 
-                {convertServerTimestamp(createdAt, updatedAt)}
-
             </section>
+
+            <SocialStats
+                views={views}
+                docLikes={likes}
+                docIsLiked={false}
+                id={id}
+                docType={docType}
+            />
 
             <section className={styles.content}>
 

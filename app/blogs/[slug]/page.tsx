@@ -9,6 +9,7 @@ import Signoff from '@/components/Signoff';
 import { getAllBlogs } from '@/lib/getAllBlogs';
 import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 import Comments from '@/components/comments/Comments';
+import SocialStats from '@/components/social-stats/SocialStats';
 
 type Params = {
     params: { slug: string }
@@ -59,7 +60,9 @@ export default async function BlogBySlug({ params }: Params) {
         createdAt,
         updatedAt,
         content,
-        likes
+        likes,
+        views,
+        docType
     } = blog
 
     return (
@@ -76,6 +79,14 @@ export default async function BlogBySlug({ params }: Params) {
                 </h3>
 
                 <Image src={image} height={337} width={448} alt='' />
+
+                <SocialStats
+                    docLikes={likes}
+                    docIsLiked={false}
+                    id={id}
+                    docType={docType}
+                    views={views}
+                />
 
                 {convertServerTimestamp(createdAt, updatedAt)}
 

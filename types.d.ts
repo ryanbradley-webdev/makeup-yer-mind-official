@@ -10,6 +10,7 @@ type Blog = {
     content: string,
     type: string,
     likes: number,
+    views: number,
     docType: 'blog'
 }
 
@@ -26,6 +27,7 @@ type Look = {
     updatedAt?: TimeStamp,
     content: string,
     likes: number,
+    views: number,
     docType: 'look'
 }
 
