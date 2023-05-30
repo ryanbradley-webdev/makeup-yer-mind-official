@@ -27,6 +27,15 @@ type Look = {
     likes: number
 }
 
+type Promo = {
+    slug: string,
+    id: string,
+    image: string,
+    title: string,
+    description: string,
+    link: string
+}
+
 type UserComment = {
     comment: string,
     createdAt: FieldValue,

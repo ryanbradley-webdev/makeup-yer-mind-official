@@ -1,12 +1,19 @@
-import Image from 'next/image'
 import SectionHeader from './SectionHeader'
-import Video from '../icons/Video'
-import Instagram from '../icons/Instagram'
 import Button from '../Button'
 import Link from 'next/link'
 import LargeBlogCard from '../cards/LargeBlogCard'
 import { getAllBlogs } from '@/lib/getAllBlogs'
 import styles from './section.module.css'
+import PromoCard from '../cards/PromoCard'
+
+const SAMPLE_PROMO: Promo = {
+    title: 'Get a discount on your Seint Products!',
+    description: 'For a limited time, get a significant discount on your makeup. You just have to follow a few simple steps!',
+    id: '1',
+    slug: 'get-a-discount-on-your-seint-products',
+    image: '/promo-placeholder.png',
+    link: '/'
+}
 
 export default async function NewSection() {
     const blogs = await getAllBlogs()
@@ -39,66 +46,18 @@ export default async function NewSection() {
                 </div>
 
                 <p>
-                    Check out my latest videos, Insta posts, and more!
+                    Latest Promotions
                 </p>
 
-                <div className={styles.content}>
+                <PromoCard promo={SAMPLE_PROMO} />
 
-                    <Image src='/new-placeholder-1.png' width={448} height={246} alt='' />
+                <div className={styles.btnDiv}>
 
-                    <div className={styles.card_info}>
-
-                        <h5>
-                            Reduce, Reuse, Recycle
-                        </h5>
-
-                        <h6>
-                            Check out this tutorial to see how I take old every-day items and turn them into super-useful tools for all of my accessories!
-                        </h6>
-
-                        <Video />
-
-                    </div>
-
-                </div>
-
-                <div className={styles.content}>
-
-                    <Image src='/new-placeholder-2.png' width={448} height={246} alt='' />
-
-                    <div className={styles.card_info}>
-
-                        <h5>
-                            A Fun Title
-                        </h5>
-
-                        <h6>
-                            I just needed another piece of content to round out this mockup. I don’t really have anything else substantive.
-                        </h6>
-
-                        <Instagram />
-
-                    </div>
-
-                </div>
-
-                <div className={styles.content}>
-
-                    <Image src='/new-placeholder-3.png' width={448} height={246} alt='' />
-
-                    <div className={styles.card_info}>
-
-                        <h5>
-                            What to expect when you follow me!
-                        </h5>
-
-                        <h6>
-                            Here’s a quick overview of all the fun content that I give you to help you out in your beauty journey!
-                        </h6>
-
-                        <Instagram />
-
-                    </div>
+                    <Link href='/promotions'>
+                        <Button variant='solid'>
+                            More promotions
+                        </Button>
+                    </Link>
 
                 </div>
 
