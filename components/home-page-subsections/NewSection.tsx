@@ -2,23 +2,19 @@ import SectionHeader from './SectionHeader'
 import Button from '../Button'
 import Link from 'next/link'
 import LargeBlogCard from '../cards/LargeBlogCard'
-import { getAllBlogs } from '@/lib/getAllBlogs'
-import styles from './section.module.css'
 import PromoCard from '../cards/PromoCard'
-
-const SAMPLE_PROMO: Promo = {
-    title: 'Get a discount on your Seint Products!',
-    description: 'For a limited time, get a significant discount on your makeup. You just have to follow a few simple steps!',
-    id: '1',
-    slug: 'get-a-discount-on-your-seint-products',
-    image: '/promo-placeholder.png',
-    link: '/',
-    docType: 'promotion',
-    active: true
-}
+import { getAllBlogs } from '@/lib/getAllBlogs'
+import { getAllPromos } from '@/lib/getAllPromos'
+import styles from './section.module.css'
 
 export default async function NewSection() {
-    const blogs = await getAllBlogs()
+    const [
+        blogs,
+        { activePromos }
+    ] = await Promise.all([
+        getAllBlogs(),
+        getAllPromos()
+    ])
 
     return (
         <section id='new'>
@@ -51,7 +47,7 @@ export default async function NewSection() {
                     Latest Promotions
                 </p>
 
-                <PromoCard promo={SAMPLE_PROMO} />
+                <PromoCard promo={activePromos[0]} />
 
                 <div className={styles.btnDiv}>
 
