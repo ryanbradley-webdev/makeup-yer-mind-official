@@ -1,30 +1,15 @@
-import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
-import Button from '@/components/Button'
+import { ReactNode, useEffect, useState } from 'react'
 import { hiddenRight, visible, hiddenLeft } from '../lib/styles'
 import styles from '../page.module.css'
 
 export default function FormDiv({
     children,
-    firstPage,
-    lastPage,
     pageIndex,
-    formPage,
-    setFormPage,
-    validateForm,
-    formSubmitting,
-    formSuccess,
-    formError
+    formPage
 }: {
     children: ReactNode,
-    firstPage?: boolean,
-    lastPage?: boolean,
     pageIndex: number,
-    formPage: number,
-    setFormPage: Dispatch<SetStateAction<number>>,
-    validateForm?: () => void,
-    formSubmitting?: boolean,
-    formSuccess?: boolean,
-    formError?: boolean
+    formPage: number
 }) {
     const [style, setStyle] = useState(hiddenRight)
 
@@ -44,22 +29,6 @@ export default function FormDiv({
         <div className={styles.formDiv} style={style}>
 
             {children}
-            
-            {!formSubmitting && !formSuccess && !formError && <div className={styles.btnDiv}>
-
-                {!firstPage && <Button onClick={() => setFormPage(prevPage => prevPage - 1)} type='button'>
-                    Previous
-                </Button>}
-
-                {!lastPage && <Button onClick={() => setFormPage(prevPage => prevPage + 1)} style={{ gridColumn: '2' }} type='button'>
-                    Next
-                </Button>}
-
-                {lastPage && <Button variant='solid' onClick={validateForm}>
-                    Submit
-                </Button>}
-
-            </div>}
 
         </div>
     )

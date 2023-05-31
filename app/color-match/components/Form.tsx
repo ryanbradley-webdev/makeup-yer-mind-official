@@ -10,6 +10,7 @@ import { uploadColorMatchForm } from '@/lib/uploadColorMatchForm'
 import FormSubmitting from './FormSubmitting'
 import FormSuccess from './FormSuccess'
 import FormError from './FormError'
+import Button from '@/components/Button'
 
 export default function Form() {
     const [formData, dispatch] = useReducer<Reducer<ColorMatchFormData, Action>>(reducer, initialState)
@@ -100,11 +101,18 @@ export default function Form() {
             className={styles.form}
             ref={formRef}
         >
+            
+            <div 
+                className={styles.page_counter}
+                style={{
+                    opacity: formPage > 1 && formPage < 9 ? '1' : '0'
+                }}
+            >
+                Page {formPage - 1} of 7
+            </div>
 
             <FormDiv
-                firstPage
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={1}
             >
             
@@ -120,7 +128,6 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={2}
             >
 
@@ -167,7 +174,6 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={3}
             >
 
@@ -225,7 +231,6 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={4}
             >
 
@@ -248,7 +253,6 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={5}
             >
 
@@ -264,7 +268,6 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={6}
             >
                 <label
@@ -290,7 +293,6 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={7}
             >
 
@@ -369,10 +371,7 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={8}
-                lastPage
-                validateForm={validateForm}
             >
 
                 <p>
@@ -383,16 +382,54 @@ export default function Form() {
 
             <FormDiv
                 formPage={formPage}
-                setFormPage={setFormPage}
                 pageIndex={9}
-                formSubmitting={formSubmitting}
-                formSuccess={formSuccess}
-                formError={formError}
             >
                 {formSubmitting && <FormSubmitting />}
                 {formSuccess && <FormSuccess />}
                 {formError && <FormError />}
             </FormDiv>
+
+            {!formSubmitting && !formSuccess && !formError && 
+            
+                <div className={styles.btnDiv}>
+
+                    {
+                        formPage > 1 && formPage < 9 && 
+                        
+                        <Button 
+                            onClick={() => setFormPage(prevPage => prevPage - 1)} 
+                            type='button'
+                        >
+                            Previous
+                        </Button>
+                    }
+
+                    {
+                        formPage < 8 && 
+                        
+                        <Button 
+                            onClick={() => setFormPage(prevPage => prevPage + 1)} 
+                            style={{ gridColumn: '2' }} 
+                            type='button'
+                        >
+                            Next
+                        </Button>
+                    }
+
+                    {
+                        formPage === 8 && 
+                        
+                        <Button 
+                            variant='solid' 
+                            onClick={validateForm}
+                        >
+                            Submit
+                        </Button>
+                    }
+
+                </div>
+            
+            }
 
         </form>
     )
