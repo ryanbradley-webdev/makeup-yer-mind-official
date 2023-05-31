@@ -5,14 +5,23 @@ type Params = {
     params: { formData: any }
 }
 
-client.setConfig({
-    apiKey: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY,
-    server: 'us20'
-})
-
 export async function POST(request: Request) {
-
     const { email } = await request.json()
+    const API_KEY = process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY
+    const LIST_ID = process.env.NEXT_PUBLIC_MAILCHIMP_LIST_ID
+
+    if (!API_KEY || !LIST_ID) {
+        return NextResponse.json({
+            error: 'Missing server data'
+        }, {
+            status: 500
+        })
+    }
+
+    client.setConfig({
+        apiKey: API_KEY,
+        server: 'us20'
+    })
 
     console.log(email)
 
@@ -25,7 +34,7 @@ export async function POST(request: Request) {
     }
 
     try {
-        const res = await client.lists.addListMember(process.env.NEXT_PUBLIC_MAILCHIMP_LIST_ID as string, {
+        const res = await client.lists.addListMember(LIST_ID, {
             email_address: email,
             status: 'subscribed'
         })
@@ -36,9 +45,9 @@ export async function POST(request: Request) {
             })
         } else {
             return NextResponse.json({
-                error: 'failed to subscribe'
+                error: 'Failed to subscribe user'
             }, {
-                status: 500
+                status: 424
             })
         }
     } catch (err) {

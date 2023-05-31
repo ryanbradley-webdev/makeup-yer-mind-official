@@ -14,7 +14,7 @@ export async function PATCH(request: Request, { params }: Params) {
         commentCount,
         docType
     }: { 
-        commentCount: string,
+        commentCount: string | number,
         docType: string
     } = await request.json()
 
