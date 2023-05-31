@@ -1,19 +1,3 @@
-export type ColorMatchFormData = {
-    firstName: string,
-    lastName: string,
-    email: string,
-    referral: string,
-    veinColor: string,
-    coverage: string,
-    selfie: string,
-    customCart: boolean,
-    address?: string,
-    phone?: string,
-    read: boolean,
-    completed: boolean,
-    docType: 'color-match'
-}
-
 export type Action = {
     type: string,
     payload: string | boolean
@@ -30,8 +14,6 @@ export const initialState: ColorMatchFormData = {
     customCart: false,
     address: '',
     phone: '',
-    read: false,
-    completed: false,
     docType: 'color-match'
 }
 

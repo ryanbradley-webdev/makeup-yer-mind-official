@@ -42,6 +42,26 @@ type Promo = {
     docType: 'promotion'
 }
 
+type ColorMatchFormData = {
+    firstName: string,
+    lastName: string,
+    email: string,
+    referral: string,
+    veinColor: string,
+    coverage: string,
+    selfie: string,
+    customCart: boolean,
+    address?: string,
+    phone?: string,
+    docType: 'color-match'
+}
+
+type ColorMatch = ColorMatchFormData & {
+    read: boolean,
+    completed: boolean,
+    sentAt: FieldValue
+}
+
 type UserComment = {
     comment: string,
     createdAt: FieldValue,

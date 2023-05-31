@@ -1,16 +1,17 @@
 'use client'
 
 import { Reducer, useEffect, useReducer, useRef, useState } from 'react'
-import { reducer, initialState, Action, ColorMatchFormData } from '../lib/Reducer'
+import { reducer, initialState, Action } from '../lib/Reducer'
 import styles from '../page.module.css'
 import FormDiv from './FormDiv'
 import Image from 'next/image'
 import { uploadImg } from '@/lib/uploadImg'
-import { uploadColorMatchForm } from '@/lib/uploadColorMatchForm'
+import { uploadColorMatch } from '@/lib/uploadColorMatch'
 import FormSubmitting from './FormSubmitting'
 import FormSuccess from './FormSuccess'
 import FormError from './FormError'
 import Button from '@/components/Button'
+import { serverTimestamp } from 'firebase/firestore'
 
 export default function Form() {
     const [formData, dispatch] = useReducer<Reducer<ColorMatchFormData, Action>>(reducer, initialState)
@@ -78,9 +79,16 @@ export default function Form() {
         setFormSubmitting(true)
         setFormPage(prevPage => prevPage + 1)
 
+        const newColorMatch: ColorMatch = {
+            ...formData,
+            read: false,
+            completed: false,
+            sentAt: serverTimestamp()
+        }
+
         try {
-            formData.selfie = await uploadImg(selfieFile)
-            await uploadColorMatchForm(formData)
+            newColorMatch.selfie = await uploadImg(selfieFile)
+            await uploadColorMatch(newColorMatch)
             setFormSubmitting(false)
             setFormSuccess(true)
             if (formRef?.current) formRef.current.reset()
@@ -101,7 +109,7 @@ export default function Form() {
             className={styles.form}
             ref={formRef}
         >
-            
+
             <div 
                 className={styles.page_counter}
                 style={{
