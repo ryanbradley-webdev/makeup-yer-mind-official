@@ -10,7 +10,8 @@ export type ColorMatchFormData = {
     address?: string,
     phone?: string,
     read: boolean,
-    completed: boolean
+    completed: boolean,
+    docType: 'color-match'
 }
 
 export type Action = {
@@ -30,38 +31,75 @@ export const initialState: ColorMatchFormData = {
     address: '',
     phone: '',
     read: false,
-    completed: false
+    completed: false,
+    docType: 'color-match'
 }
 
 export const reducer = (state: ColorMatchFormData, action: Action) => {
     switch (action.type) {
 
         case 'change-first-name':
-            return { ...state, firstName: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, firstName: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-last-name':
-            return { ...state, lastName: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, lastName: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-email':
-            return { ...state, email: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, email: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-referral':
-            return { ...state, referral: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, referral: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-vein-color':
-            return { ...state, veinColor: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, veinColor: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-coverage':
-            return { ...state, coverage: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, coverage: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-cart':
-            return { ...state, customCart: action.payload }
+            if (typeof action.payload === 'boolean') {
+                return { ...state, customCart: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-address':
-            return { ...state, address: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, address: action.payload }
+            } else {
+                return state
+            }
 
         case 'change-phone':
-            return { ...state, phone: action.payload }
+            if (typeof action.payload === 'string') {
+                return { ...state, phone: action.payload }
+            } else {
+                return state
+            }
 
         default:
             return state
