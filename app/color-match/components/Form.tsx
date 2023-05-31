@@ -82,10 +82,7 @@ export default function Form() {
             await uploadColorMatchForm(formData)
             setFormSubmitting(false)
             setFormSuccess(true)
-            setTimeout(() => {
-                setFormSuccess(false)
-                if (formRef?.current) formRef.current.reset()
-            }, 4000)
+            if (formRef?.current) formRef.current.reset()
         } catch {
             setFormSubmitting(false)
             setFormError(true)

@@ -1,3 +1,7 @@
+.main {
+    padding-inline: var(--padding-inline-main);
+}
+
 .main p {
     font-size: 12px;
     color: var(--color-white-sec);
@@ -6,21 +10,25 @@
 
 .form {
     position: relative;
-    margin-top: 24px;
-    padding-inline: var(--padding-inline-main);
-    height: 100vh;
+    margin-block: 24px 48px;
+    min-height: calc(100vh - 144px);
+    min-height: calc(100dvh - 144px);
     overflow: hidden;
 }
 
 .formDiv {
-    position: absolute;
     top: 0;
     left: 0;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     row-gap: 12px;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     transition: all 0.5s ease-in-out;
+}
+
+.formDiv:not(:nth-of-type(5)) {
+    position: absolute;
 }
 
 .formDiv > label {
@@ -44,12 +52,12 @@
 
 .img_container,
 .img_container_selfie {
-    height: 400px;
     width: 100%;
     cursor: pointer;
 }
 
 .img_container_selfie {
+    height: 400px;
     background-color: #222;
     border-radius: 8px;
     border: 1px solid var(--color-white-ter);
@@ -69,9 +77,6 @@
 .img_container_selfie img {
     width: 100%;
     height: 100%;
-}
-
-.img_container_selfie img {
     object-fit: cover;
 }
 
@@ -103,7 +108,7 @@
 }
 
 .btnDiv {
-    margin-top: 24px;
+    margin-top: auto;
     height: fit-content;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -115,4 +120,8 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
+}
+
+.form h3 {
+    text-align: center;
 }
