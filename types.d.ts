@@ -8,7 +8,7 @@ type Blog = {
     createdAt: TimeStamp,
     updatedAt?: TimeStamp,
     content: string,
-    type: string,
+    type: 'tutorial' | 'products' | 'lifestyle',
     likes: number,
     views: number,
     docType: 'blog'
