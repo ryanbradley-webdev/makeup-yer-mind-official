@@ -9,7 +9,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px;
-    background-color: var(--color-background-main);
+    background: var(--color-background-main);
+    transition: background 0.4s ease;
     z-index: 5;
 }
 

@@ -25,7 +25,7 @@ export default function Home() {
 
       {/* Hero Section */}
 
-      <section className={styles.hero}>
+      <section className={styles.hero} id='hero'>
 
         <LogoName />
 
@@ -59,8 +59,7 @@ export default function Home() {
 
       {/* About Section */}
 
-      <section className={styles.about}>
-
+      <section className={styles.about} id='about'>
 
         <div className={styles.about_hero}>
 
