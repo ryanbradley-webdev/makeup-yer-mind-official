@@ -18,9 +18,9 @@
     justify-content: flex-end;
     align-items: center;
     padding-inline: 16px;
-    padding-block: 72px 40px;
+    padding-bottom: 72px;
     height: 100vh;
-    background-image: url('/background-mobile.png');
+    background-image: url('/hero-img-mobile.png');
     background-position: center top;
     background-size: contain;
     background-repeat: no-repeat;

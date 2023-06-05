@@ -9,10 +9,13 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 export default function Header() {
-    const [menuVisible, setMenuVisible] = useState(false)
-    const [background, setBackground] = useState('var(--color-background-main)')
-
     const pathname = usePathname()
+    
+    const [menuVisible, setMenuVisible] = useState(false)
+    const [background, setBackground] = useState(() => {
+        if (pathname === '/') return 'transparent'
+        return 'var(--color-background-main)'
+    })
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible)
