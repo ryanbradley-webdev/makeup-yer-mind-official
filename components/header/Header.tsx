@@ -33,7 +33,7 @@ export default function Header() {
         }, {
             root: null,
             rootMargin: '0px',
-            threshold: 0.6
+            threshold: window.innerWidth > 1024 ? 0.8 : 0.6
         })
         
         const hero = document.getElementById('hero')

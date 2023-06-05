@@ -8,7 +8,6 @@ import Instagram from '../icons/Instagram'
 import Pinterest from '../icons/Pinterest'
 import Facebook from '../icons/Facebook'
 import Email from '../icons/Email'
-import Button from '../Button'
 
 export default function Menu({
     isVisible,
@@ -22,6 +21,8 @@ export default function Menu({
     useEffect(() => {
         if (window.innerWidth <= 1024) {
             setMenuVisible(isVisible)
+        } else {
+            setMenuVisible(true)
         }
     }, [isVisible])
 
