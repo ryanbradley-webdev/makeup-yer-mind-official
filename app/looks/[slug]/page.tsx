@@ -70,6 +70,14 @@ export default async function LookBySlug({ params }: Params) {
 
                 {convertServerTimestamp(createdAt, updatedAt)}
 
+                <SocialStats
+                    views={views}
+                    docLikes={likes}
+                    docIsLiked={false}
+                    id={id}
+                    docType={docType}
+                />
+
                 <div className={styles.img_container}>
 
                     <Image src={image1} height={646} width={550} alt='' />
@@ -91,14 +99,6 @@ export default async function LookBySlug({ params }: Params) {
                 </div>
 
             </section>
-
-            <SocialStats
-                views={views}
-                docLikes={likes}
-                docIsLiked={false}
-                id={id}
-                docType={docType}
-            />
 
             <section className={styles.content}>
 

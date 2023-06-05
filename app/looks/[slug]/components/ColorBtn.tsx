@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from '../page.module.css'
 import ExternalLink from '@/components/ExternalLink'
+import { capitalize } from '@/lib/capitalize'
 
 export default function ColorBtn({
     color
@@ -19,7 +20,7 @@ export default function ColorBtn({
             </p>
 
             <p className={styles.color_brand}>
-                {color.brand}
+                {capitalize(color.brand)}
             </p>
 
         </div>
