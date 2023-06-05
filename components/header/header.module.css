@@ -9,8 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px;
-    background: var(--color-background-main);
-    transition: background 0.4s ease;
+    transition: background 0.8s ease;
     z-index: 5;
 }
 

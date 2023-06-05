@@ -5,45 +5,58 @@ import Image from "next/image"
 import styles from './header.module.css'
 import Menu from "./Menu"
 import { useEffect, useState } from "react"
-import { useRouter } from "next/router"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function Header() {
     const [menuVisible, setMenuVisible] = useState(false)
-    // const [background, setBackground] = useState('transparent')
+    const [background, setBackground] = useState('var(--color-background-main)')
+
+    const pathname = usePathname()
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible)
     }
 
-    /* useEffect(() => {
+    useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setBackground('var(--color-background-main)')
-                } else {
                     setBackground('transparent')
+                } else {
+                    setBackground('var(--color-background-main)')
                 }
-
-                console.log(entry.isIntersecting)
             })
         }, {
             root: null,
-            rootMargin: '-10%',
-            threshold: 0
+            rootMargin: '0px',
+            threshold: 0.6
         })
         
         const hero = document.getElementById('hero')
 
-        if (hero) observer.observe(document.body)
-    }, []) */
+        if (pathname === '/') {
+            if (hero) observer.observe(hero)
+        } else {
+            setBackground('var(--color-background-main')
+        }
+
+        return () => {
+            if (hero) observer.unobserve(hero)
+        }
+    }, [pathname])
 
     return (
-        <header className={styles.header}>
-            <Image src={'/Logo-Small.svg'} alt='' width={95} height={36} />
+        <header className={styles.header} style={{ background }}>
+
+            <Link href='/'>
+                <Image src={'/Logo-Small.svg'} alt='' width={95} height={36} />
+            </Link>
 
             <Burger toggleMenu={toggleMenu} />
 
             <Menu isVisible={menuVisible} toggleMenu={toggleMenu} />
+
         </header>
     )
 }
