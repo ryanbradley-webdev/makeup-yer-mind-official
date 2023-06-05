@@ -19,15 +19,8 @@ export default function Menu({
 }) {
     const [menuVisible, setMenuVisible] = useState(false)
 
-    const localStyle = {
-        link: menuVisible ? {
-            transform: 'translateX(0)',
-            opacity: '1'
-        } : {}
-    }
-
     useEffect(() => {
-        if (window.innerWidth <= 480) {
+        if (window.innerWidth <= 1024) {
             setMenuVisible(isVisible)
         }
     }, [isVisible])
