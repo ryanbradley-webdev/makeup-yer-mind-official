@@ -74,11 +74,7 @@ export default async function BlogBySlug({ params }: Params) {
                     {title}
                 </h1>
 
-                <h3>
-                    {description}
-                </h3>
-
-                <Image src={image} height={337} width={448} alt='' />
+                {convertServerTimestamp(createdAt, updatedAt)}
 
                 <SocialStats
                     docLikes={likes}
@@ -88,7 +84,11 @@ export default async function BlogBySlug({ params }: Params) {
                     views={views}
                 />
 
-                {convertServerTimestamp(createdAt, updatedAt)}
+                <Image src={image} height={337} width={448} alt='' />
+
+                <h3>
+                    {description}
+                </h3>
 
             </section>
 

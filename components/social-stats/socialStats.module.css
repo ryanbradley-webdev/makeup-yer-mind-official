@@ -6,11 +6,13 @@
 .stat_div {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--color-white-sec);
 }
 
 .stat_div svg {
-    height: 24px;
+    height: 20px;
 }
 
 .like_btn {
