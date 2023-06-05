@@ -72,6 +72,7 @@ a:has(button) {
   font-size: 16px;
   border-radius: 4px;
   border: 2px solid var(--color-gold-pri);
+  cursor: pointer;
 }
 
 .button-main {
