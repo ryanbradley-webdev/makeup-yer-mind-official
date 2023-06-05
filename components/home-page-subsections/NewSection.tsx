@@ -29,7 +29,7 @@ export default async function NewSection() {
 
                 <div className={styles.btnDiv}>
 
-                    <Link href='/'>
+                    <Link href={`/blogs/${blogs[0].slug}`}>
                         <Button>
                             Read More
                         </Button>
@@ -43,9 +43,9 @@ export default async function NewSection() {
 
                 </div>
 
-                <p>
-                    Latest Promotions
-                </p>
+            </div>
+
+            <div className={styles.grid}>
 
                 <PromoCard promo={activePromos[0]} />
 

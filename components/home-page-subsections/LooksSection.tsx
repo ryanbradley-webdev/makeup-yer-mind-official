@@ -22,7 +22,7 @@ export default async function LooksSection() {
 
                 <div className={styles.btnDiv}>
 
-                    <Link href=''>
+                    <Link href={`/looks/${looks[0].slug}`}>
                         <Button>
                             Read More
                         </Button>
@@ -35,23 +35,31 @@ export default async function LooksSection() {
                     </Link>
 
                 </div>
+                
+            </div>
 
-                <p>
-                    I&apos;ve got a whole bunch of looks for you to try, I know you&apos;ll find one you&apos;ll love!
-                </p>
+            <div className={styles.grid}>
 
                 {looks && looks.map((look, idx) => {
-                    if (idx === 0) return
+                    if (idx === 0 || idx > 4) return
                     return <LookCard look={look} key={look.id} />
                 })}
 
-            </div>
+                <div className={styles.btnDiv}>
 
-            <Link href='/looks'>
-                <Button variant='solid'>
-                    See the rest of my looks!
-                </Button>
-            </Link>
+                    <Button variant='ghost'>
+                        Load More
+                    </Button>
+
+                    <Link href='/looks'>
+                        <Button variant='solid'>
+                            See the rest of my looks!
+                        </Button>
+                    </Link>
+
+                </div>
+
+            </div>
 
         </section>
     )

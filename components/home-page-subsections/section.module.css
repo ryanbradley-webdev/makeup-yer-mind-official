@@ -22,6 +22,10 @@
     padding-inline: 16px;
 }
 
+.grid + .grid {
+    margin-top: 72px;
+}
+
 .grid p,
 .grid .btnDiv {
     grid-column: 1 / span 2;
@@ -41,7 +45,7 @@
 }
 
 .grid > * {
-    margin-bottom: 36px;
+    margin-bottom: 12px;
 }
 
 .btnDiv {
@@ -49,7 +53,6 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 8px;
 }
 
 .promo {
