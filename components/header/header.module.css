@@ -133,7 +133,9 @@
     letter-spacing: 2px;
     transform: translateX(100px);
     opacity: 0;
-    transition: all 0.4s ease-in-out;
+    transition: 
+        opacity 0.4s ease-in-out,
+        transform 0.4s ease-in-out;
 }
 
 .menu ul a:not(:last-child) {
@@ -195,14 +197,35 @@
     }
 
     .menu ul a {
+        position: relative;
         opacity: 1;
         transform: translateX(0);
         font-size: 16px;
         font-weight: 300;
     }
 
+    .menu ul a::after {
+        content: '';
+        position: absolute;
+        left: -5%;
+        bottom: -5px;
+        width: 110%;
+        height: 1px;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .menu ul a:hover {
+        color: var(--color-gold-pri);
+    }
+
+    .menu ul a:hover::after {
+        background: var(--color-gold-pri);
+    }
+
     .menu ul a:not(:last-child) {
         margin-left: 0;
+        transition-delay: 0.3s;
     }
 
     .menu ul a:last-child {
@@ -238,5 +261,10 @@
     .iconDiv img {
         height: 20px;
         fill: var(--color-white-ter);
+        transition: fill 0.3s ease;
+    }
+
+    .iconDiv svg:hover {
+        fill: var(--color-gold-pri);
     }
 }
