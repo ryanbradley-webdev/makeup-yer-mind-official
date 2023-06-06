@@ -16,11 +16,15 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 48px;
     padding-inline: 16px;
 }
+
+.grid:not(:first-child) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 
 @media screen and (orientation: landscape) {
     .section {
@@ -56,8 +60,7 @@
     margin-top: 72px;
 }
 
-.grid p,
-.grid .btnDiv {
+.grid:not(:first-of-type) .btnDiv {
     grid-column: 1 / span 2;
 }
 

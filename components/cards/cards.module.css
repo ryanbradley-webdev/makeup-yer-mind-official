@@ -1,5 +1,14 @@
 .first_blog {
     position: relative;
+    width: 100%;
+    margin-inline: auto;
+}
+
+@media screen and (orientation: landscape) {
+    .first_blog {
+        width: 80%;
+        max-width: 1000px;
+    }
 }
 
 .first_blog img {
@@ -85,12 +94,6 @@
 .look h6,
 .promo h6 {
     color: var(--color-white-ter);
-}
-
-.promo,
-.first_look,
-.first_blog {
-    grid-column: 1 / span 2;
 }
 
 @media screen and (min-width: 481px) {
