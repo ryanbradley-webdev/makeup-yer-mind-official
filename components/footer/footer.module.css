@@ -5,6 +5,7 @@
     font-size: 12px;
     font-weight: 300;
     text-align: center;
+    background-color: var(--color-background-main);
 }
 
 .form {
@@ -17,6 +18,40 @@
 .form div {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (min-width: 769px) {
+    .form {
+        margin-top: 32px;
+        margin-bottom: 0;
+        max-width: 600px;
+        font-size: 16px;
+    }
+
+    .form div {
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .form div input {
+        width: 450px;
+    }
+
+    .form div button {
+        height: fit-content;
+        width: 150px;
+    }
+
+    .footer > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        text-align: left;
+        margin-block: 48px;
+    }
 }
 
 .form input {
@@ -35,6 +70,13 @@
     height: auto;
 }
 
+@media screen and (min-width: 481px) {
+    .footer img {
+        width: auto;
+        height: 150px;
+    }
+}
+
 .links {
     display: flex;
     flex-direction: column;
@@ -46,4 +88,10 @@
     font-size: 16px;
     text-decoration: none;
     color: var(--color-white-ter);
+}
+
+@media screen and (min-width: 769px) {
+    .links a {
+        font-size: 20px;
+    }
 }

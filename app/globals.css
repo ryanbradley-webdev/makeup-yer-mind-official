@@ -24,11 +24,16 @@ html {
   color: var(--color-white-pri);
   background-color: var(--color-background-main);
   scroll-behavior: smooth;
-  /* background-image: url('/Logo-Large.svg');
-  background-position: center;
-  background-attachment: fixed;
-  background-size: contain;
-  background-repeat: no-repeat; */
+}
+
+@media screen and (min-width: 769px) {
+  html {
+    background-image: url('/Logo-Large.svg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
 }
 
 body {
