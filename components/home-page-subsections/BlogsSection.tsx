@@ -15,12 +15,16 @@ export default async function BlogsSection() {
                 Blogs
             </SectionHeader>
 
-            <div className={styles.grid}>
+            <div>
 
-                {blogs && blogs.map((blog: Blog, idx: number) => {
-                    if (idx === 0 || idx > 6) return
-                    return <BlogCard key={blog.id} blog={blog} />
-                })}
+                <div className={styles.grid} style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+
+                    {blogs && blogs.map((blog: Blog, idx: number) => {
+                        if (idx === 0 || idx > 6) return
+                        return <BlogCard key={blog.id} blog={blog} />
+                    })}
+                    
+                </div>
 
                 <div className={styles.btnDiv}>
 
@@ -31,7 +35,7 @@ export default async function BlogsSection() {
                     </Link>
 
                 </div>
-                
+
             </div>
 
       </section>

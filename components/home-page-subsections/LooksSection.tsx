@@ -47,15 +47,15 @@ export default async function LooksSection() {
                         return <LookCard look={look} key={look.id} />
                     })}
 
-                    <div className={styles.btnDiv}>
+                </div>
 
-                        <Link href='/looks'>
-                            <Button variant='solid'>
-                                See the rest of my looks!
-                            </Button>
-                        </Link>
+                <div className={styles.btnDiv}>
 
-                    </div>
+                    <Link href='/looks'>
+                        <Button variant='solid'>
+                            See the rest of my looks!
+                        </Button>
+                    </Link>
 
                 </div>
 

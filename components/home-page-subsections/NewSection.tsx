@@ -51,15 +51,15 @@ export default async function NewSection() {
 
                     <PromoCard promo={activePromos[0]} />
 
-                    <div className={styles.btnDiv}>
+                </div>
 
-                        <Link href='/promotions'>
-                            <Button variant='solid'>
-                                More promotions
-                            </Button>
-                        </Link>
+                <div className={styles.btnDiv}>
 
-                    </div>
+                    <Link href='/promotions'>
+                        <Button variant='solid'>
+                            More promotions
+                        </Button>
+                    </Link>
 
                 </div>
 

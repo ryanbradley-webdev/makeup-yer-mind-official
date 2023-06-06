@@ -93,6 +93,12 @@
     grid-column: 1 / span 2;
 }
 
+@media screen and (orientation: landscape) {
+    .promo {
+        grid-column: 1 / span 1;
+    }
+}
+
 .first_look {
     position: relative;
     width: 80%;
