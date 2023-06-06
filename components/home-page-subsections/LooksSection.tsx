@@ -16,7 +16,7 @@ export default async function LooksSection() {
                 Find a New Look
             </SectionHeader>
 
-            <div>
+            <div className={styles.looks_grid}>
 
                 <div className={styles.grid}>
 

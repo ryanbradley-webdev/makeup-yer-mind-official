@@ -29,6 +29,8 @@
 @media screen and (orientation: landscape) {
     .section {
         display: flex;
+        gap: 20px;
+        padding-right: 20px;
     }
 
     .sectionHeader {
@@ -53,6 +55,16 @@
 
     .grid:not(:first-child) {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .looks_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+
+    .looks_grid > .btnDiv {
+        display: none;
     }
 }
 
