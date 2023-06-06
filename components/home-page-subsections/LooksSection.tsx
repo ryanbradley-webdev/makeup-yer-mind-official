@@ -18,7 +18,7 @@ export default async function LooksSection() {
 
             <div className={styles.looks_grid}>
 
-                <div className={styles.grid}>
+                <div className={styles.first_look}>
 
                     <LargeLookCard look={looks[0]} />
 

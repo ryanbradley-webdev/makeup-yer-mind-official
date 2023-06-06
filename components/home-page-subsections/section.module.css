@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     gap: 72px;
-    padding-bottom: 32px;
-    padding-inline: 8px;
+    padding-block: 12px;
+    background: linear-gradient(to bottom, #7D6D61, #665344);
 }
 
 .sectionHeader h2 {
@@ -16,6 +16,7 @@
     text-align: center;
     font-size: 40px;
     letter-spacing: -0.03em;
+    line-height: 1;
 }
 
 @media screen and (orientation: portrait) {
@@ -31,10 +32,20 @@
     padding-inline: 16px;
 }
 
+.blog_grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .grid:not(:first-child) {
     grid-template-columns: repeat(2, 1fr);
 }
 
+.first_look {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-block: 48px;
+}
 
 @media screen and (orientation: landscape) {
     .section {
@@ -48,6 +59,8 @@
         height: calc(100vh - 71px);
         background-position: center;
         background-size: cover;
+        padding-block: 32px;
+        padding-inline: 8px;
     }
 
     .new_header {
@@ -63,9 +76,9 @@
     }
 
     .sectionHeader h2 {
-        width: 5ch;
         text-align: right;
         margin-left: auto;
+        font-size: 50px;
     }
 
     .section > div + div {
@@ -84,6 +97,7 @@
     .looks_grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        align-items: center;
         row-gap: 32px;
         column-gap: 20px;
     }
@@ -99,8 +113,23 @@
         grid-column: 1 / span 2;
     }
 
-    .looks_grid .grid .btnDiv {
+    .first_look .btnDiv {
         display: none;
+    }
+
+    .blog_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .sectionHeader {
+        width: 325px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 72px;
+        margin-right: 12px;
     }
 }
 

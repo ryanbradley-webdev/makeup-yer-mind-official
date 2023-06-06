@@ -17,7 +17,7 @@ export default async function BlogsSection() {
 
             <div>
 
-                <div className={styles.grid} style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                <div className={`${styles.grid} ${styles.blog_grid}`}>
 
                     {blogs && blogs.map((blog: Blog, idx: number) => {
                         if (idx === 0 || idx > 6) return

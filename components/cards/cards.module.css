@@ -118,6 +118,7 @@
 }
 
 .first_look {
+    display: block;
     position: relative;
     width: 80%;
     height: auto;
@@ -133,16 +134,7 @@
 
 @media screen and (orientation: landscape) {
     .first_look {
-        width: auto;
-        height: 80vh;
-        max-height: 1000px;
-    }
-
-    
-    .first_look > img {
-        width: auto;
-        height: 100%;
-        object-fit: cover;
+        max-width: 600px;
     }
 }
 
