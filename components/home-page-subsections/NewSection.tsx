@@ -19,7 +19,7 @@ export default async function NewSection() {
     return (
         <section id='new' className={styles.section}>
             
-            <SectionHeader>
+            <SectionHeader type='new'>
                 What&apos;s New
             </SectionHeader>
 

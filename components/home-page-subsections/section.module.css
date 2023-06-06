@@ -14,6 +14,12 @@
     letter-spacing: -0.03em;
 }
 
+@media screen and (orientation: portrait) {
+    .sectionHeader a {
+        display: none;
+    }
+}
+
 .grid {
     display: grid;
     gap: 12px;
@@ -60,10 +66,21 @@
     .looks_grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        row-gap: 32px;
         column-gap: 20px;
     }
 
+    .looks_grid .grid:not(:first-child) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 32px;
+        height: fit-content;
+    }
+
     .looks_grid > .btnDiv {
+        grid-column: 1 / span 2;
+    }
+
+    .looks_grid .grid .btnDiv {
         display: none;
     }
 }
