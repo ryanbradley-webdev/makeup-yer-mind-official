@@ -93,7 +93,7 @@
     grid-column: 1 / span 2;
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 481px) {
     .promo {
         grid-column: 1 / span 1;
     }
