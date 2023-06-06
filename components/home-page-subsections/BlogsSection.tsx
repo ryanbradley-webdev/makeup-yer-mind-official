@@ -9,7 +9,7 @@ export default async function BlogsSection() {
     const blogs = await getAllBlogs()
 
     return (
-        <section id='blogs'>
+        <section id='blogs' className={styles.section}>
 
             <SectionHeader>
                 Blogs
@@ -17,20 +17,12 @@ export default async function BlogsSection() {
 
             <div className={styles.grid}>
 
-                <p>
-                    From tutorials, to new product releases, to everyday life, I&apos;ve got everything you need!
-                </p>
-
                 {blogs && blogs.map((blog: Blog, idx: number) => {
-                    if (idx === 0) return
+                    if (idx === 0 || idx > 6) return
                     return <BlogCard key={blog.id} blog={blog} />
                 })}
 
                 <div className={styles.btnDiv}>
-
-                    <Button variant='ghost'>
-                        Load More
-                    </Button>
 
                     <Link href='/blogs'>
                         <Button variant='solid'>

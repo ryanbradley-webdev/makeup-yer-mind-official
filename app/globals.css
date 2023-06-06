@@ -46,7 +46,7 @@ main {
   padding-top: 72px;
 }
 
-section {
+section:not(#new, #looks, #blogs) {
   padding-inline: var(--padding-inline-main);
 }
 

@@ -17,45 +17,49 @@ export default async function NewSection() {
     ])
 
     return (
-        <section id='new'>
+        <section id='new' className={styles.section}>
             
             <SectionHeader>
                 What&apos;s New
             </SectionHeader>
 
-            <div className={styles.grid}>
+            <div>
+                
+                <div className={styles.grid}>
 
-                <LargeBlogCard blog={blogs[0]} firstBlog />
+                    <LargeBlogCard blog={blogs[0]} firstBlog />
 
-                <div className={styles.btnDiv}>
+                    <div className={styles.btnDiv}>
 
-                    <Link href={`/blogs/${blogs[0].slug}`}>
-                        <Button>
-                            Read More
-                        </Button>
-                    </Link>
+                        <Link href={`/blogs/${blogs[0].slug}`}>
+                            <Button>
+                                Read More
+                            </Button>
+                        </Link>
 
-                    <Link href='/blogs'>
-                        <Button variant='solid'>
-                            All Blogs
-                        </Button>
-                    </Link>
+                        <Link href='/blogs'>
+                            <Button variant='solid'>
+                                All Blogs
+                            </Button>
+                        </Link>
+
+                    </div>
 
                 </div>
 
-            </div>
+                <div className={styles.grid}>
 
-            <div className={styles.grid}>
+                    <PromoCard promo={activePromos[0]} />
 
-                <PromoCard promo={activePromos[0]} />
+                    <div className={styles.btnDiv}>
 
-                <div className={styles.btnDiv}>
+                        <Link href='/promotions'>
+                            <Button variant='solid'>
+                                More promotions
+                            </Button>
+                        </Link>
 
-                    <Link href='/promotions'>
-                        <Button variant='solid'>
-                            More promotions
-                        </Button>
-                    </Link>
+                    </div>
 
                 </div>
 

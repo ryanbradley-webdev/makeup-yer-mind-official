@@ -10,52 +10,52 @@ export default async function LooksSection() {
     const looks = await getAllLooks()
 
     return (
-        <section id='looks'>
+        <section id='looks' className={styles.section}>
 
             <SectionHeader>
                 Find a New Look
             </SectionHeader>
 
-            <div className={styles.grid}>
+            <div>
 
-                <LargeLookCard look={looks[0]} />
+                <div className={styles.grid}>
 
-                <div className={styles.btnDiv}>
+                    <LargeLookCard look={looks[0]} />
 
-                    <Link href={`/looks/${looks[0].slug}`}>
-                        <Button>
-                            Read More
-                        </Button>
-                    </Link>
+                    <div className={styles.btnDiv}>
 
-                    <Link href='/looks'>
-                        <Button variant='solid'>
-                            All Looks
-                        </Button>
-                    </Link>
+                        <Link href={`/looks/${looks[0].slug}`}>
+                            <Button>
+                                Read More
+                            </Button>
+                        </Link>
 
+                        <Link href='/looks'>
+                            <Button variant='solid'>
+                                All Looks
+                            </Button>
+                        </Link>
+
+                    </div>
+                    
                 </div>
-                
-            </div>
 
-            <div className={styles.grid}>
+                <div className={styles.grid}>
 
-                {looks && looks.map((look, idx) => {
-                    if (idx === 0 || idx > 4) return
-                    return <LookCard look={look} key={look.id} />
-                })}
+                    {looks && looks.map((look, idx) => {
+                        if (idx === 0 || idx > 4) return
+                        return <LookCard look={look} key={look.id} />
+                    })}
 
-                <div className={styles.btnDiv}>
+                    <div className={styles.btnDiv}>
 
-                    <Button variant='ghost'>
-                        Load More
-                    </Button>
+                        <Link href='/looks'>
+                            <Button variant='solid'>
+                                See the rest of my looks!
+                            </Button>
+                        </Link>
 
-                    <Link href='/looks'>
-                        <Button variant='solid'>
-                            See the rest of my looks!
-                        </Button>
-                    </Link>
+                    </div>
 
                 </div>
 
