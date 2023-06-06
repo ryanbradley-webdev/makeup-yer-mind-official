@@ -11,7 +11,7 @@ export default async function BlogsSection() {
     return (
         <section id='blogs' className={styles.section}>
 
-            <SectionHeader type='blogs'>
+            <SectionHeader type='blogs' className={styles.blogs_header}>
                 Blogs
             </SectionHeader>
 

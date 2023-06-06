@@ -52,25 +52,31 @@
     font-weight: 300;
 }
 
-.card_info button {
-    display: none;
-    padding: 8px;
-    color: var(--color-gold-pri);
-    background-color: transparent;
-    border: 1px solid var(--color-gold-pri);
-    border-radius: 0;
-}
-
 .blog,
 .look,
 .promo {
+    position: relative;
     text-decoration: none;
+}
+
+.hidden_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 @media screen and (orientation: landscape) {
     .look {
         width: 80%;
         max-width: 300px;
+    }
+
+    .look:hover .hidden_img {
+        opacity: 1;
     }
 }
 

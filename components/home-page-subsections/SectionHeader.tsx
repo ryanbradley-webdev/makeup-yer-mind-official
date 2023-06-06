@@ -4,10 +4,12 @@ import Button from '../Button'
 
 export default function SectionHeader({
     children,
-    type
+    type,
+    className
 }: {
     children: string,
-    type: string
+    type: string,
+    className: string
 }) {
     const targetPath = () => {
         if (type === 'new') {
@@ -33,7 +35,7 @@ export default function SectionHeader({
     }
 
     return (
-        <div className={styles.sectionHeader}>
+        <div className={`${styles.sectionHeader} ${className}`}>
             <h2>
                 {children}
             </h2>

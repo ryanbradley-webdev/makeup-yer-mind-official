@@ -2,7 +2,6 @@
     position: sticky;
     top: 71px;
     width: 100%;
-    background: linear-gradient(to bottom, #7D6D61, #665344);
     z-index: 1;
 }
 
@@ -40,8 +39,22 @@
     }
 
     .sectionHeader {
-        width: 200px;
+        width: 250px;
         height: calc(100vh - 71px);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .new_header {
+        background-image: url('/new-header.png');
+    }
+
+    .looks_header {
+        background-image: url('/looks-header.png');
+    }
+
+    .blogs_header {
+        background-image: url('/blogs-header.png');
     }
 
     .sectionHeader h2 {
@@ -74,6 +87,7 @@
         grid-template-columns: repeat(2, 1fr);
         row-gap: 32px;
         height: fit-content;
+        margin-block: auto;
     }
 
     .looks_grid > .btnDiv {

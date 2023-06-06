@@ -12,7 +12,7 @@ export default async function LooksSection() {
     return (
         <section id='looks' className={styles.section}>
 
-            <SectionHeader type='looks'>
+            <SectionHeader type='looks' className={styles.looks_header}>
                 Find a New Look
             </SectionHeader>
 

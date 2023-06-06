@@ -11,6 +11,7 @@ export default function LookCard({
         <Link className={styles.look} href={`/looks/${look.slug}`}>
 
             <Image src={look.image1} width={200} height={240} alt='' />
+            <Image src={look.image2} width={200} height={240} alt='' className={styles.hidden_img} />
 
             <h5>
                 {look.title}
