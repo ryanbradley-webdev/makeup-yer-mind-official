@@ -68,7 +68,7 @@ export default function Home() {
 
           <div className={styles.about_hero}>
 
-            <Image src='/about.png' height={200} width={200} alt='' />
+            <Image src='/about-sm.png' height={200} width={200} alt='' />
 
             <h4>
               Hey Bebe!

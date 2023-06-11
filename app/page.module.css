@@ -169,6 +169,7 @@
 .about_hero img {
     width: 150px;
     height: auto;
+    border-radius: 100%;
 }
 
 .about_hero h4 {
