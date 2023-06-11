@@ -103,6 +103,19 @@
 }
 
 @media screen and (min-width: 1025px) {
+    .header > a,
+    .iconDiv {
+        position: absolute;
+    }
+
+    .header > a {
+        left: 18px;
+    }
+
+    .iconDiv {
+        right: 18px;
+    }
+
     .menu {
         position: static;
         flex-direction: row;
@@ -129,7 +142,6 @@
     text-decoration: none;
     color: var(--color-white-sec);
     font-size: 24px;
-    font-weight: 600;
     letter-spacing: 2px;
     transform: translateX(100px);
     opacity: 0;
@@ -175,7 +187,6 @@
     border-radius: 4px;
     border: 1px solid var(--color-gold-pri);
     font-size: 20px;
-    font-weight: 300;
 }
 
 @keyframes nav-fade {
@@ -208,7 +219,7 @@
         content: '';
         position: absolute;
         left: -5%;
-        bottom: -5px;
+        bottom: -2px;
         width: 110%;
         height: 1px;
         background: transparent;
