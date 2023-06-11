@@ -57,7 +57,7 @@
         display: flex;
         gap: 20px;
         padding-right: 20px;
-        background: linear-gradient(to bottom, transparent 80%, #22222277);
+        background: linear-gradient(to bottom, #12121277 20%, transparent 80%, #22222277);
     }
 
     .sectionHeader {
@@ -213,4 +213,22 @@
 
 .form a {
     margin-inline: auto;
+}
+
+@media screen and (orientation: landscape) {
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .contact h5 {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .form {
+        width: 600px;
+    }
 }

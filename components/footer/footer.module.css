@@ -21,11 +21,14 @@
 }
 
 @media screen and (min-width: 769px) {
+    .footer {
+        font-size: 16px;
+    }
+
     .form {
         margin-top: 32px;
         margin-bottom: 0;
         max-width: 600px;
-        font-size: 16px;
     }
 
     .form div {
@@ -64,6 +67,13 @@
     font-size: 12px;
 }
 
+@media screen and (min-width: 769px) {
+    .form input,
+    .form button {
+        font-size: 16px;
+    }
+}
+
 .footer img {
     opacity: 0.5;
     width: 50%;
@@ -93,5 +103,10 @@
 @media screen and (min-width: 769px) {
     .links a {
         font-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .links a:is(:hover, :focus) {
+        color: var(--color-white-sec);
     }
 }

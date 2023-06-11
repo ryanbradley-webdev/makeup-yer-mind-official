@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from './footer.module.css'
 import Link from 'next/link'
 import Subscribe from './Subscribe'
+import ExternalLink from '../ExternalLink'
 
 export default function Footer() {
     return (
@@ -37,7 +38,7 @@ export default function Footer() {
 
 
             <p>
-                &copy; 2023 Shades of Pink. Designed and developed by Ryan Bradley Web Design.
+                &copy; 2023 Shades of Pink. Designed and developed by <ExternalLink href='https://ryanbradleywebdev.com'>Ryan Bradley Web Design</ExternalLink>.
             </p>
 
         </footer>
