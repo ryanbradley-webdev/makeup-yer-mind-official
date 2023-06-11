@@ -47,10 +47,12 @@
 }
 
 .header img {
+    display: block;
     width: 100%;
     max-width: 500px;
     height: auto;
     margin-block: 24px;
+    margin-inline: auto;
 }
 
 @media screen and (orientation: landscape) {
