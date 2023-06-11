@@ -10,6 +10,8 @@ import { v4 as uuid } from 'uuid'
 import styles from './page.module.css'
 import Comments from '@/components/comments/Comments'
 import SocialStats from '@/components/social-stats/SocialStats'
+import Share from '@/components/share/Share'
+import rehypeRaw from 'rehype-raw'
 
 type Params = {
     params: { slug: string }
@@ -64,19 +66,25 @@ export default async function LookBySlug({ params }: Params) {
             
             <section className={styles.header}>
 
-                <h1>
-                    {title}
-                </h1>
+                <div>
 
-                {convertServerTimestamp(createdAt, updatedAt)}
+                    <h1>
+                        {title}
+                    </h1>
 
-                <SocialStats
-                    views={views}
-                    docLikes={likes}
-                    docIsLiked={false}
-                    id={id}
-                    docType={docType}
-                />
+                    {convertServerTimestamp(createdAt, updatedAt)}
+
+                    <SocialStats
+                        views={views}
+                        docLikes={likes}
+                        docIsLiked={false}
+                        id={id}
+                        docType={docType}
+                    />
+
+                    <Share />
+
+                </div>
 
                 <div className={styles.img_container}>
 
@@ -100,11 +108,32 @@ export default async function LookBySlug({ params }: Params) {
 
             </section>
 
-            <section className={styles.content}>
+            <section className={styles.content_container}>
 
-                <ReactMarkdown>
+                <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
+                    className={styles.content}
+                >
                     {content}
                 </ReactMarkdown>
+
+                <SocialStats
+                    docLikes={likes}
+                    docIsLiked={false}
+                    id={id}
+                    docType={docType}
+                    views={views}
+                />
+
+                <aside className={styles.share}>
+
+                    <p>
+                        Share this article:
+                    </p>
+
+                    <Share />
+
+                </aside>
 
             </section>
 
