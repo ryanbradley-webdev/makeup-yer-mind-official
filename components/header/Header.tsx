@@ -16,6 +16,10 @@ export default function Header() {
         if (pathname === '/') return 'transparent'
         return 'var(--color-background-main)'
     })
+    const [boxShadow, setBoxShadow] = useState(() => {
+        if (pathname === '/') return 'none'
+        return '0px 6px 10px black'
+    })
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible)
@@ -26,14 +30,16 @@ export default function Header() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setBackground('transparent')
+                    setBoxShadow('none')
                 } else {
                     setBackground('var(--color-background-main)')
+                    setBoxShadow('0px 6px 10px black')
                 }
             })
         }, {
             root: null,
             rootMargin: '0px',
-            threshold: window.innerWidth > 1024 ? 0.8 : 0.6
+            threshold: window.innerWidth > 1024 ? 0.9 : 0.6
         })
         
         const hero = document.getElementById('hero')
@@ -50,7 +56,7 @@ export default function Header() {
     }, [pathname])
 
     return (
-        <header className={styles.header} style={{ background }}>
+        <header className={styles.header} style={{ background, boxShadow }}>
 
             <Link href='/'>
                 <Image src={'/Logo-Small.svg'} alt='' width={95} height={36} />
