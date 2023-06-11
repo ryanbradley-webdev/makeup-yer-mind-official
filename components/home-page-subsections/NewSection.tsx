@@ -57,7 +57,7 @@ export default async function NewSection() {
 
                     <Link href='/promotions'>
                         <Button variant='solid'>
-                            More promotions
+                            Show me more!
                         </Button>
                     </Link>
 

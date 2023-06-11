@@ -200,6 +200,13 @@
     line-height: 1.5em;
 }
 
+@media screen and (orientation: landscape) {
+    .about p {
+        font-size: 16px;
+        max-width: 70ch;
+    }
+}
+
 .about a {
     text-decoration: none;
     margin-inline: auto;

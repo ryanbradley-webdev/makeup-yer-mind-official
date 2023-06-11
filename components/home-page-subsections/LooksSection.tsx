@@ -53,7 +53,7 @@ export default async function LooksSection() {
 
                     <Link href='/looks'>
                         <Button variant='solid'>
-                            See the rest of my looks!
+                            See all looks
                         </Button>
                     </Link>
 

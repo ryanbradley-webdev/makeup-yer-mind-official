@@ -24,11 +24,11 @@ export default function SectionHeader({
     const buttonContent = () => {
         switch (type) {
             case 'new':
-                return 'Check out the rest of my deals!'
+                return 'See what\'s new!'
             case 'looks':
-                return 'Find your next great look!'
+                return 'Find your new favorite look!'
             case 'blogs':
-                return 'Learn something new!'
+                return 'Discover something new!'
             default:
                 return 'See what else I have in store!'
         }

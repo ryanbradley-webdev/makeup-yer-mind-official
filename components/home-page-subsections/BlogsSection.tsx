@@ -30,7 +30,7 @@ export default async function BlogsSection() {
 
                     <Link href='/blogs'>
                         <Button variant='solid'>
-                            See the rest of my blogs!
+                            Show me more!
                         </Button>
                     </Link>
 
