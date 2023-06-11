@@ -1,13 +1,14 @@
 'use client'
 
-import Link from 'next/link'
-import styles from './header.module.css'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import ExternalLink from '../ExternalLink'
 import YouTube from '../icons/YouTube'
 import Instagram from '../icons/Instagram'
 import Pinterest from '../icons/Pinterest'
 import Facebook from '../icons/Facebook'
 import Email from '../icons/Email'
+import styles from './header.module.css'
 
 export default function Menu({
     isVisible,
@@ -17,6 +18,11 @@ export default function Menu({
     toggleMenu: () => void
 }) {
     const [menuVisible, setMenuVisible] = useState(false)
+    const [youtubeHover, setYoutubeHover] = useState(false)
+    const [instagramHover, setInstagramHover] = useState(false)
+    const [pinterestHover, setPinterestHover] = useState(false)
+    const [facebookHover, setFacebookHover] = useState(false)
+    const [emailHover, setEmailHover] = useState(false)
 
     useEffect(() => {
         if (window.innerWidth <= 1024) {
@@ -59,24 +65,46 @@ export default function Menu({
 
             <div className={styles.iconDiv}>
 
-                <Link href='https://www.youtube.com/@Makeup.Yer.Mind.' rel='noopener noreferrer' target='_blank'>
-                    <YouTube />
-                </Link>
+                <ExternalLink 
+                    href='https://www.youtube.com/@Makeup.Yer.Mind.'
+                    onMouseEnter={() => setYoutubeHover(true)}
+                    onMouseLeave={() => setYoutubeHover(false)}
+                >
+                    <YouTube hover={youtubeHover} />
+                </ExternalLink>
 
-                <Link href='https://www.youtube.com/@Makeup.Yer.Mind.' rel='noopener noreferrer' target='_blank'>
-                    <Instagram />
-                </Link>
+                <ExternalLink 
+                    href='https://www.instagram.com/makeup.yer.mind/'
+                    onMouseEnter={() => setInstagramHover(true)}
+                    onMouseLeave={() => setInstagramHover(false)}
+                >
+                    <Instagram hover={instagramHover} />
+                </ExternalLink>
 
-                <Link href='https://www.pinterest.com/MakeupYerMind/' rel='noopener noreferrer' target='_blank'>
-                    <Pinterest />
-                </Link>
+                <ExternalLink 
+                    href='https://www.pinterest.com/MakeupYerMind/'
+                    onMouseEnter={() => setPinterestHover(true)}
+                    onMouseLeave={() => setPinterestHover(false)}
+                >
+                    <Pinterest hover={pinterestHover} />
+                </ExternalLink>
 
-                <Link href='https://www.facebook.com/MakeupYerMind' rel='noopener noreferrer' target='_blank'>
-                    <Facebook />
-                </Link>
+                <ExternalLink 
+                    href='https://www.facebook.com/MakeupYerMind'
+                    onMouseEnter={() => setFacebookHover(true)}
+                    onMouseLeave={() => setFacebookHover(false)}
+                >
+                    <Facebook hover={facebookHover} />
+                </ExternalLink>
 
-                <Link href='mailto:courtneyhollyactor@gmail.com' target='_blank'>
-                    <Email />
+                <Link 
+                    href='mailto:courtneyhollyactor@gmail.com'
+                    target='_blank'
+                    rel='nofollow'
+                    onMouseEnter={() => setEmailHover(true)}
+                    onMouseLeave={() => setEmailHover(false)}
+                >
+                    <Email hover={emailHover} />
                 </Link>
 
             </div>

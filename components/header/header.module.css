@@ -275,15 +275,13 @@
     height: 30px;
 }
 
+.iconDiv svg {
+    transition: fill 0.3s ease;
+}
+
 @media screen and (min-width: 1025px) {
     .iconDiv svg,
     .iconDiv img {
         height: 20px;
-        fill: var(--color-white-ter);
-        transition: fill 0.3s ease;
-    }
-
-    .iconDiv svg:hover {
-        fill: var(--color-gold-pri);
     }
 }

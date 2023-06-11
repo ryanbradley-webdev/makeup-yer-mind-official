@@ -1,5 +1,19 @@
-.instagram {
+.instagram_container {
+    position: relative;
+    display: flex;
+}
+
+.instagram_container > * {
+    transition: opacity 0.3s ease;
+}
+
+.gradient {
     width: auto;
     mask-image: url('./instagram.svg');
     mask-repeat: no-repeat;
+}
+
+.instagram {
+    position: absolute;
+    inset: 0;
 }
