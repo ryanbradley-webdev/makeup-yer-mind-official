@@ -10,6 +10,7 @@ import { getAllBlogs } from '@/lib/getAllBlogs';
 import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 import Comments from '@/components/comments/Comments';
 import SocialStats from '@/components/social-stats/SocialStats';
+import Share from '@/components/share/Share';
 
 type Params = {
     params: { slug: string }
@@ -20,7 +21,6 @@ export async function generateMetadata(
 ): Promise<Metadata> {
     const slug = params.slug;
 
-    // fetch data
     const blog = await getBlogBySlug(slug)
 
     const metatdata = {
@@ -70,19 +70,23 @@ export default async function BlogBySlug({ params }: Params) {
             
             <section className={styles.header}>
 
-                <h1>
-                    {title}
-                </h1>
+                <div>
 
-                {convertServerTimestamp(createdAt, updatedAt)}
+                    <h1>
+                        {title}
+                    </h1>
 
-                <SocialStats
-                    docLikes={likes}
-                    docIsLiked={false}
-                    id={id}
-                    docType={docType}
-                    views={views}
-                />
+                    {convertServerTimestamp(createdAt, updatedAt)}
+
+                    <SocialStats
+                        docLikes={likes}
+                        docIsLiked={false}
+                        id={id}
+                        docType={docType}
+                        views={views}
+                    />
+
+                </div>
 
                 <Image src={image} height={337} width={448} alt='' />
 
@@ -92,7 +96,7 @@ export default async function BlogBySlug({ params }: Params) {
 
             </section>
 
-            <section>
+            <section className={styles.content_section}>
 
                 <ReactMarkdown 
                     rehypePlugins={[rehypeRaw]}
@@ -102,6 +106,24 @@ export default async function BlogBySlug({ params }: Params) {
                 </ReactMarkdown>
 
                 <Signoff />
+
+                <SocialStats
+                    docLikes={likes}
+                    docIsLiked={false}
+                    id={id}
+                    docType={docType}
+                    views={views}
+                />
+
+                <aside className={styles.share}>
+
+                    <p>
+                        Share this article:
+                    </p>
+
+                    <Share />
+
+                </aside>
                 
             </section>
 

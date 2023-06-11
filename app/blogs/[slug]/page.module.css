@@ -2,6 +2,12 @@
     padding-top: 48px;
 }
 
+.header,
+.content_section {
+    max-width: 1000px;
+    margin-inline: auto;
+}
+
 .header h1 {
     text-align: left;
     font-size: 20px;
@@ -26,8 +32,34 @@
 
 .header img {
     width: 100%;
+    max-width: 500px;
     height: auto;
     margin-block: 24px;
+}
+
+@media screen and (orientation: landscape) {
+    .header {
+        display: grid;
+        grid-template-columns: 500px 1fr;
+        column-gap: 32px;
+        row-gap: 72px;
+    }
+
+    .header > div {
+        grid-column: 2;
+        align-self: end;
+        margin-bottom: 20px;
+    }
+
+    .header img {
+        grid-column: 1;
+        grid-row: 1;
+        margin-block: 0;
+    }
+
+    .header h3 {
+        grid-column: 1 / span 2;
+    }
 }
 
 .content {
@@ -36,6 +68,12 @@
     font-size: 12px;
     color: var(--color-white-sec);
     line-height: 1.5;
+}
+
+@media screen and (orientation: landscape) {
+    .content {
+        font-size: 16px;
+    }
 }
 
 .content img {
@@ -52,13 +90,25 @@
     margin-bottom: 12px;
 }
 
+@media screen and (orientation: landscape) {
+    .content > * {
+        margin-bottom: 20px;
+    }
+}
+
 .content ul {
     padding-left: 16px;
     list-style-type: '-';
 }
 
 .content ol {
-    padding-inline: 8px;
+    padding-inline: 12px;
+}
+
+@media screen and (orientation: landscape) {
+    .content ol {
+        padding-inline: 16px;
+    }
 }
 
 .content li {
@@ -76,4 +126,14 @@
     width: fit-content;
     margin-inline: auto;
     margin-block: 48px;
+}
+
+.content video {
+    width: 500px;
+}
+
+.share {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
