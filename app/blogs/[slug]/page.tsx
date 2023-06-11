@@ -86,6 +86,8 @@ export default async function BlogBySlug({ params }: Params) {
                         views={views}
                     />
 
+                    <Share />
+
                 </div>
 
                 <Image src={image} height={337} width={448} alt='' />
