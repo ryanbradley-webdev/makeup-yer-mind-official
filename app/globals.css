@@ -51,6 +51,10 @@ main {
   padding-top: 72px;
 }
 
+section {
+  padding-inline: var(--padding-inline-main);
+}
+
 h1 {
   text-align: center;
 }
