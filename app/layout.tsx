@@ -1,9 +1,9 @@
 import './globals.css'
-import { Cabin } from 'next/font/google'
+import { Bodoni_Moda } from 'next/font/google'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
 
-const cabin = Cabin({ subsets: ['latin'] })
+const bodoni = Bodoni_Moda({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cabin.className}>
+      <body className={bodoni.className}>
 
         <Header />
 
