@@ -121,7 +121,7 @@
     display: block;
     position: relative;
     width: 80%;
-    height: auto;
+    height: fit-content;
     margin-inline: auto;
 }
 
