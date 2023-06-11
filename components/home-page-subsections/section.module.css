@@ -1,3 +1,7 @@
+.section {
+    padding-inline: 0;
+}
+
 .sectionHeader {
     position: sticky;
     top: 78px;
@@ -53,6 +57,7 @@
         display: flex;
         gap: 20px;
         padding-right: 20px;
+        background-color: var(--color-background-main);
     }
 
     .sectionHeader {
