@@ -30,11 +30,11 @@ export default function Home() {
         <LogoName />
 
         <h3>
-          The Blog for people who love to feel <span>beautiful</span>
+          Beauty begins with <span>mindset</span>
         </h3>
 
         <p>
-          Follow my journey of sharing new looks, helpful tips and tricks, and all sorts of other fun things along the way.
+          Join the beauty adventure: with helpful tips, tricks, and a sprinkle of humor we aim to make you feel beautiful inside and out!
         </p>
 
         <div className={styles.heroBtnDiv}>
@@ -47,7 +47,7 @@ export default function Home() {
 
           <Link href='/color-match'>
             <Button variant='solid'>
-              Get Color-Matched
+              Free Makeup Consultation
             </Button>
           </Link>
 

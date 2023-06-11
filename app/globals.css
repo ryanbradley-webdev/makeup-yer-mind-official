@@ -51,10 +51,6 @@ main {
   padding-top: 72px;
 }
 
-section:not(#new, #looks, #blogs) {
-  padding-inline: var(--padding-inline-main);
-}
-
 h1 {
   text-align: center;
 }
