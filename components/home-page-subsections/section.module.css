@@ -4,7 +4,7 @@
 
 .sectionHeader {
     position: sticky;
-    top: 78px;
+    top: 72px;
     width: 100%;
     z-index: 1;
     display: flex;
@@ -12,6 +12,12 @@
     gap: 72px;
     padding-block: 12px;
     background: linear-gradient(to bottom, #7D6D61, #665344);
+}
+
+@media screen and (orientation: landscape) {
+    .sectionHeader {
+        top: 60.5px;
+    }
 }
 
 .sectionHeader h2 {
