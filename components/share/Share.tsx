@@ -14,13 +14,22 @@ export default function Share() {
     const [twitterHover, setTwitterHover] = useState<boolean>(false)
     const [linkedInHover, setLinkedInHover] = useState<boolean>(false)
     const [linkHover, setLinkHover] = useState<boolean>(false)
+    const [opacity, setOpacity] = useState('0')
 
     const pathname = usePathname()
 
     const URL = `https://makeupyermind.com${pathname}`
     
     const copyURL = () => {
-        navigator.clipboard.writeText(URL)
+        try {
+            navigator.clipboard.writeText(URL)
+            setOpacity('1')
+            setTimeout(() => {
+                setOpacity('0')
+            }, 2000)
+        } catch {
+            return
+        }
     }
 
     return (
@@ -30,6 +39,7 @@ export default function Share() {
                 href={`https://www.facebook.com/sharer/sharer.php?u=${URL}`}
                 onMouseEnter={() => setFacebookHover(true)}
                 onMouseLeave={() => setFacebookHover(false)}
+                title='Share to FaceBook'
             >
                 <Facebook hover={facebookHover} />
             </ExternalLink>
@@ -38,6 +48,7 @@ export default function Share() {
                 href={`https://twitter.com/intent/tweet?text=${URL}`}
                 onMouseEnter={() => setTwitterHover(true)}
                 onMouseLeave={() => setTwitterHover(false)}
+                title='Share to Twitter'
             >
                 <Twitter hover={twitterHover} />
             </ExternalLink>
@@ -46,6 +57,7 @@ export default function Share() {
                 href={`https://www.linkedin.com/shareArticle?mini=true&url=${URL}`}
                 onMouseEnter={() => setLinkedInHover(true)}
                 onMouseLeave={() => setLinkedInHover(false)}
+                title='Share to LinkedIn'
             >
                 <LinkedIn hover={linkedInHover} />
             </ExternalLink>
@@ -54,8 +66,15 @@ export default function Share() {
                 onClick={copyURL}
                 onMouseEnter={() => setLinkHover(true)}
                 onMouseLeave={() => setLinkHover(false)}
+                title='Copy Article Link'
             >
                 <LinkIcon hover={linkHover} />
+                <p
+                    style={{ opacity }}
+                    className={styles.toast}
+                >
+                    Link copied!
+                </p>
             </span>
 
         </div>
