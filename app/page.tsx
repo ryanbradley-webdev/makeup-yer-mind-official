@@ -62,7 +62,7 @@ export default function Home() {
 
       <section className={styles.about} id='about'>
 
-        <Image src='/about-lg.png' height={550} width={360} alt='' />
+        <Image src='/about-md.png' height={550} width={360} alt='' />
 
         <div>
 
