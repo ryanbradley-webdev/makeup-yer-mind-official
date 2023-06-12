@@ -38,7 +38,7 @@ export default function Footer() {
 
 
             <p>
-                &copy; 2023 Shades of Pink. Designed and developed by <ExternalLink href='https://ryanbradleywebdev.com'>Ryan Bradley Web Design</ExternalLink>.
+                &copy; {new Date().getFullYear()} Shades of Pink. Designed and developed by <ExternalLink href='https://ryanbradleywebdev.com'>Ryan Bradley Web Design</ExternalLink>.
             </p>
 
         </footer>
