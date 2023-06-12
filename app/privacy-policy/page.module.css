@@ -1,5 +1,7 @@
 .main section {
     padding-block: 12px;
+    max-width: 1000px;
+    margin-inline: auto;
 }
 
 .main h1 {
@@ -20,6 +22,13 @@
 
 .main p {
     margin-block: 12px;
+}
+
+@media screen and (min-width: 769px) {
+    .main p,
+    .main ul {
+        font-size: 16px;
+    }
 }
 
 .main ul {
