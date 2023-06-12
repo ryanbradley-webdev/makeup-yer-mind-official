@@ -53,8 +53,8 @@ export default function Menu({
                     Looks
                 </Link>
 
-                <Link href='/affiliates' onClick={toggleMenu}>
-                    Affiliates
+                <Link href='/meet-the-team' onClick={toggleMenu}>
+                    Meet the Team
                 </Link>
 
                 <Link href='/color-match' onClick={toggleMenu}>
