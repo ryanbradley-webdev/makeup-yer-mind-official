@@ -3,6 +3,12 @@
     padding-top: 72px;
 }
 
+@media screen and (orientation: landscape) {
+    .header {
+        min-height: 100vh;
+    }
+}
+
 .main section,
 .main aside {
     display: grid;
@@ -18,9 +24,23 @@
     margin-top: 24px;
 }
 
+@media screen and (orientation: landscape) {
+    .main aside {
+        display: flex;
+        gap: 1ch;
+        padding-left: 16px;
+        margin-bottom: 24px;
+    }
+}
+
 .main h1,
 .main h3 {
     text-align: center;
+}
+
+.header h3,
+.header h3 a {
+    font-size: 16px;
 }
 
 .intro img {
@@ -95,6 +115,13 @@
     background: var(--color-gold-gradient);
     border: none;
     box-shadow: 0 4px 8px black;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .glossary_btn span:last-child {
+        display: none;
+    }
 }
 
 .glossary {
@@ -109,6 +136,13 @@
     box-shadow: inset 0px -10px 13px -9px black;
     transition: height 0.3s ease-in-out;
     z-index: -1;
+}
+
+@media screen and (orientation: landscape) {
+    .glossary {
+        height: 250px;
+        padding-left: 32px;
+    }
 }
 
 .glossary[aria-hidden="true"] {

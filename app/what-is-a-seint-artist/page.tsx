@@ -16,50 +16,54 @@ export const metadata = {
 export default function WhatIsASeintArtist() {
     return (
         <main className={styles.main}>
+
+            <div className={styles.header}>
             
-            <section className={styles.intro}>
+                <section className={styles.intro}>
 
-                <Image src='/seint-logo-large.png' height={476} width={900} alt='Seint Artist Program' />
+                    <Image src='/seint-logo-large.png' height={476} width={900} alt='Seint Artist Program' />
 
-                <h1>
-                    What is a Seint Artist, anyway?
-                </h1>
+                    <h1>
+                        What is a Seint Artist, anyway?
+                    </h1>
 
-                <p>
-                    My dearest readers (please read this entire post in the Lady Whistledown voice, k?),
-                </p>
+                    <p>
+                        My dearest readers (please read this entire post in the Lady Whistledown voice, k?),
+                    </p>
 
-                <p>
-                    While I am still hastily writing/filming the color correction post and video there are some products I&apos;m ordering to really help give a full educational experience to that entry so I do apologize for it taking longer than the typical post. 
-                </p>
+                    <p>
+                        While I am still hastily writing/filming the color correction post and video there are some products I&apos;m ordering to really help give a full educational experience to that entry so I do apologize for it taking longer than the typical post. 
+                    </p>
 
-                <p>
-                    However, I&apos;ve been getting quite a few people asking about the Seint Artist Program, and I thought that doing a quick writeup about the program and my experiences with it thus far would benefit a lot of you who have been curious about it. I&apos;m going to try to write this in as much of an unbiased headspace as possible because is this for everyone? No. I want to be detailed and answer as many questions as possible (especially because I had so many when I first started) so that anyone who stumbles upon this post can make a truly informed decision. 
-                </p>
+                    <p>
+                        However, I&apos;ve been getting quite a few people asking about the Seint Artist Program, and I thought that doing a quick writeup about the program and my experiences with it thus far would benefit a lot of you who have been curious about it. I&apos;m going to try to write this in as much of an unbiased headspace as possible because is this for everyone? No. I want to be detailed and answer as many questions as possible (especially because I had so many when I first started) so that anyone who stumbles upon this post can make a truly informed decision. 
+                    </p>
 
-                <p>
-                    So with that, let&apos;s dive in!
-                </p>
+                    <p>
+                        So with that, let&apos;s dive in!
+                    </p>
 
-            </section>
+                </section>
 
-            <aside>
+                <aside>
 
-                <h3>
-                    Looking for just some quick info without reading the whole article?
-                </h3>
+                    <h3>
+                        Looking for just some quick info without reading the whole article?
+                    </h3>
 
-                <h3>
-                    <a href='#video'>
-                        Watch a quick video here!
-                    </a>
-                </h3>
+                    <h3>
+                        <a href='#video'>
+                            Watch a quick video here!
+                        </a>
+                    </h3>
 
-            </aside>
+                </aside>
 
-            <Button>
-                Join Courtney&apos;s Team!
-            </Button>
+                <Button>
+                    Join Courtney&apos;s Team!
+                </Button>
+
+            </div>
 
             <Glossary />
 
