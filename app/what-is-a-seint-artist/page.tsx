@@ -51,7 +51,7 @@ export default function WhatIsASeintArtist() {
 
                 <h3>
                     <a href='#video'>
-                        What a quick video here!
+                        Watch a quick video here!
                     </a>
                 </h3>
 
