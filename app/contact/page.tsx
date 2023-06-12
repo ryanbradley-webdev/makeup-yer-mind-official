@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Form from "./components/Form"
 import styles from './page.module.css'
 
@@ -15,7 +16,13 @@ export default function Contact() {
                 I want to hear from you!
             </h1>
 
-            <Form />
+            <div className={styles.form_container}>
+
+                <Image src='/contact.webp' height={540} width={500} alt="" />
+
+                <Form />
+
+            </div>
 
         </main>
     )

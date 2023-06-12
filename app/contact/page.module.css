@@ -2,15 +2,37 @@
     margin-top: 24px;
 }
 
+.form_container {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1048px;
+    margin-inline: auto;
+}
+
+.form_container img {
+    display: none;
+}
+
 .form {
     display: grid;
     row-gap: 12px;
     padding-block: 24px;
+    padding-inline: 16px;
     margin-block: 24px;
-    /* background-image: url('/contact.webp');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
+    width: 100%;
+}
+
+@media screen and (orientation: landscape) {
+    .form_container img {
+        display: block;
+    }
+
+    .form {
+        max-width: 500px;
+        padding-inline: 0;
+    }
 }
 
 .form label {
