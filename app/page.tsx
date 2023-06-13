@@ -83,7 +83,7 @@ export default function Home() {
             </p>
 
             <p>
-              &quot;Makeup Yer Mind&apos; is so much more than just a fun play on words. <strong>It&apos;s a mission.</strong>
+              &quot;Makeup Yer Mind&quot; is so much more than just a fun play on words. <strong>It&apos;s a mission.</strong>
             </p>
 
             <p>
