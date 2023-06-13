@@ -59,6 +59,12 @@
     width: 80%;
 }
 
+.profile h3 span {
+    font-size: 14px;
+    color: var(--color-white-sec);
+    font-style: italic;
+}
+
 .profile img {
     width: 100%;
     height: auto;
@@ -68,18 +74,23 @@
 @media screen and (min-width: 1025px) {
     .profile {
         grid-template-columns: 400px 1fr;
-        grid-template-rows: 40px 1fr;
         column-gap: 24px;
-    }
-
-    .profile img {
-        grid-column: 1;
-        grid-row: 1 / span 2;
     }
 }
 
 .affiliate_container {
     margin-block: 48px;
+}
+
+.affiliate_container strong {
+    font-size: 14px;
+    color: var(--color-white-pri);
+}
+
+@media screen and (orientation: landscape) {
+    .affiliate_container strong {
+        font-size: 18px;
+    }
 }
 
 .affiliate {

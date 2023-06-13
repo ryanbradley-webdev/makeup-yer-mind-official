@@ -17,57 +17,81 @@ export default function MeetTheTeam() {
 
                 <div className={styles.profile}>
 
-                    <Image src='/steve.webp' width={800} height={1200} alt='' />
+                    <Image src='/team-photo-courtney.png' width={800} height={1200} alt='' />
 
-                    <h3>
-                        Steve
-                    </h3>
+                    <div>
 
-                    <p>
-                        Hailing from Brooklyn, NY, Steve has been passionate about makeup from a very early age. He joined my team in late 2021 and has become my go-to person for any and all advice!
-                    </p>
+                        <h3>
+                            Courtney Holly <span>- Founder</span>
+                        </h3>
 
-                </div>
+                        <p>
+                            Courtney is a professionally trained Actress, Voiceover Artist, Makeup Artist, Podcast Host and SFX Makeup Artist based in Nashville, Tennessee.
+                        </p>
 
-                <div className={styles.profile}>
+                        <p>
+                            Her passion for sharing her knowledge of the beauty industry and being the support that others need to truly believe they are beautiful was the driving force behind the founding of Makeup Yer Mind. Her main goal is to create a safe space for anyone and everyone to learn the in&apos;s and out&apos;s of the beauty industry while also fostering a positive and supportive environment.
+                        </p>
 
-                    <Image src='/jeff.jpg' width={512} height={288} alt='' />
+                        <p>
+                            When she&apos;s not writing blogs, creating videos, performing or hosting you can find her spending time with her family, playing videogames and giving her dog Tessa an obscene amount of snuggles!
+                        </p>
 
-                    <h3>
-                        Jeff
-                    </h3>
-
-                    <p>
-                        A member of the local cartel (shhh! He&apos;s undercover), Jeff brings a whole new personality to the team. Although his exterior is tough and rugged, he&apos;s actually a huge softie!
-                    </p>
+                    </div>
 
                 </div>
 
                 <div className={styles.profile}>
 
-                    <Image src='/chris.gif' width={331} height={280} alt='' />
+                    <Image src='/team-photo-tara-PLACEHOLDER.png' width={800} height={1200} alt='' />
 
-                    <h3>
-                        Chris
-                    </h3>
+                    <div>
 
-                    <p>
-                        Gone too young, Chris was an irreplaceable member of the team. Unfortunately, his soul was lost to copious amounts of cocaine and amphetamines. Still, his presence is felt every day and he will always be remembered as a core member of my community!
-                    </p>
+                        <h3>
+                            Tara Andersen <span>- Associate Blogger</span>
+                        </h3>
+
+                        <p>
+                            Bio in progress.
+                        </p>
+
+                    </div>
 
                 </div>
 
                 <div className={styles.profile}>
 
-                    <Image src='/barack.jpg' width={1024} height={683} alt='' />
+                    <Image src='/team-photo-malina-PLACEHOLDER.png' width={800} height={1200} alt='' />
 
-                    <h3>
-                        B-dawg
-                    </h3>
+                    <div>
 
-                    <p>
-                        After struggling through an unsuccessful career in politics (ew, gross!), Barack reached out to join my team in 2017 shortly after losing his previous job. Since then, he&apos;s proven himself INVALUABLE to the growth of my community! His message of positivity and hope is one that has shaped this community over the last several years, and I know you&apos;ll come to love his influence! As a final note, I&apos;ll leave you with his famous saying: &quot;Make America Great Again!&quot;
-                    </p>
+                        <h3>
+                            Malina Roiati <span>- Associate Blogger</span>
+                        </h3>
+
+                        <p>
+                            Bio in progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div className={styles.profile}>
+
+                    <Image src='/team-photo-ryan-PLACEHOLDER.png' width={800} height={1200} alt='' />
+
+                    <div>
+
+                        <h3>
+                            Ryan Bradley <span>- Web Design</span>
+                        </h3>
+
+                        <p>
+                            Hi, I&apos;m Ryan, and I like to party.
+                        </p>
+
+                    </div>
 
                 </div>
 
