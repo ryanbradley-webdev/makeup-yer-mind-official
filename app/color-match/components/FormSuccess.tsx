@@ -4,7 +4,7 @@ import styles from '../page.module.css'
 
 export default function FormSuccess() {
     return (
-        <>
+        <div className={styles.form_completion}>
 
             <h3>
                 Form Submitted!
@@ -20,6 +20,6 @@ export default function FormSuccess() {
                 </Button>
             </Link>
 
-        </>
+        </div>
     )
 }

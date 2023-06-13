@@ -336,7 +336,7 @@ export default function Form() {
 
                 </div>
 
-                {seintCartWanted && <div>
+                {seintCartWanted && <div className={styles.cart_info}>
 
                     <p>
                         I just need a little more information to set up a profile for you.
@@ -355,7 +355,7 @@ export default function Form() {
                             name="address"
                             id="address"
                             onChange={e => dispatch({ type: 'change-address', payload: e.target.value })}
-                            placeholder='address'
+                            placeholder='Enter your address here!'
                             required
                         />
                     </label>
