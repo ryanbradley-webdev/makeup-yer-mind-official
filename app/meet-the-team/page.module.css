@@ -8,9 +8,19 @@
     margin-bottom: 60px;
 }
 
+.section:last-child {
+    margin-top: 100px;
+}
+
+@media screen and (orientation: landscape) {
+    .section:last-child {
+        margin-top: 150px;
+    }
+}
+
 .section h2 {
     font-size: 20px;
-    margin-left: 24px;
+    text-align: center;
 }
 
 .section p {
@@ -22,6 +32,14 @@
 
 .section > p {
     padding-inline: 24px;
+    margin-inline: auto;
+}
+
+@media screen and (min-width: 481px) {
+    .section:last-child > p {
+        width: 80%;
+        padding-inline: 0;
+    }
 }
 
 @media screen and (min-width: 769px) {
@@ -57,5 +75,46 @@
     .profile img {
         grid-column: 1;
         grid-row: 1 / span 2;
+    }
+}
+
+.affiliate_container {
+    margin-block: 48px;
+}
+
+.affiliate {
+    margin-block: 100px;
+    margin-inline: auto;
+    max-width: 600px;
+}
+
+.affiliate img,
+.affiliate svg {
+    display: block;    
+    margin-inline: auto;
+    margin-bottom: 24px;
+    width: 150px;
+    height: auto;
+}
+
+@media screen and (min-width: 481px) {
+    .affiliate {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        column-gap: 24px;
+        align-items: center;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .affiliate {
+        grid-template-columns: 243px 1fr;
+        max-width: none;
+        width: 80%;
+    }
+
+    .affiliate img,
+    .affiliate svg {
+        width: 234px;
     }
 }
