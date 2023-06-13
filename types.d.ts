@@ -39,6 +39,9 @@ type Promo = {
     description: string,
     link: string,
     active: boolean,
+    createdAt: TimeStamp,
+    updatedAt?: TimeStamp,
+    expiresAt?: TimeStamp,
     docType: 'promotion'
 }
 
