@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Link from 'next/link'
+import ExternalLink from '@/components/ExternalLink'
 
 export const metadata = {
     title: 'Makeup Yer Mind | Meet My Team!',
@@ -9,32 +11,8 @@ export const metadata = {
 export default function MeetTheTeam() {
     return (
         <main className={styles.main}>
-            
-            <section className={styles.section}>
-
-                <h2>
-                    Affiliations:
-                </h2>
-
-                <p>
-                    <strong>This blogsite was created to share products that I actually use and believe in.</strong> And while I have some affiliations, if I find something I like better you&apos;ll know about it! You will never catch me promoting something for the sole purpose of making a sale.
-                </p>
-
-                <p>
-                    This is my promise to you.
-                </p>
-
-                <p>
-                    This is also why I haven&apos;t finished writing this section yet.
-                </p>
-            
-            </section>
 
             <section className={styles.section}>
-
-                <h2>
-                    My team:
-                </h2>
 
                 <div className={styles.profile}>
 
@@ -92,6 +70,72 @@ export default function MeetTheTeam() {
 
                 </div>
 
+            </section>
+            
+            <section className={styles.section}>
+
+                <h2>
+                    Affiliations:
+                </h2>
+
+                <p>
+                    <strong>This blogsite was created to share products that I actually use and believe in.</strong> And while I have some affiliations, if I find something I like better you&apos;ll know about it! You will never catch me promoting something for the sole purpose of making a sale.
+                </p>
+
+                <p>
+                    This is my promise to you.
+                </p>
+
+                <p>
+                    This is also why I want to be as completely transparent as I possibly can on this site and list the affiliations I do have!
+                </p>
+                
+                <div className={styles.affiliate}>
+                    
+                    {/* Add Seint Logo here */}
+                    
+                    <p>
+                        <strong>Seint Beauty:</strong> I started using Seint&apos;s products in June of 2021, and got completely obsessed with them and became an artist with Seint Beauty in October of 2021 and it&apos;s been an amazing ride.
+                    </p>
+
+                    <p>
+                        You can read more about the Seint Artist program here: <Link href='/what-is-a-seint-artist'>What Is A Seint Artist?</Link>
+                    </p>
+
+                    <p>
+                        Check out Seint&apos;s products <ExternalLink href='https://st-sational-corntee.seintofficial.com/en/shop/office/new-releases'>here!</ExternalLink>
+                    </p>
+
+                </div>
+                
+                <div className={styles.affiliate}>
+                    
+                    {/* Add City Beauty Logo here */}
+                    
+                    <p>
+                        <strong>City Beauty:</strong> In March of 2023 the kind folks at City Beauty reached out to collaborate with me. I had been using their products since my mom first introduced me to them back in 2007 and I can state from personal experience they are some of the best skincare products on the market!!
+                    </p>
+
+                    <p>
+                        Check out City Beauty&apos;s products <ExternalLink href='https://aspireiq.go2cloud.org/SH1la'>here!</ExternalLink>
+                    </p>
+
+                </div>
+                
+                <div className={styles.affiliate}>
+                    
+                    {/* Add Senegence Logo here */}
+                    
+                    <p>
+                        <strong>Senegence:</strong> I became a Senegence distributor in January of 2023 and I love it. I am a lipstick junkie and, when I was introduced to Senegence&apos;s line of no-budge lipstick, I was hooked. These products are amazing and play so nicely with my entire makeup routine. They have a vast array of products and are a trustworthy company.
+                    </p>
+
+                    <p>
+                        Check out Senegence&apos;s products <ExternalLink href='https://shop.senegence.com/en-us/distributor/804775'>here!</ExternalLink>
+                    </p>
+
+                </div>
+            
             </section>
 
         </main>
