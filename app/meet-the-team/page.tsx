@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link'
 import ExternalLink from '@/components/ExternalLink'
+import Seint from './components/Seint'
 
 export const metadata = {
     title: 'Makeup Yer Mind | Meet My Team!',
@@ -92,7 +93,7 @@ export default function MeetTheTeam() {
                 
                 <div className={styles.affiliate}>
                     
-                    {/* Add Seint Logo here */}
+                    <Seint />
                     
                     <p>
                         <strong>Seint Beauty:</strong> I started using Seint&apos;s products in June of 2021, and got completely obsessed with them and became an artist with Seint Beauty in October of 2021 and it&apos;s been an amazing ride.
@@ -109,8 +110,8 @@ export default function MeetTheTeam() {
                 </div>
                 
                 <div className={styles.affiliate}>
-                    
-                    {/* Add City Beauty Logo here */}
+
+                    <Image src='/city-beauty-logo.png' width={243} height={105} alt='City Beauty' />
                     
                     <p>
                         <strong>City Beauty:</strong> In March of 2023 the kind folks at City Beauty reached out to collaborate with me. I had been using their products since my mom first introduced me to them back in 2007 and I can state from personal experience they are some of the best skincare products on the market!!
@@ -124,7 +125,7 @@ export default function MeetTheTeam() {
                 
                 <div className={styles.affiliate}>
                     
-                    {/* Add Senegence Logo here */}
+                    <Image src='/senegence-logo.png' width={243} height={290} alt='Senegence' />
                     
                     <p>
                         <strong>Senegence:</strong> I became a Senegence distributor in January of 2023 and I love it. I am a lipstick junkie and, when I was introduced to Senegence&apos;s line of no-budge lipstick, I was hooked. These products are amazing and play so nicely with my entire makeup routine. They have a vast array of products and are a trustworthy company.
