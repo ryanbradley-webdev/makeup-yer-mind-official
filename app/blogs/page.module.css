@@ -1,3 +1,7 @@
+.main h1 {
+    margin-block: 48px;
+}
+
 .parameters {
     display: flex;
     flex-direction: column;
@@ -37,8 +41,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 12px;
-    row-gap: 30px;
+    row-gap: 48px;
     padding-block: 24px;
+    max-width: 1200px;
+    margin-inline: auto;
 }
 
 .blog_grid > *:first-child {
@@ -52,15 +58,5 @@
 
     .blog_grid > *:first-child {
         grid-column: 1 / span 3;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .blog_grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .blog_grid > *:first-child {
-        grid-column: 1 / span 4;
     }
 }

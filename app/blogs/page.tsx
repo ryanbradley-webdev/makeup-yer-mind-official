@@ -9,7 +9,7 @@ export const metadata = {
 export default function Blogs() {
 
     return (
-        <main>
+        <main className={styles.main}>
 
             <h1>
                 Learn Something New
