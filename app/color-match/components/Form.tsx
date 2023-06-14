@@ -129,7 +129,19 @@ export default function Form() {
                 </h1>
 
                 <p>
-                    So you&apos;re interested in getting a free color match for Seint Makeup? Yay! I&apos;m so excited! I can&apos;t wait to match you to your perfect colors! I just need a few things from you to get started.
+                    Thank you so much for trusting me to help you on your beauty adventure. In order for me to best serve you, I just need to know a few things about you!
+                </p>
+
+                <p>
+                    Beauty is a personal journey, and I value you and your trust so everything between us is always 100% confidential.
+                </p>
+
+                <p>
+                    Ready to completely revamp your beauty routine?!
+                </p>
+
+                <p>
+                    Let&apos;s go!
                 </p>
 
             </FormDiv>
@@ -243,7 +255,15 @@ export default function Form() {
             >
 
                 <p>
-                    What kind of coverage are you looking for in your makeup? What are your skin concerns?
+                    What are your biggest makeup concerns?
+                </p>
+
+                <p>
+                    Any skin concerns?
+                </p>
+
+                <p>
+                    What are you wanting to achieve from your beauty routine?
                 </p>
 
                 <textarea
@@ -265,7 +285,11 @@ export default function Form() {
             >
 
                 <p>
-                    Okay gorgeous, I just need a makeup free selfie! This is so important for me to accurately match you. I know that sending a makeup-free selfie can be intimidating, please know that I am the only one who will see it and I will delete it as soon as I&apos;m done matching you! Follow the instructions below to submit a perfect selfie!
+                    Okay gorgeous, I just need a makeup-free selfie! This is so important for me to accurately match your natural skin-tone and undertones and get a better idea of how your skin is behaving right now.
+                </p>
+
+                <p>
+                    I know that sending a makeup-free selfie can be intimidating, please know that I am the only one who will see it and I will delete it as soon as I&apos;m done matching you! Follow the instructions below to submit a perfect selfie!
                 </p>
 
                 <div className={styles.img_container}>
@@ -305,7 +329,7 @@ export default function Form() {
             >
 
                 <p>
-                    Would you like me to custom build your cart with my recommendations for you?
+                    Would you like me to custom build your cart with any Seint Makeup related recommendations for you?
                 </p>
 
                 <div className={styles.radioDiv}>
@@ -383,7 +407,11 @@ export default function Form() {
             >
 
                 <p>
-                    If you&apos;re happy with everything, submit the form and I&apos;ll give you your color match in just a few days!
+                    Okay! That&apos;s all I need to get started! Watch your email inbox for your results! If you don&apos;t see an email in the next 24-48 hours please make sure it didn&apos;t go to your spam or promotions folders, if it&apos;s still not there reach out to me and let me know!
+                </p>
+
+                <p>
+                    I can&apos;t wait to get to know you!
                 </p>
 
             </FormDiv>
