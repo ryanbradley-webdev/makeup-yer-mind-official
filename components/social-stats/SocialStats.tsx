@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import LikesIcon from '../icons/LikesIcon'
 import ViewsIcon from '../icons/ViewsIcon'
 import styles from './socialStats.module.css'
-import { getPageStats } from '@/lib/getPageStats'
+import { doc, onSnapshot } from 'firebase/firestore'
+import { firestore } from '@/util/firebase'
 
 export default function SocialStats({
     docViews,
@@ -19,7 +20,7 @@ export default function SocialStats({
     id: string,
     docType: string
 }) {
-    const [views, setViews] = useState(docViews || 0)
+    const [views, setViews] = useState(docViews + 1 || 0)
     const [likes, setLikes] = useState(docLikes || 0)
     const [isLiked, setIsLiked] = useState(docIsLiked)
 
@@ -39,9 +40,6 @@ export default function SocialStats({
             })
 
             if (res.ok) {
-                setLikes(prevLikes => {
-                    return isLiked ? prevLikes - 1 : prevLikes + 1
-                })
                 setIsLiked(!isLiked)
             }
         } catch {
@@ -50,11 +48,34 @@ export default function SocialStats({
     }
 
     useEffect(() => {
-        getPageStats(id, docType).then(stats => {
-            setViews(stats.views)
-            setLikes(stats.likes)
+        const docRef = doc(firestore, `${docType}s`, id)
+
+        const unsubscribe = onSnapshot(docRef, document => {
+            const docData = document.data()
+
+            if (docData) {
+                const likesData = docData.likes
+                const viewsData = docData.views
+
+                if (likesData !== likes) {
+                    setLikes(likesData)
+                    
+                    if (likesData < likes) {
+                        setIsLiked(false)
+                    } else {
+                        setIsLiked(true)
+                    }
+                }
+
+                if (viewsData !== views) {
+                    setViews(viewsData)
+                }
+            }
+            
         })
-    }, [id, docType])
+
+        return () => unsubscribe()
+    }, [views, likes, docType, id])
 
     return (
         <div className={styles.social_stats}>

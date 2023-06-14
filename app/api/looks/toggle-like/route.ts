@@ -16,7 +16,10 @@ export async function PATCH(request: Request) {
     try {
         const lookRef = doc(firestore, 'looks', id)
 
-        const newLikes = isLiked ? likes - 1 : likes + 1
+        const newLikes =
+            isLiked ? 
+            likes - 1 < 0 ? 0 : likes - 1 : 
+            likes + 1
 
         await updateDoc(lookRef, {
             likes: newLikes
