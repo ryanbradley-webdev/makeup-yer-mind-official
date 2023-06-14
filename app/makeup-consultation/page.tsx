@@ -6,7 +6,7 @@ export const metadata = {
     description: 'Just give me a little information about yourself and I\'ll give you a personalized color palette, all for free!'
 }
 
-export default function ColorMatch() {
+export default function MakeupConsultation() {
     return (
         <main className={styles.main}>
 

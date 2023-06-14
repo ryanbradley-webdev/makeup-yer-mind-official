@@ -46,7 +46,7 @@ export default function Home() {
             </Button>
           </Link>
 
-          <Link href='/color-match'>
+          <Link href='/makeup-consultation'>
             <Button variant='solid'>
               Free Makeup Consultation
             </Button>

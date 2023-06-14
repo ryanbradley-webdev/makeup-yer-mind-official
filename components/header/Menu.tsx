@@ -57,8 +57,8 @@ export default function Menu({
                     Meet the Team
                 </Link>
 
-                <Link href='/color-match' onClick={toggleMenu}>
-                    Get Color Matched!
+                <Link href='/makeup-consultation' onClick={toggleMenu}>
+                    Get a Free Consultation!
                 </Link>
 
             </ul>
