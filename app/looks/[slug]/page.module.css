@@ -26,6 +26,7 @@
 
 .img_container {
     display: flex;
+    gap: 12px;
     width: 100%;
 }
 
@@ -116,22 +117,28 @@
 }
 
 .color_div {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 110px));
     gap: 12px;
-    width: 100%;
-    margin-block: 16px;
+    margin-block: 32px;
 }
 
 .color_btn {
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     text-decoration: none;
 }
 
 .color_btn img {
-    width: 100%;
     height: 30px;
+    width: 100%;
+    max-width: 134px;
     object-fit: cover;
+}
+
+.color_info {
+    margin-left: 8px;
 }
 
 .color_name {
