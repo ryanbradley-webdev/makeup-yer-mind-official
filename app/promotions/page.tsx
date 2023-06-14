@@ -5,15 +5,20 @@ import PastPromos from './components/PastPromos'
 
 export const revalidate = 60 // FIXME update revalidate variable for production
 
+export const metadata = {
+    title: 'Makeup Yer Mind | All Promotions',
+    description: 'I constantly run promotions, check out what I have to offer you today!'
+}
+
 export default function Promotions() {
     return (
         <main className={styles.main}>
 
-            <h1>
-                Active Promotions
-            </h1>
+            <section className={styles.promotion_grid}>
 
-            <section>
+                <h2>
+                    Active Promotions
+                </h2>
 
                 <Suspense fallback={<p>Loading...</p>}>
                     {/* @ts-expect-error Async Server Component */}
@@ -22,11 +27,11 @@ export default function Promotions() {
 
             </section>
 
-            <h2>
-                Past Promotions
-            </h2>
+            <section className={styles.promotion_grid}>
 
-            <section>
+                <h2>
+                    Past Promotions
+                </h2>
 
                 <Suspense fallback={<p>Loading...</p>}>
                     {/* @ts-expect-error Async Server Component */}

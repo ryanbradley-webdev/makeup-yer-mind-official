@@ -1,6 +1,5 @@
 import PromoCard from '@/components/cards/PromoCard'
 import { getAllPromos } from '@/lib/getAllPromos'
-import { v4 as uuid } from 'uuid'
 
 export default async function PastPromos() {
     const { pastPromos } = await getAllPromos()
@@ -11,11 +10,11 @@ export default async function PastPromos() {
                 pastPromos?.length > 0 ?
 
                 pastPromos.map(promo => (
-                    <PromoCard promo={promo} key={uuid()} />
+                    <PromoCard promo={promo} key={promo.id} />
                 )) :
 
                 <p>
-                    No past promotions
+                    I don&apos;t have any past promotions at the moment.
                 </p>
             }
         </>

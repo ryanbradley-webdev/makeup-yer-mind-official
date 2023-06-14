@@ -1,6 +1,5 @@
 import PromoCard from '@/components/cards/PromoCard'
 import { getAllPromos } from '@/lib/getAllPromos'
-import { v4 as uuid } from 'uuid'
 
 export default async function ActivePromos() {
     const { activePromos } = await getAllPromos()
@@ -11,11 +10,11 @@ export default async function ActivePromos() {
                 activePromos?.length > 0 ?
 
                 activePromos.map(promo => (
-                    <PromoCard promo={promo} key={uuid()} />
+                    <PromoCard promo={promo} key={promo.id} />
                 )) :
                 
                 <p>
-                    No active promotions
+                    I&apos;m not currently running any promotions, but check back soon! I&apos;m sure I&apos;ll have something you&apos;ll love!
                 </p>
             }
         </>
