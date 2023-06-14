@@ -1,0 +1,6 @@
+.content {
+    color: var(--color-white-ter);
+    font-style: italic;
+    font-size: 12px;
+    margin-block: 8px;
+}

@@ -12,6 +12,7 @@ import Comments from '@/components/comments/Comments'
 import SocialStats from '@/components/social-stats/SocialStats'
 import Share from '@/components/share/Share'
 import rehypeRaw from 'rehype-raw'
+import TagsAndTopics from '@/components/tags-and-topics/TagsAndTopics'
 
 type Params = {
     params: { slug: string }
@@ -73,6 +74,10 @@ export default async function LookBySlug({ params }: Params) {
                     </h1>
 
                     {convertServerTimestamp(createdAt, updatedAt)}
+
+                    {tags.length > 0 && <TagsAndTopics content={tags}>
+                        Tags
+                    </TagsAndTopics>}
 
                     <SocialStats
                         views={views}

@@ -11,6 +11,7 @@ import { convertServerTimestamp } from '@/lib/convertServerTimestamp'
 import Comments from '@/components/comments/Comments';
 import SocialStats from '@/components/social-stats/SocialStats';
 import Share from '@/components/share/Share';
+import TagsAndTopics from '@/components/tags-and-topics/TagsAndTopics';
 
 type Params = {
     params: { slug: string }
@@ -60,6 +61,7 @@ export default async function BlogBySlug({ params }: Params) {
         createdAt,
         updatedAt,
         content,
+        topics,
         likes,
         views,
         docType
@@ -77,6 +79,10 @@ export default async function BlogBySlug({ params }: Params) {
                     </h1>
 
                     {convertServerTimestamp(createdAt, updatedAt)}
+
+                    {topics.length > 0 && <TagsAndTopics content={topics}>
+                        Topics
+                    </TagsAndTopics>}
 
                     <SocialStats
                         docLikes={likes}
