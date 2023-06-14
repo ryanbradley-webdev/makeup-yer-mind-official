@@ -1,6 +1,7 @@
 .promotion_grid {
     display: grid;
     row-gap: 24px;
+    column-gap: 24px;
     margin-block: 24px 72px;
     max-width: 1200px;
     margin-inline: auto;

@@ -14,12 +14,6 @@
     background: linear-gradient(to bottom, #7D6D61, #665344);
 }
 
-@media screen and (orientation: landscape) {
-    .sectionHeader {
-        top: 60.5px;
-    }
-}
-
 .sectionHeader h2 {
     color: var(--color-white-pri);
     opacity: 0.7;
@@ -67,12 +61,17 @@
     }
 
     .sectionHeader {
+        top: 60.5px;
         width: 250px;
-        height: calc(100vh - 71px);
+        height: calc(100vh - 60.5px);
         background-position: center;
         background-size: cover;
         padding-block: 32px;
         padding-inline: 8px;
+    }
+
+    .section > div:not(.sectionHeader) {
+        width: calc(100vw - 250px);
     }
 
     .new_header {
@@ -137,6 +136,10 @@
 @media screen and (min-width: 1440px) {
     .sectionHeader {
         width: 325px;
+    }
+
+    .section > div:not(.sectionHeader) {
+        width: calc(100vw - 325px);
     }
 
     .sectionHeader h2 {

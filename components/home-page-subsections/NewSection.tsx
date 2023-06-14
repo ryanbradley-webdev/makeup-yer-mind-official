@@ -49,7 +49,7 @@ export default async function NewSection() {
 
                 <div className={styles.grid}>
 
-                    {activePromos.length > 0 && <PromoCard promo={activePromos[0]} />}
+                    {activePromos.length > 0 && activePromos.map(promo => <PromoCard promo={promo} key={promo.id} />)}
 
                 </div>
 

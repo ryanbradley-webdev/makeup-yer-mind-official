@@ -118,9 +118,9 @@
     color: var(--color-white-ter);
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (max-width: 480px) {
     .promo {
-        grid-column: 1 / span 1;
+        grid-column: 1 / span 2;
     }
 }
 
