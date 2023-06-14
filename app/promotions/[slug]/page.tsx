@@ -12,7 +12,7 @@ export default async function PromotionBySlug({ params }: Params) {
     const promo = await getPromoBySlug(slug)
 
     return (
-        <main>
+        <main className={styles.main}>
             
             {
                 promo ?
@@ -23,15 +23,15 @@ export default async function PromotionBySlug({ params }: Params) {
                         !promo.active && <h2>This promotion is no longer active.</h2>
                     }
 
-                    <Image src={promo.image} height={320} width={480} alt='' />
-
                     <h1>
                         {promo.title}
                     </h1>
 
-                    <h3>
+                    <Image src={promo.image} height={320} width={480} alt='' />
+
+                    <p>
                         {promo.description}
-                    </h3>
+                    </p>
 
                     <p>
                         To get started, just click <ExternalLink href={promo.link}>this link</ExternalLink>!
