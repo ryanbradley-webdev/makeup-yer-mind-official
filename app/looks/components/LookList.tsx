@@ -23,6 +23,7 @@ export default function LookList() {
             
             searchTerms.forEach(term => {
                 if (look.title.toLowerCase().includes(term.toLowerCase())) matchFound = true
+                if (look.tags.includes(term.toLowerCase())) matchFound = true
             })
 
             return matchFound

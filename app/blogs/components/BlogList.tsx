@@ -7,7 +7,6 @@ import styles from '../page.module.css'
 import { getAllBlogs } from '@/lib/getAllBlogs'
 
 export default function BlogList() {
-    // const blogs = await getAllBlogs()
     const [blogs, setBlogs] = useState<Blog[]>([])
     const [searchTerm, setSearchTerm] = useState('')
     const [filterTerm, setFilterTerm] = useState('')
@@ -34,6 +33,8 @@ export default function BlogList() {
             
             searchTerms.forEach(term => {
                 if (blog.title.toLowerCase().includes(term.toLowerCase())) matchFound = true
+                if (blog.topics.includes(searchTerm.toLowerCase())) matchFound = true
+                if (blog.topics.includes(term.toLowerCase())) matchFound = true
             })
 
             return matchFound
@@ -73,6 +74,7 @@ export default function BlogList() {
 
                     <select name="filter" id="filter" onChange={e => setFilterTerm(e.target.value)}>
                         <option value="none">No Filter</option>
+                        <option value="state-of-mind">State of Mind</option>
                         <option value="tutorial">Tutorials</option>
                         <option value="products">Products</option>
                         <option value="lifestyle">Lifestyle</option>
