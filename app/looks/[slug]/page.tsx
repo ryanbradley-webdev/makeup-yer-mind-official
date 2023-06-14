@@ -13,6 +13,7 @@ import SocialStats from '@/components/social-stats/SocialStats'
 import Share from '@/components/share/Share'
 import rehypeRaw from 'rehype-raw'
 import TagsAndTopics from '@/components/tags-and-topics/TagsAndTopics'
+import IncrementPageViews from '@/components/social-stats/IncrementPageViews'
 
 type Params = {
     params: { slug: string }
@@ -37,6 +38,8 @@ export async function generateStaticParams() {
 
     return looks.map(look => look.slug)
 }
+
+export const revalidate = 60 // FIXME increase revalidate counter for production
 
 export default async function LookBySlug({ params }: Params) {
     const { slug } = params
@@ -80,7 +83,7 @@ export default async function LookBySlug({ params }: Params) {
                     </TagsAndTopics>}
 
                     <SocialStats
-                        views={views}
+                        docViews={views}
                         docLikes={likes}
                         docIsLiked={false}
                         id={id}
@@ -127,7 +130,7 @@ export default async function LookBySlug({ params }: Params) {
                     docIsLiked={false}
                     id={id}
                     docType={docType}
-                    views={views}
+                    docViews={views}
                 />
 
                 <aside className={styles.share}>
@@ -143,6 +146,12 @@ export default async function LookBySlug({ params }: Params) {
             </section>
 
             <Comments id={id} />
+
+            <IncrementPageViews
+                id={id}
+                docType={docType}
+                docViews={views}
+            />
 
         </main>
     )

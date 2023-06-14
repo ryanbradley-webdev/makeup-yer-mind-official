@@ -12,6 +12,7 @@ import Comments from '@/components/comments/Comments';
 import SocialStats from '@/components/social-stats/SocialStats';
 import Share from '@/components/share/Share';
 import TagsAndTopics from '@/components/tags-and-topics/TagsAndTopics';
+import IncrementPageViews from '@/components/social-stats/IncrementPageViews';
 
 type Params = {
     params: { slug: string }
@@ -44,6 +45,8 @@ export async function generateStaticParams() {
 
     return blogs.map(blog => blog.slug)
 }
+
+export const revalidate = 60 // FIXME increase revalidation counter for production
 
 export default async function BlogBySlug({ params }: Params) {
     const { slug } = params
@@ -89,7 +92,7 @@ export default async function BlogBySlug({ params }: Params) {
                         docIsLiked={false}
                         id={id}
                         docType={docType}
-                        views={views}
+                        docViews={views}
                     />
 
                     <Share />
@@ -120,7 +123,7 @@ export default async function BlogBySlug({ params }: Params) {
                     docIsLiked={false}
                     id={id}
                     docType={docType}
-                    views={views}
+                    docViews={views}
                 />
 
                 <aside className={styles.share}>
@@ -136,6 +139,12 @@ export default async function BlogBySlug({ params }: Params) {
             </section>
 
             <Comments id={id} />
+
+            <IncrementPageViews
+                id={id}
+                docType={docType}
+                docViews={views}
+            />
 
         </main>
     )

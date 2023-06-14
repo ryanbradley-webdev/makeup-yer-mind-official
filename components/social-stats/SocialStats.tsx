@@ -1,23 +1,25 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import LikesIcon from '../icons/LikesIcon'
 import ViewsIcon from '../icons/ViewsIcon'
 import styles from './socialStats.module.css'
+import { getPageStats } from '@/lib/getPageStats'
 
 export default function SocialStats({
-    views,
+    docViews,
     docLikes,
     docIsLiked,
     id,
     docType
 }: {
-    views: number,
+    docViews: number,
     docLikes: number,
     docIsLiked: boolean
     id: string,
     docType: string
 }) {
+    const [views, setViews] = useState(docViews || 0)
     const [likes, setLikes] = useState(docLikes || 0)
     const [isLiked, setIsLiked] = useState(docIsLiked)
 
@@ -46,6 +48,13 @@ export default function SocialStats({
             return
         }
     }
+
+    useEffect(() => {
+        getPageStats(id, docType).then(stats => {
+            setViews(stats.views)
+            setLikes(stats.likes)
+        })
+    }, [id, docType])
 
     return (
         <div className={styles.social_stats}>
