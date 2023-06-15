@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link'
+import Button from '@/components/Button'
 
 export const metadata = {
     title: 'Makeup Yer Mind | Who is \'Courtney\' anyway?',
@@ -56,6 +57,22 @@ export default function About() {
                     </p>
 
                 </section>
+
+                <div className={styles.btnDiv}>
+
+                    <Link href='/meet-the-team'>
+                        <Button>
+                            Meet my team!
+                        </Button>
+                    </Link>
+
+                    <Link href='/makeup-consultation'>
+                        <Button variant='solid'>
+                            Get a Free Makeup Consultation
+                        </Button>
+                    </Link>
+
+                </div>
 
             </div>
 
