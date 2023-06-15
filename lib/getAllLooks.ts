@@ -1,21 +1,27 @@
 import { firestore } from "@/util/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { dataIsLook } from "./typeCheck";
 
 export async function getAllLooks() {
-    const looskRef = collection(firestore, 'looks')
-
-    const looksSnap = await getDocs(looskRef)
-    
     const looks: Look[] = []
 
-    looksSnap.forEach(doc => {
-        const docData = doc.data()
+    try {
+        const looskRef = collection(firestore, 'looks')
 
-        if (dataIsLook(docData)) {
-            looks.push(docData)
-        }
-    })
+        const q = query(looskRef, where("draft", "==", false))
 
-    return looks
+        const looksSnap = await getDocs(q)
+        
+        looksSnap.forEach(doc => {
+            const docData = doc.data()
+
+            if (dataIsLook(docData)) {
+                looks.push(docData)
+            }
+        })
+
+        return looks.sort((a, b) => b.createdAt.seconds - a.createdAt.seconds)
+    } catch {
+        return []
+    }
 }
