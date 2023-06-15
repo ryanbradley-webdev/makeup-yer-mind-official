@@ -108,7 +108,7 @@ export default function Home() {
 
         </div>
 
-        <Link href='/'>
+        <Link href='/makeup-consultation'>
           <Button variant='solid'>
             Let&apos;s Do It!!
           </Button>

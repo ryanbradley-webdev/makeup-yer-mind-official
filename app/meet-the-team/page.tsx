@@ -22,7 +22,7 @@ export default function MeetTheTeam() {
                     <div>
 
                         <h3>
-                            Courtney Holly <span>- Founder</span>
+                            Courtney Holly (Baumann) <span>- Founder</span>
                         </h3>
 
                         <p>

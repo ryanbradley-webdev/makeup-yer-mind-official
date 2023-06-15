@@ -90,7 +90,7 @@ export default function Menu({
                 </ExternalLink>
 
                 <ExternalLink 
-                    href='https://www.facebook.com/MakeupYerMind'
+                    href='https://www.facebook.com/Makeup.Yer.Mind.Official'
                     onMouseEnter={() => setFacebookHover(true)}
                     onMouseLeave={() => setFacebookHover(false)}
                 >

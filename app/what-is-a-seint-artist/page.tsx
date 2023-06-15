@@ -179,9 +179,9 @@ export default function WhatIsASeintArtist() {
 
                     </li>
 
-                    <Link href='#cheat-code'>
+                    <a href='#cheat-code'>
                         See this section for how you can pay in 4 interest free installments.
-                    </Link>
+                    </a>
 
                     <li>
                         A $12.99/month Back Office Fee. Each artist is equipped with a unique web address, so that customer orders are directly linked to them. This along with your Back Office Analytics is critical to your sales. However, this is a small price to pay as Seint handles all customer service, returns/exchanges, shipping & fulfillment for you!
