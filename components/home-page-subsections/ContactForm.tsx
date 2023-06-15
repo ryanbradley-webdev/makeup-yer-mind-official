@@ -15,6 +15,22 @@ export default function ContactForm() {
     const nameRef = useRef<HTMLInputElement>(null)
     const messageRef = useRef<HTMLTextAreaElement>(null)
 
+    const generateBtnMsg = () => {
+        if (msgSending) {
+            return 'Sending Message...'
+        }
+
+        if (msgSuccess) {
+            return 'Message Sent!'
+        }
+
+        if (msgError) {
+            return 'Something went wrong'
+        }
+
+        return 'Submit'
+    }
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -39,8 +55,8 @@ export default function ContactForm() {
                 setMsgSending(false)
                 if (res.id) {
                     setMsgSuccess(true)
+                    if (formRef?.current) formRef.current.reset()
                     setTimeout(() => {
-                        if (formRef?.current) formRef.current.reset()
                         setMsgSuccess(false)
                     }, 4000)
                 }
@@ -106,7 +122,7 @@ export default function ContactForm() {
                 <Button
                     disabled={msgSending || msgSuccess}
                 >
-                    {msgError ? 'Retry' : 'Submit'}
+                    {generateBtnMsg()}
                 </Button>
 
             </form>
