@@ -97,15 +97,14 @@ export default function Menu({
                     <Facebook hover={facebookHover} />
                 </ExternalLink>
 
-                <Link 
+                <a
                     href='mailto:courtneyhollyactor@gmail.com'
-                    target='_blank'
                     rel='nofollow'
                     onMouseEnter={() => setEmailHover(true)}
                     onMouseLeave={() => setEmailHover(false)}
                 >
                     <Email hover={emailHover} />
-                </Link>
+                </a>
 
             </div>
 
