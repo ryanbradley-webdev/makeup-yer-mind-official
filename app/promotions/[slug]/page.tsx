@@ -2,10 +2,35 @@ import { getPromoBySlug } from '@/lib/getPromoBySlug'
 import Image from 'next/image'
 import styles from './page.module.css'
 import ExternalLink from '@/components/ExternalLink'
+import { Metadata } from 'next/types'
 
 type Params = {
     params: { slug: string }
 }
+
+export async function generateMetadata(
+    { params }: Params,
+): Promise<Metadata> {
+    const { slug } = params
+
+    const promo = await getPromoBySlug(slug)
+
+    const metadata = {
+        title: promo?.title || 'Look not found',
+        description: promo?.description || 'Look not found',
+        openGraph: {
+            images: [] as string[],
+            description: promo?.description
+        }
+    }
+
+    if (promo) {
+        metadata.openGraph.images.push(promo.image)
+    }
+
+    return metadata
+}
+
 
 export default async function PromotionBySlug({ params }: Params) {
     const { slug } = params

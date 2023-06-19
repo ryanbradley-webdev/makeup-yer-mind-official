@@ -24,12 +24,14 @@ export async function generateMetadata(
 ): Promise<Metadata> {
     const { slug } = params
 
-    // fetch data
     const look = await getLookBySlug(slug)
 
     return {
         title: look?.title || 'Look not found',
-        description: look?.description || 'Look not found'
+        description: look?.description || 'Look not found',
+        openGraph: {
+            description: look?.description
+        }
     }
 }
 

@@ -25,19 +25,20 @@ export async function generateMetadata(
 
     const blog = await getBlogBySlug(slug)
 
-    const metatdata = {
+    const metadata = {
         title: blog?.title || 'Blog not found',
         descrition: blog?.description || 'No description found',
         openGraph: {
-            images: [] as string[]
+            images: [] as string[],
+            description: blog?.description
         }
     }
 
     if (blog) {
-        metatdata.openGraph.images.push(blog.image)
+        metadata.openGraph.images.push(blog.image)
     }
 
-    return metatdata
+    return metadata
 }
 
 export async function generateStaticParams() {
