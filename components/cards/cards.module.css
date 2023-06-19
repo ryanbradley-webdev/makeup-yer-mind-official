@@ -92,8 +92,18 @@
 .promo img {
     width: 100%;
     height: auto;
+    object-fit: cover;
     margin-bottom: 12px;
     box-shadow: 0px 6px 10px -3px black;
+}
+
+.blog img,
+.promo img {
+    aspect-ratio: 3 / 2;
+}
+
+.look img {
+    aspect-ratio: 3 / 4;
 }
 
 .blog h5,
