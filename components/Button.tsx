@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-    children: string
+    children: string | ReactNode | ReactNode[]
     variant?: string
     type?: 'submit' | 'reset' | 'button',
     disabled?: boolean

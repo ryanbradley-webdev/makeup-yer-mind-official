@@ -13,6 +13,9 @@ import SocialStats from '@/components/social-stats/SocialStats';
 import Share from '@/components/share/Share';
 import TagsAndTopics from '@/components/tags-and-topics/TagsAndTopics';
 import IncrementPageViews from '@/components/social-stats/IncrementPageViews';
+import Link from 'next/link';
+import ExternalLink from '@/components/ExternalLink';
+import Button from '@/components/Button';
 
 type Params = {
     params: { slug: string }
@@ -113,6 +116,28 @@ export default async function BlogBySlug({ params }: Params) {
                 <ReactMarkdown 
                     rehypePlugins={[rehypeRaw]}
                     className={styles.content}
+                    components={{
+                        button: ({ node, ...props }) => {
+                            return (
+                                <Button>
+                                    {props.children}
+                                </Button>
+                            )
+                        },
+                        a: ({ node, ...props }) => {
+                            if (!props.href) return null
+
+                            return props.href.includes('http') ? (
+                                <ExternalLink href={props.href} {...props}>
+                                    {props.children}
+                                </ExternalLink>
+                            ) : (
+                                <Link href={props.href} {...props}>
+                                    {props.children}
+                                </Link>
+                            )
+                        }
+                    }}
                 >
                     {content}
                 </ReactMarkdown>
