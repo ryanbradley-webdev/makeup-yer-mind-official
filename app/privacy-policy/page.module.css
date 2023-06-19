@@ -17,7 +17,7 @@
 .main ul {
     color: var(--color-white-sec);
     font-size: 12px;
-    line-height: 20px;
+    line-height: 24px;
 }
 
 .main p {
@@ -28,6 +28,7 @@
     .main p,
     .main ul {
         font-size: 16px;
+        line-height: 20px;
     }
 }
 
