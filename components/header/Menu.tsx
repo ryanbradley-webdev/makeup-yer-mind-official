@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './header.module.css'
 import SocialLinks from '../SocialLinks'
+import Button from '../Button'
 
 export default function Menu({
     isVisible,
@@ -43,15 +44,27 @@ export default function Menu({
                     Looks
                 </Link>
 
+                <Link href='/promotions' onClick={toggleMenu}>
+                    Promotions
+                </Link>
+
                 <Link href='/meet-the-team' onClick={toggleMenu}>
                     Meet the Team
                 </Link>
 
-                <Link href='/makeup-consultation' onClick={toggleMenu}>
-                    Get a Free Consultation!
-                </Link>
-
             </ul>
+
+            <div className={styles.btnDiv}>
+
+                <Button variant='solid'>
+                    Get a Free Consultation!
+                </Button>
+
+                <Button>
+                    What is a Seint Artist?
+                </Button>
+
+            </div>
 
             <SocialLinks className={styles.iconDiv} />
 
