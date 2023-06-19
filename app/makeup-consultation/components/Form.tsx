@@ -1,6 +1,6 @@
 'use client'
 
-import { Reducer, useEffect, useReducer, useRef, useState } from 'react'
+import { ChangeEvent, Reducer, useEffect, useReducer, useRef, useState } from 'react'
 import { reducer, initialState, Action } from '../lib/Reducer'
 import styles from '../page.module.css'
 import FormDiv from './FormDiv'
@@ -25,6 +25,10 @@ export default function Form() {
     const [formError, setFormError] = useState(false)
 
     const formRef = useRef<HTMLFormElement>(null)
+    const greenRef = useRef<HTMLLabelElement>(null)
+    const blueRef = useRef<HTMLLabelElement>(null)
+    const bothRef = useRef<HTMLLabelElement>(null)
+    const selfieRef = useRef<HTMLDivElement>(null)
 
     const previewSelfie = (e: React.ChangeEvent<HTMLInputElement>) => {
         const images = e.target.files
@@ -35,6 +39,17 @@ export default function Form() {
 
         setSelfieFile(newFile)
         setLocalSelfieSrc(imgSrc)
+        validateSelfie(true)
+    }
+
+    const validateSelfie = (isValid?: boolean) => {
+        if (selfieRef.current) {
+            if (selfieFile || isValid) {
+                selfieRef.current.style.borderColor = ''
+            } else {
+                selfieRef.current.style.borderColor = 'var(--color-invalid)'
+            }
+        }
     }
 
     const handleSeintCartChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +64,42 @@ export default function Form() {
         }
     }
 
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, type: string) => {
+        const field = e.target
+
+        if (!field) return
+        
+        if (!field.value) {
+            field.style.borderColor = 'var(--color-invalid)'
+        } else {
+            field.style.borderColor = ''
+        }
+        
+        dispatch({ type, payload: field.value })
+    }
+
+    const validateVeinColor = (e?: ChangeEvent<HTMLInputElement>) => {
+        if (e) {
+            dispatch({ type: 'change-vein-color', payload: e.target.value })
+        }
+
+        if (blueRef.current && greenRef.current && bothRef.current) {
+            blueRef.current.style.borderColor = (formData.veinColor || e?.target.value) ? '' : 'var(--color-invalid)'
+            greenRef.current.style.borderColor = (formData.veinColor || e?.target.value) ? '' : 'var(--color-invalid)'
+            bothRef.current.style.borderColor = (formData.veinColor || e?.target.value) ? '' : 'var(--color-invalid)'
+        }
+    }
+
     const validateForm = () => {
+        formRef.current?.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input, textarea').forEach(field => {
+            if (!field.value) {
+                field.style.borderColor = 'var(--color-invalid)'
+            }
+        })
+
+        validateVeinColor()
+        validateSelfie()
+
         if (!formData.firstName || !formData.lastName || !formData.email) {
             return setFormPage(2)
         }
@@ -157,7 +207,7 @@ export default function Form() {
                         type="text"
                         name="firstName"
                         id="firstName"
-                        onChange={e => dispatch({ type: 'change-first-name', payload: e.target.value })}
+                        onChange={e => handleChange(e, 'change-first-name')}
                         value={formData.firstName}
                         placeholder='First Name'
                         required 
@@ -170,7 +220,7 @@ export default function Form() {
                         type="text"
                         name="lastName"
                         id="lastName"
-                        onChange={e => dispatch({ type: 'change-last-name', payload: e.target.value })}
+                        onChange={e => handleChange(e, 'change-last-name')}
                         value={formData.lastName}
                         placeholder='Last Name'
                         required 
@@ -183,7 +233,7 @@ export default function Form() {
                         type="text"
                         name="email"
                         id="email"
-                        onChange={e => dispatch({ type: 'change-email', payload: e.target.value })}
+                        onChange={e => handleChange(e, 'change-email')}
                         value={formData.email}
                         placeholder='example@email.com'
                         required 
@@ -203,7 +253,7 @@ export default function Form() {
                         type="text" 
                         name="referral" 
                         id="referral"
-                        onChange={e => dispatch({ type: 'change-referral', payload: e.target.value })}
+                        onChange={e => handleChange(e, 'change-referral')}
                         placeholder="If you weren't referred, tell me how you found me!"
                         value={formData.referral}
                     />
@@ -215,32 +265,47 @@ export default function Form() {
                         When you look at the veins on the underside of your wrist (in natural light) are they...
                     </p>
 
-                    <label htmlFor="green">
+                    <label 
+                        htmlFor="green"
+                        ref={greenRef}
+                    >
                         <input 
                             type="radio"
                             name="vein-color"
+                            value='green'
                             id="green"
-                            onChange={e => dispatch({ type: 'change-vein-color', payload: 'green' })}
+                            onChange={e => validateVeinColor(e)}
+                            required
                         />
                         <span>Green</span>
                     </label>
 
-                    <label htmlFor="blue">
+                    <label 
+                        htmlFor="blue"
+                        ref={blueRef}
+                    >
                         <input 
                             type="radio"
                             name="vein-color"
+                            value='blue'
                             id="blue"
-                            onChange={e => dispatch({ type: 'change-vein-color', payload: 'blue' })}
+                            onChange={e => validateVeinColor(e)}
+                            required
                         />
                         <span>Blue</span>
                     </label>
 
-                    <label htmlFor="both">
+                    <label 
+                        htmlFor="both"
+                        ref={bothRef}
+                    >
                         <input 
                             type="radio"
                             name="vein-color"
+                            value='both'
                             id="both"
-                            onChange={e => dispatch({ type: 'change-vein-color', payload: 'both' })}
+                            onChange={e => validateVeinColor(e)}
+                            required
                         />
                         <span>A perfect combination of green and blue</span>
                     </label>
@@ -271,7 +336,7 @@ export default function Form() {
                     id="coverage"
                     cols={30}
                     rows={10}
-                    onChange={e => dispatch({ type: 'change-coverage', payload: e.target.value })}
+                    onChange={e => handleChange(e, 'change-coverage')}
                     placeholder='Tell me all about it here!'
                     value={formData.coverage}
                     required
@@ -315,7 +380,10 @@ export default function Form() {
                         required
                     />
                  
-                    <div className={styles.img_container_selfie}>
+                    <div
+                        className={styles.img_container_selfie}
+                        ref={selfieRef}
+                    >
                         {localSelfieSrc && <Image src={localSelfieSrc} height={550} width={480} alt='' />}
                     </div>
 
@@ -378,7 +446,7 @@ export default function Form() {
                             type="text"
                             name="address"
                             id="address"
-                            onChange={e => dispatch({ type: 'change-address', payload: e.target.value })}
+                            onChange={e => handleChange(e, 'change-address')}
                             placeholder='Enter your address here!'
                             required
                         />
@@ -390,7 +458,7 @@ export default function Form() {
                             type='tel'
                             name="phone"
                             id="phone"
-                            onChange={e => dispatch({ type: 'change-phone', payload: e.target.value })}
+                            onChange={e => handleChange(e, 'change-phone')}
                             placeholder='(123) 555-1234'
                             required
                         />

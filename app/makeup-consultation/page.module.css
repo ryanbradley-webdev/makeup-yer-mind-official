@@ -132,10 +132,11 @@
 
     .img_container img,
     .img_container_selfie img {
-        display: block;
+        display: flex;
         margin-inline: auto;
-        max-width: 500px;
-        height: auto;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
     }
 
     .formDiv:has(.img_container) p {
