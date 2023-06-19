@@ -39,6 +39,10 @@ export default function Footer() {
 
             <SocialLinks className={styles.iconDiv} />
 
+            <Link href={'/what-is-a-seint-artist'}>
+                Learn more about being a Seint Artist!
+            </Link>
+
             <p>
                 &copy; {new Date().getFullYear()} Shades of Pink.<br />Designed and developed by <ExternalLink href='https://ryanbradleywebdev.com'>Ryan Bradley Web Design</ExternalLink>.
             </p>
