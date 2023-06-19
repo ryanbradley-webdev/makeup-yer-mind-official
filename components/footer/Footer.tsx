@@ -3,6 +3,7 @@ import styles from './footer.module.css'
 import Link from 'next/link'
 import Subscribe from './Subscribe'
 import ExternalLink from '../ExternalLink'
+import SocialLinks from '../SocialLinks'
 
 export default function Footer() {
     return (
@@ -36,6 +37,7 @@ export default function Footer() {
 
             </div>
 
+            <SocialLinks className={styles.iconDiv} />
 
             <p>
                 &copy; {new Date().getFullYear()} Shades of Pink.<br />Designed and developed by <ExternalLink href='https://ryanbradleywebdev.com'>Ryan Bradley Web Design</ExternalLink>.

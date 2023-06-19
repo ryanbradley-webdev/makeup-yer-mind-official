@@ -110,3 +110,30 @@
         color: var(--color-white-sec);
     }
 }
+
+.iconDiv {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    margin-block: 24px;
+}
+
+@media screen and (min-width: 1025px) {
+    .iconDiv {
+        margin: 0;
+    }
+}
+
+.iconDiv a {
+    display: flex;
+}
+
+.iconDiv svg,
+.iconDiv img {
+    height: 30px;
+}
+
+.iconDiv svg {
+    transition: fill 0.3s ease;
+}
