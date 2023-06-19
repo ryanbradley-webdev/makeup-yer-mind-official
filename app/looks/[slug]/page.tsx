@@ -33,6 +33,7 @@ export async function generateMetadata(
         title: look?.title || 'Look not found',
         description: look?.description || 'Look not found',
         openGraph: {
+            images: `${process.env.NEXT_PUBLIC_SELF_URL}api/looks/og?slug=${slug}`,
             description: look?.description
         }
     }
