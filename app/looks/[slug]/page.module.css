@@ -90,6 +90,11 @@
     }
 }
 
+.content a:has(button) {
+    display: block;
+    margin-block: 48px;
+}
+
 .content ul {
     padding-left: 16px;
     list-style-type: '-';
