@@ -1,5 +1,4 @@
 .first_blog {
-    position: relative;
     width: 100%;
     max-width: 1000px;
     margin-inline: auto;
@@ -13,21 +12,22 @@
 }
 
 .card_info {
-    position: absolute;
-    inset: 16px;
-    top: auto;
     display: flex;
     flex-direction: column;
     gap: 4px;
     padding: 8px;
     padding-right: 24px;
-    background-color: var(--color-background-card);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
 }
 
-.card_info img {
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.233);
+@media screen and (min-width: 481px) {
+    .card_info {
+        position: absolute;
+        inset: 16px;
+        top: auto;
+        background-color: var(--color-background-card);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -39,10 +39,20 @@
     }
 }
 
+.card_info img {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.233);
+}
+
 .latest {
     font-size: 12px;
     font-weight: 300;
-    color: #E71313;
+    color: var(--color-invalid);
+}
+
+@media screen and (min-width: 481px) {
+    .latest {
+        color: #E71313
+    }
 }
 
 .card_info h5,
@@ -59,6 +69,8 @@
     font-weight: 300;
 }
 
+.first_blog,
+.first_look,
 .blog,
 .look,
 .promo {
@@ -111,7 +123,6 @@
 .look h5,
 .look h6 {
     margin-left: 4px;
-    text-decoration: inherit;
 }
 
 .blog h5,
@@ -128,6 +139,15 @@
     color: var(--color-white-ter);
 }
 
+@media screen and (orientation: landscape) {
+    .blog h6,
+    .look h6,
+    .promo h6,
+    .card_info h6 {
+        font-size: 16px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .promo {
         grid-column: 1 / span 2;
@@ -136,7 +156,6 @@
 
 .first_look {
     display: block;
-    position: relative;
     width: 80%;
     height: fit-content;
     margin-inline: auto;
