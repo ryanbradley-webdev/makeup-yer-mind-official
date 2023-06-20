@@ -43,7 +43,7 @@ export default async function LooksSection() {
                 <div className={styles.grid}>
 
                     {looks && looks.map((look, idx) => {
-                        if (idx === 0 || idx > 4) return
+                        if (idx === 0 || idx > 6) return
                         return <LookCard look={look} key={look.id} />
                     })}
 

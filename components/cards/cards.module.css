@@ -33,6 +33,7 @@
 @media screen and (min-width: 1025px) {
     .card_info {
         width: fit-content;
+        max-width: calc(100% - 64px);
         left: auto;
         right: 32px;
         bottom: 32px;
@@ -139,7 +140,7 @@
     color: var(--color-white-ter);
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 1200px) {
     .blog h6,
     .look h6,
     .promo h6,
@@ -170,7 +171,7 @@
 
 @media screen and (orientation: landscape) {
     .first_look {
-        max-width: 600px;
+        max-width: 1000px;
     }
 }
 
@@ -179,6 +180,22 @@
     inset: 0;
     opacity: 0;
     animation: look-fade 7s ease 2s infinite;
+}
+
+@media screen and (orientation: landscape) and (min-width: 1025px) {
+    .first_look {
+        display: flex;
+    }
+
+    .first_look > img {
+        width: 50%;
+    }
+
+    .first_look > img:nth-of-type(2) {
+        position: static;
+        animation: none;
+        opacity: 1;
+    }
 }
 
 @keyframes look-fade {

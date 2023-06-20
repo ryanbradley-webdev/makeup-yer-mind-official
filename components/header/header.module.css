@@ -255,6 +255,12 @@
     }
 }
 
+@media screen and (min-width: 1025px) {
+    .btnDiv {
+        display: none;
+    }
+}
+
 .iconDiv {
     display: flex;
     align-items: center;
