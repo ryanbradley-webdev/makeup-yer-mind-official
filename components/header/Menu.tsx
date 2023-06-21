@@ -56,13 +56,17 @@ export default function Menu({
 
             <div className={styles.btnDiv}>
 
-                <Button variant='solid'>
-                    Get a Free Consultation!
-                </Button>
+                <Link href='/makeup-consultation' onClick={toggleMenu}>
+                    <Button variant='solid'>
+                        Get a Free Consultation!
+                    </Button>
+                </Link>
 
-                <Button>
-                    What is a Seint Artist?
-                </Button>
+                <Link href='what-is-a-seint-artist' onClick={toggleMenu}>
+                    <Button>
+                        What is a Seint Artist?
+                    </Button>
+                </Link>
 
             </div>
 
