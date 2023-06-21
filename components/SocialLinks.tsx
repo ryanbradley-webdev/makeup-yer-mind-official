@@ -7,6 +7,7 @@ import Facebook from "./icons/Facebook"
 import Instagram from "./icons/Instagram"
 import Pinterest from "./icons/Pinterest"
 import YouTube from "./icons/YouTube"
+import Shop from "./icons/Shop"
 
 export default function SocialLinks({
     className
@@ -18,7 +19,8 @@ export default function SocialLinks({
     const [pinterestHover, setPinterestHover] = useState(false)
     const [facebookHover, setFacebookHover] = useState(false)
     const [emailHover, setEmailHover] = useState(false)
-
+    const [shopHover, setShopHover] = useState(false)
+    
     return (
         <div className={className}>
 
@@ -52,6 +54,14 @@ export default function SocialLinks({
                 onMouseLeave={() => setFacebookHover(false)}
             >
                 <Facebook hover={facebookHover} />
+            </ExternalLink>
+
+            <ExternalLink
+                href='https://my-store-e2f2c8.creator-spring.com/'
+                onMouseEnter={() => setShopHover(true)}
+                onMouseLeave={() => setShopHover(false)}
+            >
+                <Shop hover={shopHover} />
             </ExternalLink>
 
             <a
