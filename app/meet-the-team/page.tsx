@@ -77,24 +77,6 @@ export default function MeetTheTeam() {
 
                 </div>
 
-                <div className={styles.profile}>
-
-                    <Image src='/team-photo-ryan-PLACEHOLDER.png' width={800} height={1200} alt='' />
-
-                    <div>
-
-                        <h3>
-                            Ryan Bradley <span>- Web Design</span>
-                        </h3>
-
-                        <p>
-                            Hi, I&apos;m Ryan, and I like to party.
-                        </p>
-
-                    </div>
-
-                </div>
-
             </section>
             
             <section className={styles.section}>
