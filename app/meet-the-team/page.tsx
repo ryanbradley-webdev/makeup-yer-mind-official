@@ -43,7 +43,7 @@ export default function MeetTheTeam() {
 
                 <div className={styles.profile}>
 
-                    <Image src='/team-photo-tara-PLACEHOLDER.png' width={800} height={1200} alt='' />
+                    <Image src='/team-photo-tara.jpg' width={800} height={1200} alt='' />
 
                     <div>
 
@@ -61,7 +61,7 @@ export default function MeetTheTeam() {
 
                 <div className={styles.profile}>
 
-                    <Image src='/team-photo-malina-PLACEHOLDER.png' width={800} height={1200} alt='' />
+                    <Image src='/team-photo-malina.jpg' width={800} height={1200} alt='' />
 
                     <div>
 

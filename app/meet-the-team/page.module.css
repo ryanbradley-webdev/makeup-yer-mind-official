@@ -65,10 +65,19 @@
     font-style: italic;
 }
 
+.profile h3,
+.profile p {
+    max-width: 553px;
+    margin-inline: auto;
+}
+
 .profile img {
+    display: block;
     width: 100%;
+    max-width: 553px;
     height: auto;
     margin-bottom: 12px;
+    margin-inline: auto;
 }
 
 @media screen and (min-width: 1025px) {
