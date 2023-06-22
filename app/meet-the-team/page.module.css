@@ -54,7 +54,7 @@
 
 .profile {
     display: grid;
-    margin-block: 32px;
+    margin-bottom: 72px;
     margin-inline: auto;
     width: 80%;
 }
@@ -137,4 +137,50 @@
     .affiliate svg {
         width: 234px;
     }
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 36px;
+}
+
+@media screen and (min-width: 481px) {
+    .socials {
+        margin-inline: 32px;
+    }
+}
+
+.socials a {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--color-white-ter);
+    transition: color 0.3s ease;
+    width: fit-content;
+}
+
+.socials svg {
+    fill: var(--color-white-ter);
+}
+
+.socials a:is(:hover, :focus) {
+    color: var(--color-white-sec);
+}
+
+.socials a:is(:hover, :focus) svg {
+    fill: var(--color-white-sec);
+}
+
+.socials svg,
+.socials img {
+    height: 25px;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
 }
