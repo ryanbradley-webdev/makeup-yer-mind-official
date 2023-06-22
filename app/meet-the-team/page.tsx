@@ -76,7 +76,7 @@ export default function MeetTheTeam() {
                     <div>
 
                         <h3>
-                            Tara Andersen <span>- Associate Blogger</span>
+                            Tara Andreasen <span>- Associate Blogger</span>
                         </h3>
 
                         <p>

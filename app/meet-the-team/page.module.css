@@ -157,7 +157,7 @@
 .socials a {
     display: flex;
     align-items: flex-end;
-    gap: 12px;
+    gap: 6px;
     text-decoration: none;
     font-style: italic;
     font-weight: 500;
@@ -166,7 +166,7 @@
     width: fit-content;
 }
 
-.socials svg {
+.socials a:not(:first-of-type) svg {
     fill: var(--color-white-ter);
 }
 
@@ -174,13 +174,13 @@
     color: var(--color-white-sec);
 }
 
-.socials a:is(:hover, :focus) svg {
+.socials a:not(:first-of-type):is(:hover, :focus) svg {
     fill: var(--color-white-sec);
 }
 
 .socials svg,
 .socials img {
-    height: 25px;
+    height: 26px;
     transition: all 0.3s ease;
     margin-bottom: 0;
 }
