@@ -4,8 +4,8 @@ import Link from 'next/link'
 import Button from '@/components/Button'
 
 export const metadata = {
-    title: 'Makeup Yer Mind | Who is \'Courtney\' anyway?',
-    description: 'Seint Artist, actress, voice actress, influencer, I\'m a woman with many hats to wear! Let me tell you all about it!'
+    title: 'Makeup Yer Mind | About',
+    description: 'Meet Courtney, founder and lead blogger of Makeup Yer Mind.'
 }
 
 export default function About() {

@@ -12,7 +12,7 @@ import Signoff from '@/components/Signoff'
 
 export const metadata = {
   title: 'Makeup Yer Mind',
-  description: 'Be your most beautiful self!'
+  description: 'Beauty Begins with Mindset: With helpful tips, tricks, and a sprinkle of humor we aim to make you feel beautiful inside and out!'
 }
 
 // FIXME adjust revalidate variable to 3600 for production

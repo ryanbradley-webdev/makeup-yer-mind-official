@@ -7,7 +7,7 @@ export const revalidate = 60 // FIXME update revalidate variable for production
 
 export const metadata = {
     title: 'Makeup Yer Mind | All Promotions',
-    description: 'I constantly run promotions, check out what I have to offer you today!'
+    description: 'Deep dive into exclusive discounts, giveaways, and promotions from some of the best beauty products on the market!'
 }
 
 export default function Promotions() {

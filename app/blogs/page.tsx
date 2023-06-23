@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export const metadata = {
     title: 'Makeup Yer Mind | All Blogs',
-    description: 'Are you looking for some helpful tips and tricks? What about a product upgrade? I\'ve got you covered!'
+    description: 'Looking for makeup tips or some insight into skindcare? How about a good laugh? We\'ve got what your\'re looking for and more!'
 }
 
 export default function Blogs() {

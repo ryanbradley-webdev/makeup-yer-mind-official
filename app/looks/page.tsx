@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export const metadata = {
     title: 'Makeup Yer Mind | All Looks to Try',
-    description: 'I love experimenting with all the different products there are, and I\'m sure there\'s something here you\'ll love to try!'
+    description: 'Need some makeup inspiration for your next big event? Maybe you want to see some new color combinations. Whatever you\'re searching for, this is the place for you!'
 }
 
 export default function Looks() {

@@ -9,7 +9,7 @@ import Podcast from '@/components/icons/Podcast'
 
 export const metadata = {
     title: 'Makeup Yer Mind | Meet My Team!',
-    description: 'Want to know which companies I work with and why? Find out here!'
+    description: 'From licensed estheticians, to professional film SFX artists. Meet the "Minds" behind Makeup Yer Mind!'
 }
 
 export default function MeetTheTeam() {
