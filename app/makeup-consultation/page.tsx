@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export const metadata = {
     title: 'Get a FREE color match from yours truly!',
-    description: 'Just give me a little information about yourself and I\'ll give you a personalized color palette, all for free!'
+    description: 'Have you always wished you had a personal makeup artist to teach you exactly how to do your makeup? Look no further! Get a custom makeup consultation today and revolutionize your beauty routine!'
 }
 
 export default function MakeupConsultation() {

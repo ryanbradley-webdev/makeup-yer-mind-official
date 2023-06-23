@@ -10,7 +10,7 @@ import Signoff from '../../components/Signoff'
 
 export const metadata = {
     title: 'What is a Seint Artist, anyway?',
-    description: 'What does it mean to be a Seint Artist? I\'ve put together a comprehensive guide to my role as an ambassador for the Seint brand!'
+    description: 'What is the Seint Artist Program, and is it worth it?'
 }
 
 export default function WhatIsASeintArtist() {
