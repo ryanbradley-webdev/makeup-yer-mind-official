@@ -16,6 +16,7 @@ import IncrementPageViews from '@/components/social-stats/IncrementPageViews';
 import Link from 'next/link';
 import ExternalLink from '@/components/ExternalLink';
 import Button from '@/components/Button';
+import YouTube from './components/YouTube';
 
 type Params = {
     params: { slug: string }
@@ -137,6 +138,13 @@ export default async function BlogBySlug({ params }: Params) {
                                     {props.children}
                                 </Link>
                             )
+                        },
+                        video: ({ node, ...props }) => {
+                            if (!props.src) return null
+
+                            return (props.src.includes('youtu.be') || props.src.includes('youtube.com')) ? (
+                                <YouTube url={props.src} />
+                            ) : null
                         }
                     }}
                 >

@@ -153,11 +153,19 @@
     margin-top: 8px;
 }
 
-.content p:has(video) {
-    width: 80%;
-    max-width: 500px;
+.content p:has(video),
+.content p:has(iframe) {
+    width: 100%;
+    max-width: 600px;
     margin-inline: auto;
     margin-block: 48px;
+}
+
+@media screen and (min-width: 769px) {
+    .content p:has(video),
+    .content p:has(iframe) {
+        margin-block: 72px;
+    }
 }
 
 .content video {
@@ -180,4 +188,10 @@
         font-size: 16px;
         gap: 20px;
     }
+}
+
+.youtube {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
 }
