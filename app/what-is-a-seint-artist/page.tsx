@@ -6,7 +6,6 @@ import ExternalLink from '../../components/ExternalLink'
 import ImgCarousel from './components/ImgCarousel'
 import Image from 'next/image'
 import Signoff from '../../components/Signoff'
-// import YouTubeEmbed from '@/components/YouTubeEmbed'
 
 export const metadata = {
     title: 'What is a Seint Artist, anyway?',
@@ -473,7 +472,13 @@ export default function WhatIsASeintArtist() {
                     Quick Seint Artist Program Overview Video:
                 </h2>
 
-                {/* <YouTubeEmbed url='https://youtube.com/embed/vb1QfLXK-JY' /> */}
+                <iframe
+                    src='https://youtube.com/embed/vb1QfLXK-JY'
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Embedded youtube"
+                    className={styles.youtube}
+                />
 
             </section>
 

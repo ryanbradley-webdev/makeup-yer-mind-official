@@ -222,8 +222,8 @@
     padding-block: 24px;
 }
 
-/* .youtube {
-    object-fit: cover;
+.youtube {
+    aspect-ratio: 16 / 9;
     width: 100%;
     height: auto;
-} */
+}
