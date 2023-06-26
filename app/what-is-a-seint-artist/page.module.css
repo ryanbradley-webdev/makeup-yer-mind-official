@@ -199,12 +199,15 @@
     gap: 8px;
     width: 100%;
     overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
 .carousel img {
     height: 200px;
     width: auto;
     border-radius: 0;
+    scroll-snap-align: center;
 }
 
 .section img {
