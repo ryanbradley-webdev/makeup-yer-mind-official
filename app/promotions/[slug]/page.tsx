@@ -5,6 +5,7 @@ import ExternalLink from '@/components/ExternalLink'
 import { Metadata } from 'next/types'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { getAllPromos } from '@/lib/getAllPromos'
 
 type Params = {
     params: { slug: string }
@@ -31,6 +32,12 @@ export async function generateMetadata(
     }
 
     return metadata
+}
+
+export async function generateStaticParams() {
+    const { activePromos, pastPromos } = await getAllPromos()
+
+    return [ ...activePromos, ...pastPromos ].map(promo => promo.slug)
 }
 
 
