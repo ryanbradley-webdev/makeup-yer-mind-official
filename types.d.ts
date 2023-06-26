@@ -5,6 +5,7 @@ type Blog = {
     description: string,
     image: string,
     topics: string[],
+    author: string,
     createdAt: TimeStamp,
     updatedAt?: TimeStamp,
     content: string,

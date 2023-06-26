@@ -1,3 +1,4 @@
+import { capitalize } from '@/lib/capitalize'
 import { Great_Vibes } from 'next/font/google'
 import { CSSProperties } from 'react'
 
@@ -7,9 +8,11 @@ const greatVibes = Great_Vibes({
 })
 
 export default function Signoff({
-    className
+    className,
+    author = 'courtney'
 }: { 
-    className?: string
+    className?: string,
+    author?: string
 }) {
     const localStyles = {
         paragraph: {
@@ -27,10 +30,22 @@ export default function Signoff({
     }
 
     return (
-        <p className={className} style={localStyles.paragraph}>
+        <p
+            className={className}
+            style={localStyles.paragraph}
+        >
             Love always,
+
             <br />
-            <span className={greatVibes.className} style={localStyles.span}>Courtney</span> xoxo
+
+            <span 
+                className={greatVibes.className}
+                style={localStyles.span}>
+                    {capitalize(author)}
+            </span>
+            
+            &nbsp;xoxo
+
         </p>
     )
 }

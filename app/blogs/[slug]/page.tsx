@@ -65,6 +65,7 @@ export default async function BlogBySlug({ params }: Params) {
         title,
         description,
         image,
+        author,
         createdAt,
         updatedAt,
         content,
@@ -142,7 +143,7 @@ export default async function BlogBySlug({ params }: Params) {
                     {content}
                 </ReactMarkdown>
 
-                <Signoff />
+                <Signoff author={author} />
 
                 <SocialStats
                     docLikes={likes}
