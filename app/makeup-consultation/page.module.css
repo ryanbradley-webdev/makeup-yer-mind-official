@@ -278,7 +278,7 @@
     top: auto;
     left: 50%;
     transform: translateX(-50%);
-    height: fit-content;
+    height: 45px;
     width: 100%;
     max-width: 500px;
     display: grid;
