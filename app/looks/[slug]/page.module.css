@@ -74,6 +74,7 @@
     display: block;
     margin-top: 20px;
     margin-inline: auto;
+    width: 100%;
 }
 
 @media screen and (min-width: 481px) {
