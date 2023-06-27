@@ -20,7 +20,7 @@ export default async function BlogsSection() {
                 <div className={`${styles.grid} ${styles.blog_grid}`}>
 
                     {blogs && blogs.map((blog: Blog, idx: number) => {
-                        if (idx === 0 || idx > 6) return
+                        if (idx === 0 || idx > 12) return
                         return <BlogCard key={blog.id} blog={blog} />
                     })}
                     
