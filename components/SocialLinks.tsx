@@ -65,7 +65,7 @@ export default function SocialLinks({
             </ExternalLink>
 
             <a
-                href='mailto:courtneyhollyactor@gmail.com'
+                href={`mailto:${process.env.NEXT_PUBLIC_TO_EMAIL}`}
                 rel='nofollow'
                 onMouseEnter={() => setEmailHover(true)}
                 onMouseLeave={() => setEmailHover(false)}
