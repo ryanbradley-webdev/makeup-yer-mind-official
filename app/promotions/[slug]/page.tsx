@@ -6,6 +6,7 @@ import { Metadata } from 'next/types'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getAllPromos } from '@/lib/getAllPromos'
+import Button from '@/components/Button'
 
 type Params = {
     params: { slug: string }
@@ -60,12 +61,16 @@ export default async function PromotionBySlug({ params }: Params) {
 
     const generateLink = () => {
         return link.includes('http') ? (
-            <ExternalLink href={link}>
-                this link
+            <ExternalLink href={link} className={styles.link}>
+                <Button variant='solid'>
+                    here!
+                </Button>
             </ExternalLink>
         ) : (
-            <Link href={link}>
-                this link
+            <Link href={link} className={styles.link}>
+                <Button variant='solid'>
+                    here!
+                </Button>
             </Link>
         )
     }
@@ -83,22 +88,26 @@ export default async function PromotionBySlug({ params }: Params) {
                     {title}
                 </h1>
 
-                <Image src={image} height={320} width={480} alt='' />
+                <div>
 
-                {
-                    active && expiresAt && (
-                        <p className={styles.expiration}>
-                            Active until {new Date(expiresAt.seconds * 1000).toLocaleDateString()}
-                        </p>
-                    )
-                }
+                    <Image src={image} height={320} width={480} alt='' />
+
+                    {
+                        active && expiresAt && (
+                            <p className={styles.expiration}>
+                                Active until {new Date(expiresAt.seconds * 1000).toLocaleDateString()}
+                            </p>
+                        )
+                    }
+
+                    <p className={styles.paragraph}>
+                        {description}
+                    </p>
+
+                </div>
 
                 <p className={styles.paragraph}>
-                    {description}
-                </p>
-
-                <p className={styles.paragraph}>
-                    To get started, just click {generateLink()}!
+                    To get started, just click {generateLink()}
                 </p>
 
             </section>

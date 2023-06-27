@@ -66,3 +66,19 @@
         padding-top: 48px;
     }
 }
+
+.promo > .paragraph:last-of-type {
+    text-align: center;
+}
+
+.link {
+    display: inline;
+}
+
+.link button {
+    display: inline;
+    padding-inline: 16px;
+    margin: 0;
+    margin-left: 8px;
+    width: fit-content;
+}

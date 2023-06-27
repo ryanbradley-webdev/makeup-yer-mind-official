@@ -7,6 +7,16 @@ export default function PromoCard({
 }: {
     promo: Promo
 }) {
+    const truncateDescription = () => {
+        if (promo.description.length > 70) {
+            const spaceIdx = promo.description.indexOf(' ', 70)
+
+            return promo.description.slice(0, spaceIdx) + '...'
+        }
+
+        return promo.description
+    }
+
     return (
         <Link href={`/promotions/${promo.slug}`} className={styles.promo}>
         
@@ -19,7 +29,7 @@ export default function PromoCard({
                 </h5>
 
                 <h6>
-                    {promo.description}
+                    {truncateDescription()}
                 </h6>
 
             </div>
