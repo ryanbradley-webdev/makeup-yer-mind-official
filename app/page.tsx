@@ -15,8 +15,7 @@ export const metadata = {
   description: 'Beauty Begins with Mindset: With helpful tips, tricks, and a sprinkle of humor we aim to make you feel beautiful inside and out!'
 }
 
-// FIXME adjust revalidate variable to 3600 for production
-export const revalidate = 60
+export const revalidate = 43200
 
 export default function Home() {
   return (

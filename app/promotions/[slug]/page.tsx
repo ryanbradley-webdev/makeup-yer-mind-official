@@ -41,6 +41,8 @@ export async function generateStaticParams() {
     return [ ...activePromos, ...pastPromos ].map(promo => promo.slug)
 }
 
+export const revalidate = 86400
+
 
 export default async function PromotionBySlug({ params }: Params) {
     const { slug } = params

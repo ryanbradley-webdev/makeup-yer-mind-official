@@ -45,7 +45,7 @@ export async function generateStaticParams() {
     return looks.map(look => look.slug)
 }
 
-export const revalidate = 60 // FIXME increase revalidate counter for production
+export const revalidate = 86400
 
 export default async function LookBySlug({ params }: Params) {
     const { slug } = params

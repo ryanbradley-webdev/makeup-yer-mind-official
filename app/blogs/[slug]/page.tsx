@@ -51,7 +51,7 @@ export async function generateStaticParams() {
     return blogs.map(blog => blog.slug)
 }
 
-export const revalidate = 60 // FIXME increase revalidation counter for production
+export const revalidate = 86400
 
 export default async function BlogBySlug({ params }: Params) {
     const { slug } = params
