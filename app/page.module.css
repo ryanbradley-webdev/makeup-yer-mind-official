@@ -35,12 +35,17 @@
 
 @media screen and (min-width: 769px) {
     .hero {
+        background-image: url('/hero-img-sm.png');
+    }    
+}
+
+@media screen and (orientation: landscape) {
+    .hero {
         position: relative;
         padding-top: 25vh;
         padding-inline: 5vw;
         justify-content: center;
         align-items: flex-start;
-        background-image: url('/hero-img-sm.png');
         background-position: calc(100% + 100px) 0%;
     }
 
@@ -241,12 +246,12 @@
     color: var(--color-white-sec);
     font-size: 12px;
     line-height: 1.5em;
+    max-width: 70ch;
 }
 
 @media screen and (orientation: landscape) {
     .about p {
         font-size: 16px;
-        max-width: 70ch;
     }
 }
 
