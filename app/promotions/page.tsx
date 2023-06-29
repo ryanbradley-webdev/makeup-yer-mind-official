@@ -3,7 +3,7 @@ import ActivePromos from './components/ActivePromos'
 import styles from './page.module.css'
 import PastPromos from './components/PastPromos'
 
-export const revalidate = 60 // FIXME update revalidate variable for production
+export const revalidate = 86420
 
 export const metadata = {
     title: 'Makeup Yer Mind | All Promotions',
