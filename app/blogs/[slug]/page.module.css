@@ -149,9 +149,15 @@
 
 .content li img {
     float: left;
-    width: 35%;
+    width: 20%;
     margin-inline: 8px;
     margin-top: 8px;
+}
+
+@media screen and (min-width: 769px) {
+    .content li img {
+        margin-top: 30px;
+    }
 }
 
 .content p:has(video),
