@@ -58,9 +58,13 @@ export default function WhatIsASeintArtist() {
 
                 </aside>
 
-                <Button>
-                    Join Courtney&apos;s Team!
-                </Button>
+                <ExternalLink href='https://st-sational-corntee.seintofficial.com/en/enroll/pick-artist'>
+
+                    <Button>
+                        Join Courtney&apos;s Team!
+                    </Button>
+
+                </ExternalLink>
 
             </div>
 
