@@ -40,7 +40,8 @@ export default function ContactForm() {
             name: '',
             content: '',
             read: false,
-            sentAt: serverTimestamp()
+            sentAt: serverTimestamp(),
+            docType: 'message'
         }
 
         if (nameRef?.current && messageRef?.current) {

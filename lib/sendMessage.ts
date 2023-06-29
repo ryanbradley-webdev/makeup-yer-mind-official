@@ -5,7 +5,8 @@ export type quickMessage = {
     name: string,
     content: string,
     read: boolean,
-    sentAt: FieldValue
+    sentAt: FieldValue,
+    docType: 'message'
 }
 
 export const sendMessage = async (msg: quickMessage): Promise<DocumentReference> => {
