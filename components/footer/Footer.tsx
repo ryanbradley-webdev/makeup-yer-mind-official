@@ -44,7 +44,7 @@ export default function Footer() {
             </Link>
 
             <p>
-                &copy; {new Date().getFullYear()} Shades of Pink.<br />Designed and developed by <ExternalLink href='https://ryanbradleywebdev.com'>Ryan Bradley Web Design</ExternalLink>.
+                &copy; {new Date().getFullYear()} Courtney Holly.<br />Designed and developed by <ExternalLink href='https://ryanbradleywebdev.com'>Ryan Bradley Web Design</ExternalLink>.
             </p>
 
         </footer>
