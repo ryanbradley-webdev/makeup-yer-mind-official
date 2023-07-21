@@ -65,7 +65,7 @@ For the design of this site, I was given a logo around which to design the entir
 
 ![Makeup Yer Mind Logo](./documentation/mym-logo.svg)
 
-<!-- ![Color Palette](./documentation/color-palette.png) -->
+![Color Palette](./documentation/color-palette.png)
 
 With this palette derived, I designed the home page with the intent to capture visitor attention and display the various forms of content according to heirarchy. The latest blog is displayed first, followed by promotional content and the 'Looks to Try' section, which are smaller and more easily-consumed pieces of content.
 
