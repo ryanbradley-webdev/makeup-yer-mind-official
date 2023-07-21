@@ -97,7 +97,7 @@ On submission of the form, a form validation method is run to ensure all require
 
 ![Example of an invalid input](./documentation/screenshot-invalid-input.png)
 
-/app/makeup-consultation/components/Form.tsx:93
+*/app/makeup-consultation/components/Form.tsx:93*
 ~~~
 const validateForm = () => {
     formRef.current?.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input, textarea').forEach(field => {
@@ -137,7 +137,7 @@ Each input also has its own validation method that is called on change, so an in
 
 Each article generates page metadata based on the page content. For blogs and promotions, which only use one image, this process is accomplished by an exported 'generateMetadata' function:
 
-/app/blogs/[slug]/page.tsx:25
+*/app/blogs/[slug]/page.tsx:25*
 ~~~
 export async function generateMetadata(
     { params }: Params
@@ -165,7 +165,7 @@ export async function generateMetadata(
 
 For 'looks to try' articles, this process is more involved as it requires pushing two images into one. This was accomplished by writing an API route to handle the image generation via the Next.js ImageResponse API:
 
-/app/api/looks/og/route.tsx:6
+*/app/api/looks/og/route.tsx:6*
 ~~~
 export async function GET(request: NextRequest) {
     try {
@@ -233,9 +233,141 @@ export async function GET(request: NextRequest) {
 
 ### Organization and Routing
 
+The application is organized according to Next.js v13.4.1 using the latest 'app' directory feature. Each page is contained in its own directory with a page.tsx file to indicate the specified route. Since the site only requires a single layout, the root layout.tsx file in the /app directory provides a single layout containing a header and footer component to remain static on page.
+
+Each route contains its own CSS module for styling, and any specialized components are included in their own /components directory within that route. Global components are maintained within a /components directory in the root directory outside of the /app directory.
+
+The /api directory within the /app directory houses all backend API routes. These routes are used for handling comments, article likes, contact forms, and email list subscriptions.
+
 ### API Structure
 
+The API was designed to handle backend features that did not necessarily require major UI updates, as well as email subscriptions through Mailchimp which could not be accomplished on the frontend.
+
+Article likes are accomplished via specific routes according to article type. The route is designed to take in data about the article and user, such as how many likes are currently on the page and whether the user is 'liking' or 'disliking' the article. It is also designed to prevent the like count from dropping below zero.
+
+*/app/api/blogs/toggle-like/route.ts:5*
+~~~
+export async function PATCH(request: Request) {
+    const { id, likes, isLiked } = await request.json()
+
+    if (!id || isLiked == undefined) {
+        return NextResponse.json({
+            message: 'Missing data'
+        }, {
+            status: 400
+        })
+    }
+
+    try {
+        const lookRef = doc(firestore, 'blogs', id)
+
+        const newLikes = 
+            isLiked ? 
+            likes - 1 < 0 ? 0 : likes - 1 : 
+            likes + 1
+
+        await updateDoc(lookRef, {
+            likes: newLikes
+        })
+
+        return NextResponse.json({
+            message: 'Likes updated'
+        }, {
+            status: 200
+        })
+    } catch {
+        return NextResponse.error()
+    }
+}
+~~~
+
+Contact and email subscription are handled in a similar manner, consisting of a simple API call and returning a success or error response to the frontend. Error handling is intended to return an HTML status corresponding to the exact issue as closely as possible to help in troubleshooting for future issues. An example of the email contact form submission API:
+
+*/app/api/contact/route.ts:4*
+~~~
+export async function POST(request: Request) {
+    const API_KEY = --SENDGRID-API-KEY--
+    const TEMPLATE_ID = --SENDGRID-TEMPLATE-ID---
+    const TO_EMAIL = --CLIENT-EMAIL--
+    const FROM_EMAIL = --SENDGRID-ACCOUNT-EMAIL--
+
+    if (!API_KEY || !TEMPLATE_ID || !TO_EMAIL || !FROM_EMAIL) {
+        return NextResponse.json({
+            error: 'missing server data'
+        }, {
+            status: 500
+        })
+    }
+
+    const body = await request.json()
+
+    for (const field in body) {
+        if (!field) return NextResponse.json({
+            error: 'missing form data'
+        }, {
+            status: 400
+        })
+    }
+
+    sgMail.setApiKey(API_KEY)
+
+    const msg = {
+        to: {
+            name: --CLIENT-NAME--,
+            email: TO_EMAIL
+        },
+        from: {
+            name: --ACCOUNT-NAME--,
+            email: FROM_EMAIL
+        },
+        subject: body.subject,
+        templateId: TEMPLATE_ID,
+        dynamicTemplateData: body
+    }
+
+    try {
+        const [ response ] = await sgMail.send(msg as MailDataRequired)
+
+        if (response.statusCode === 202) {
+            return NextResponse.json({
+                message: 'email sent'
+            }, {
+                status: 202
+            })
+        } else {
+            return NextResponse.json({
+                message: 'bad request'
+            }, { 
+                status: 400
+            })
+        }
+    } catch (error) {
+        return NextResponse.json({
+            error
+        }, {
+            status: 500
+        })
+    }
+
+}
+~~~
+
 ### Database
+
+The database is a Firebase Firestore document-storage database separated into several document types. Blogs, Looks, Promotions, consultation requests, and comments are all stored as distinct document types. Each document is saved (whether on this application or on the associated content management system) with a 'docType' property pointing to the segment in which it belongs. This property is then used to validate the document type upon retrieval to ensure the necessary fields exist prior to attempting to read the data on page. This is done to preemptively eliminate errors that could arise due to reading undefined or null fields.
+
+*/lib/typeCheck.ts:3*
+~~~
+export const dataIsBlog = (data: DocumentData): data is Blog => {
+    return data.docType === 'blog'
+}
+~~~
+
+On data retrieval, all data is passed through this (or a similar) validation method before being either passed to the application or, if invalid, dropped entirely.
+
+The comment type is stored independently of blogs and looks articles in order to minimize document complexity. Instead, a comment count variable is stored in the article types that is updated every time a comment is added to the database. This count is only used for the client's tracking purposes and is not utilized on this application.
+
+The database is secured with a number of security rules, only allowing reading or writing under certain circumstances. Writing to the comments, messages, and consultation requests directories is allowed from this application, but reading is restricted to the content management system, and only when logged in. Blogs, looks, and promotions can be read by any user on this application, but only the comments, likes, and views of each of these data types can be written by this application. Entire articles can only be written if logged into the content management system. These rules are written to allow this application to write only what is necessary for user interaction and restricting everything else.
 
 ## Continued Development
 
