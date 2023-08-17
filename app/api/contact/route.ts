@@ -33,7 +33,7 @@ export async function POST(request: Request) {
             email: TO_EMAIL
         },
         from: {
-            name: 'Ryan Bradley',
+            name: body.name,
             email: FROM_EMAIL
         },
         subject: body.subject,
