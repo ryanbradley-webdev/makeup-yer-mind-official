@@ -179,11 +179,11 @@ export default function Form() {
                 </h1>
 
                 <p>
-                    Thank you so much for trusting me to help you on your beauty adventure. In order for me to best serve you, I just need to know a few things about you!
+                    Welcome to the first step in your beauty adventure! I&apos;m so exceited for you!
                 </p>
 
                 <p>
-                    Beauty is a personal journey, and I value you and your trust so everything between us is always 100% confidential.
+                    In order to create a totally unique and tailor-made routine for you, I just have a few quick question!
                 </p>
 
                 <p>
@@ -191,7 +191,7 @@ export default function Form() {
                 </p>
 
                 <p>
-                    Let&apos;s go!
+                    Click &quot;next&quot; to begin!
                 </p>
 
             </FormDiv>
@@ -466,7 +466,6 @@ export default function Form() {
 
                 </div>}
 
-
             </FormDiv>
 
             <FormDiv
@@ -474,12 +473,12 @@ export default function Form() {
                 pageIndex={8}
             >
 
-                <p>
-                    Okay! That&apos;s all I need to get started! Watch your email inbox for your results! If you don&apos;t see an email in the next 24-48 hours please make sure it didn&apos;t go to your spam or promotions folders, if it&apos;s still not there reach out to me and let me know!
+                <p style={{ marginTop: "24px" }}>
+                    That&apos;s all the questions I have for you!
                 </p>
 
                 <p>
-                    I can&apos;t wait to get to know you!
+                    If you&apos;re happy with all of your information, just click &quot;Submit&quot; below to send it all my way!
                 </p>
 
             </FormDiv>
@@ -496,6 +495,16 @@ export default function Form() {
             {!formSubmitting && !formSuccess && !formError && 
             
                 <div className={styles.btnDiv}>
+
+                    {
+                        formPage === 1 &&
+
+                        <span
+                            className={styles.tooltip}
+                        >
+                            Around 2 minutes to complete
+                        </span>
+                    }
 
                     {
                         formPage > 1 && formPage < 9 && 

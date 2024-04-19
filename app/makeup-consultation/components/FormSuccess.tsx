@@ -7,11 +7,15 @@ export default function FormSuccess() {
         <div className={styles.form_completion}>
 
             <h3>
-                Form Submitted!
+                Consultation Request Submitted!
             </h3>
 
             <p>
-                Look out for an email in a couple days with your personalized color match!
+                Okay! That&apos;s all I need to get started! Watch your email inbox for your results! If you don&apos;t see an email in the next 24-48 hours please make sure it didn&apos;t go to your spam or promotions folders, if it&apos;s still not there reach out to me and let me know!
+            </p>
+
+            <p>
+                I can&apos;t wait to get to know you!
             </p>
             
             <Link href='/'>
