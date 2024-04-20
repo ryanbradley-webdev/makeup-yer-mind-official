@@ -183,7 +183,7 @@ export default function Form() {
                 </p>
 
                 <p>
-                    In order to create a totally unique and tailor-made routine for you, I just have a few quick question!
+                    In order to create a totally unique and tailor-made routine for you, I just have a few quick questions!
                 </p>
 
                 <p>
